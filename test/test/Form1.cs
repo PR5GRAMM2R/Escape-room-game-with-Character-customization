@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// hahaha 나는 윈도우 폼이 싫어
+
+
 namespace test
 {
     public partial class Form1 : Form
