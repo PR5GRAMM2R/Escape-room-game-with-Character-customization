@@ -31,6 +31,7 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.lblRunner = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnStart
@@ -47,7 +48,7 @@
             // 
             this.lblRunner.AutoSize = true;
             this.lblRunner.Font = new System.Drawing.Font("굴림", 20F);
-            this.lblRunner.Location = new System.Drawing.Point(252, 160);
+            this.lblRunner.Location = new System.Drawing.Point(274, 175);
             this.lblRunner.Name = "lblRunner";
             this.lblRunner.Size = new System.Drawing.Size(262, 34);
             this.lblRunner.TabIndex = 1;
@@ -55,7 +56,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(463, 324);
+            this.btnExit.Location = new System.Drawing.Point(487, 324);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(150, 63);
             this.btnExit.TabIndex = 2;
@@ -63,11 +64,21 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(332, 260);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(132, 15);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "점프는 스페이스바";
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblRunner);
             this.Controls.Add(this.btnStart);
@@ -83,6 +94,7 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Label lblRunner;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label label1;
     }
 }
 
