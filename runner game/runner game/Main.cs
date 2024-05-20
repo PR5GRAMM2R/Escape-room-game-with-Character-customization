@@ -19,7 +19,7 @@ namespace runner_game
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            GameRunner GameRunnerForm = new GameRunner();
+            player GameRunnerForm = new player();
             GameRunnerForm.Show();
 
             this.Hide();

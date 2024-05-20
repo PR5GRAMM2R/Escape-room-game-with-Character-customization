@@ -10,9 +10,11 @@ using System.Windows.Forms;
 
 namespace runner_game
 {
-    public partial class GameRunner : Form
+    public partial class player : Form
     {
-        bool jumping = false;
+        
+        bool jumping = false, goleft = false, goright =false;
+        int playerspeed = 7;
         int jumpSpeed;
         int force = 12;
         int score = 0;
@@ -21,7 +23,9 @@ namespace runner_game
         int position;
         bool isGameOver = false;
 
-        public GameRunner()
+
+
+        public player()
         {
             InitializeComponent();
 
@@ -34,7 +38,8 @@ namespace runner_game
 
             lblScore.Text = "점수: " + score;
 
-            if(jumping == true && force < 0)
+            //점프 한다.
+            if(jumping == true && force < 0) //힘이 0이고 점프 중이라면 점핑을 바꾼다.?
             {
                 jumping = false;
             }
@@ -49,14 +54,23 @@ namespace runner_game
                 jumpSpeed = 12;
             }
 
-            if (pbRunner.Top > 334 && jumping == false)
+            if (pbRunner.Top > 334 && jumping == false) // 러너의 최고 점을 알려준다.
             {
                 force = 12;
                 pbRunner.Top = 335;
                 jumpSpeed = 0;
             }
+            if (goleft)
+            {
+                pbRunner.Left -= playerspeed;
+            }
+            if (goright)
+            {
+                pbRunner.Left += playerspeed;
+            }
 
-            foreach(Control x in this.Controls)
+            //여기에서는 타임 부분에다가 했는데 하다가 에러나면 바꾸어야함. 키 다운 쪽으로 옮겨야함
+            /*foreach (Control x in this.Controls)
             {
                 if(x is PictureBox && (string)x.Tag == "obstacle")
                 {
@@ -72,12 +86,13 @@ namespace runner_game
                     {
                         gameTimer.Stop();
                         pbRunner.Image = Properties.Resources.dead;
+
                         lblScore.Text += " 다시 시작하려면 R키를 누르세요.";
                         MessageBox.Show("Game Over!");
                         isGameOver = true;
                     }
                 }
-            }
+            }*/
 
             if (score > 5)
             {
@@ -85,38 +100,60 @@ namespace runner_game
             }
         }
 
+        //스페이스 바를 누르고 점프 (점프 상황이 아닌 경우에만 점프 가능-> 이단 점프 불가능)
         private void keyisdown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Space && jumping == false)
+
+                if (e.KeyCode == Keys.Space && jumping == false)
             {
                 jumping = true;
             }
+            if (e.KeyCode == Keys.Left)
+            {
+                goleft = true;
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                goright = true;
+            }
         }
 
+        //점프를 한 다음 다시 점프가 가능하게 만들어줌
         private void keyisup(object sender, KeyEventArgs e)
         {
             if (jumping == true)
             {
                 jumping = false;
             }
+            if (e.KeyCode == Keys.Left)
+            {
+                goleft = false;
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                goright = false;
+            }
 
+            //게임 재 시작
             if (e.KeyCode == Keys.R && isGameOver == true)
             {
                 GameReset();
             }
         }
 
+        //게임 시작 시 초기화 부분
         private void GameReset()
         {
             force = 12;
             jumpSpeed = 0;
             jumping = false;
             score = 0;
-            obstacleSpeed = 10;
+            obstacleSpeed = 10; //장애물 스피드
             lblScore.Text = "점수: " + score;
             pbRunner.Image = Properties.Resources.running;
             isGameOver = false;
-            pbRunner.Top = 335;
+            pbRunner.Top = 335; //러너의 최고점?
+
 
             foreach (Control x in this.Controls)
             {
