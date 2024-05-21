@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace runner_game
 {
@@ -92,15 +93,15 @@ namespace runner_game
                         isGameOver = true;
                     }
                 }
-            }*/
+            }
 
             if (score > 5)
             {
                 obstacleSpeed = 15;
-            }
+            }*/
         }
 
-        //스페이스 바를 누르고 점프 (점프 상황이 아닌 경우에만 점프 가능-> 이단 점프 불가능)
+        //키 다운 키가 움직이면 작용
         private void keyisdown(object sender, KeyEventArgs e)
         {
 
@@ -116,6 +117,29 @@ namespace runner_game
             {
                 goright = true;
             }
+            foreach (Control control in this.Controls)
+            {
+                if (control is PictureBox)
+                {
+                    if ((string)control.Tag == "obstacle")
+                    {
+                        if (pbRunner.Bounds.IntersectsWith(control.Bounds))
+                        {
+                            BlackJack blackJack = new BlackJack();
+                            blackJack.Show();
+
+                            this.Hide();
+
+                        }
+                    }
+
+                }
+            }
+        }
+
+        private void pbObstacle1_Click(object sender, EventArgs e)
+        {
+
         }
 
         //점프를 한 다음 다시 점프가 가능하게 만들어줌
@@ -155,16 +179,17 @@ namespace runner_game
             pbRunner.Top = 335; //러너의 최고점?
 
 
-            foreach (Control x in this.Controls)
+            /*foreach (Control control in this.Controls)
             {
 
-                if (x is PictureBox && (string)x.Tag == "obstacle")
+                if (control is PictureBox && (string)control.Tag == "obstacle")
                 {
-                    position = this.ClientSize.Width + rand.Next(500, 800) + (x.Width * 10);
+                    position = this.ClientSize.Width + rand.Next(500, 800) + (control.Width * 10);
 
-                    x.Left = position;
+                    control.Left = position;
                 }
-            }
+            }*/
+           
 
             gameTimer.Start();
 

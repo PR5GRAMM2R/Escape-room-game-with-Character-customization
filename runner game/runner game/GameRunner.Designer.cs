@@ -70,7 +70,7 @@
             // pbObstacle2
             // 
             this.pbObstacle2.Image = global::runner_game.Properties.Resources.obstacle_2;
-            this.pbObstacle2.Location = new System.Drawing.Point(741, 348);
+            this.pbObstacle2.Location = new System.Drawing.Point(621, 341);
             this.pbObstacle2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.pbObstacle2.Name = "pbObstacle2";
             this.pbObstacle2.Size = new System.Drawing.Size(32, 33);
@@ -82,7 +82,7 @@
             // pbObstacle1
             // 
             this.pbObstacle1.Image = global::runner_game.Properties.Resources.obstacle_1;
-            this.pbObstacle1.Location = new System.Drawing.Point(612, 336);
+            this.pbObstacle1.Location = new System.Drawing.Point(477, 328);
             this.pbObstacle1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.pbObstacle1.Name = "pbObstacle1";
             this.pbObstacle1.Size = new System.Drawing.Size(23, 46);
@@ -90,6 +90,7 @@
             this.pbObstacle1.TabIndex = 5;
             this.pbObstacle1.TabStop = false;
             this.pbObstacle1.Tag = "obstacle";
+            this.pbObstacle1.Click += new System.EventHandler(this.pbObstacle1_Click);
             // 
             // pbRunner
             // 
@@ -107,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 422);
+            this.ClientSize = new System.Drawing.Size(950, 422);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pbRunner);
             this.Controls.Add(this.pbObstacle1);
