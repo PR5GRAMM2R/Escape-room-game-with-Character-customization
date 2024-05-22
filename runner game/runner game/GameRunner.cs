@@ -11,7 +11,7 @@ using System.IO;
 
 namespace runner_game
 {
-    public partial class player : Form
+    public partial class mainPlay : Form
     {
         
         bool jumping = false, goleft = false, goright =false;
@@ -26,7 +26,7 @@ namespace runner_game
 
 
 
-        public player()
+        public mainPlay()
         {
             InitializeComponent();
 

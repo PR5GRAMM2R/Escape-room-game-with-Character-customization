@@ -7,9 +7,7 @@ using System.Windows.Forms;
 
 namespace runner_game
 {
-    internal class GameClass
-    {
-    }
+    
     public struct Card
     {
         public int iIndex;
@@ -296,7 +294,7 @@ namespace runner_game
 
         public void Start()
         {
-            cardStore.InitCard();
+            cardStore.InitCard(); //
             computer.Init();
             user.Init();
             showResult = false;

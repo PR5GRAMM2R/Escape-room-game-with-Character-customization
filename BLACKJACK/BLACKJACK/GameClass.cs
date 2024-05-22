@@ -293,7 +293,7 @@ namespace BLACKJACK
 
         public void Start()
         { 
-            cardStore.InitCard();
+            cardStore.InitCard(); //
             computer.Init();
             user.Init();
             showResult = false;

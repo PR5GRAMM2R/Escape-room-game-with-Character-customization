@@ -200,7 +200,7 @@ namespace runner_game
 
         private void btnStart_Click_1(object sender, EventArgs e)
         {
-            gameManager.Start();
+            gameManager.Start(); //이 줄에서 객체가 안 댐 gameManager가 할당을 못 받음
 
             btnhit.Enabled = true;
             btnStand.Enabled = true;

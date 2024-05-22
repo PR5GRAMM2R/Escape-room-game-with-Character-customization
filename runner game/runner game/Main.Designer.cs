@@ -1,6 +1,6 @@
 ﻿namespace runner_game
 {
-    partial class Game
+    partial class Main
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -73,7 +73,7 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "점프는 스페이스바";
             // 
-            // Game
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -82,7 +82,7 @@
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblRunner);
             this.Controls.Add(this.btnStart);
-            this.Name = "Game";
+            this.Name = "Main";
             this.Text = "Main";
             this.ResumeLayout(false);
             this.PerformLayout();

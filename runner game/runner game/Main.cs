@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace runner_game
 {
-    public partial class Game : Form
+    public partial class Main : Form
     {
-        public Game()
+        public Main()
         {
             InitializeComponent();
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            player GameRunnerForm = new player();
+            mainPlay GameRunnerForm = new mainPlay();
             GameRunnerForm.Show();
 
             this.Hide();
