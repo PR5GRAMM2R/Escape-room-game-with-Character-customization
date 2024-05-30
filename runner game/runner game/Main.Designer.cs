@@ -36,9 +36,10 @@
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(152, 324);
+            this.btnStart.Location = new System.Drawing.Point(159, 400);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(150, 63);
+            this.btnStart.Size = new System.Drawing.Size(131, 50);
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "시작";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -48,17 +49,18 @@
             // 
             this.lblRunner.AutoSize = true;
             this.lblRunner.Font = new System.Drawing.Font("굴림", 20F);
-            this.lblRunner.Location = new System.Drawing.Point(274, 175);
+            this.lblRunner.Location = new System.Drawing.Point(319, 206);
             this.lblRunner.Name = "lblRunner";
-            this.lblRunner.Size = new System.Drawing.Size(262, 34);
+            this.lblRunner.Size = new System.Drawing.Size(208, 27);
             this.lblRunner.TabIndex = 1;
             this.lblRunner.Text = "RUNNER GAME";
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(487, 324);
+            this.btnExit.Location = new System.Drawing.Point(591, 400);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(150, 63);
+            this.btnExit.Size = new System.Drawing.Size(131, 50);
             this.btnExit.TabIndex = 2;
             this.btnExit.Text = "종료";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -67,21 +69,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(332, 260);
+            this.label1.Location = new System.Drawing.Point(369, 274);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 15);
+            this.label1.Size = new System.Drawing.Size(105, 12);
             this.label1.TabIndex = 3;
             this.label1.Text = "점프는 스페이스바";
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(850, 571);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblRunner);
             this.Controls.Add(this.btnStart);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Main";
             this.Text = "Main";
             this.ResumeLayout(false);

@@ -80,6 +80,12 @@
     <Compile Include="GameRunner.Designer.cs">
       <DependentUpon>GameRunner.cs</DependentUpon>
     </Compile>
+    <Compile Include="mazeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mazeForm.Designer.cs">
+      <DependentUpon>mazeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BlackJack.resx">
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GameRunner.resx">
       <DependentUpon>GameRunner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mazeForm.resx">
+      <DependentUpon>mazeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
