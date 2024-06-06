@@ -1,0 +1,208 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace EscapeGame
+{
+    public partial class Form1 : Form
+    {
+        private HashSet<Keys> pressedKeys = new HashSet<Keys>();
+        private Timer movementTimer;
+        private const int step = 10; // 캐릭터 이동 거리
+        private bool hasReachedTarget = false; // 목표 위치 도달 여부를 추적
+        public bool hasKeyToRoom2 = false;
+        public bool hasKeyToRoom3 = false;
+        public bool hasKeyToRoom4 = false;
+        public bool hasKeyToEscape = false;
+
+        public Form1()
+        {
+            InitializeComponent();
+            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
+            this.KeyUp += new KeyEventHandler(Form1_KeyUp);
+            this.KeyPreview = true;
+
+            // 방향키 두 개를 동시에 눌렀을 때 대각선으로 이동시키기 위함
+            movementTimer = new Timer();
+            movementTimer.Interval = 20; // 20ms 간격으로 움직임을 업데이트
+            movementTimer.Tick += MovementTimer_Tick;
+            movementTimer.Start();
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            pressedKeys.Add(e.KeyCode);
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            pressedKeys.Remove(e.KeyCode);
+        }
+
+        private void MovementTimer_Tick(object sender, EventArgs e)
+        {
+            MovePlayer();
+            MoveRoom1();
+            MoveRoom2();
+            MoveRoom3();
+            MoveRoom4();
+            MoveEscape();
+        }
+
+        private void MovePlayer()
+        {
+            if (pressedKeys.Contains(Keys.Up))
+            {
+                pbPlayer.Top -= step;
+            }
+            if (pressedKeys.Contains(Keys.Down))
+            {
+                pbPlayer.Top += step;
+            }
+            if (pressedKeys.Contains(Keys.Left))
+            {
+                pbPlayer.Left -= step;
+            }
+            if (pressedKeys.Contains(Keys.Right))
+            {
+                pbPlayer.Left += step;
+            }
+        }
+
+        private void MoveRoom1()
+        {
+            if (hasReachedTarget == false && hasKeyToRoom2 == false && pbPlayer.Bounds.IntersectsWith(pbRoom1p.Bounds)) // 1번방
+            {
+                hasReachedTarget = true; // 플래그를 설정하여 이벤트가 한 번만 발생하도록 함
+                Room1 room1 = new Room1(this);
+                room1.Show();
+                this.Hide();
+            }
+            else if (hasKeyToRoom2 == true && pbPlayer.Bounds.IntersectsWith(pbRoom1p.Bounds))
+            {
+                movementTimer.Stop(); // 타이머 멈춤으로써 플레이어 이동 멈춤
+                MessageBox.Show("여긴 더 볼 필요 없을 거 같아.");
+                pbPlayer.Left -= 20;
+                movementTimer.Start(); // 타이머 시작
+                pressedKeys.Clear(); // 입력된 키 초기화
+            }
+        }
+        private void MoveRoom2()
+        {
+            if (hasReachedTarget == false && pbPlayer.Bounds.IntersectsWith(pbRoom2p.Bounds)) // 2번방
+            {
+                if (hasKeyToRoom2 == true && hasKeyToRoom3 == false)
+                {
+                    hasReachedTarget = true;
+                    Room2 room2 = new Room2(this);
+                    room2.Show();
+                    this.Hide();
+                }
+                else if (hasKeyToRoom3 == true)
+                {
+                    movementTimer.Stop();
+                    MessageBox.Show("여긴 더 볼 필요 없을 거 같아.");
+                    pbPlayer.Left += 20;
+                    movementTimer.Start();
+                    pressedKeys.Clear();
+                }
+                else
+                {
+                    movementTimer.Stop();
+                    MessageBox.Show("잠겨있다.");
+                    pbPlayer.Left += 20;
+                    movementTimer.Start();
+                    pressedKeys.Clear();
+                }
+            }
+        }
+        private void MoveRoom3()
+        {
+            if (hasReachedTarget == false && pbPlayer.Bounds.IntersectsWith(pbRoom3p.Bounds)) // 3번방
+            {
+                if (hasKeyToRoom3 == true && hasKeyToRoom4 == false)
+                {
+                    hasReachedTarget = true;
+                    Room3 room3 = new Room3(this);
+                    room3.Show();
+                    this.Hide();
+                }
+                else if (hasKeyToRoom4 == true)
+                {
+                    movementTimer.Stop();
+                    MessageBox.Show("여긴 더 볼 필요 없을 거 같아.");
+                    pbPlayer.Top += 20;
+                    movementTimer.Start();
+                    pressedKeys.Clear();
+                }
+                else
+                {
+                    movementTimer.Stop();
+                    MessageBox.Show("잠겨있다.");
+                    pbPlayer.Top += 20;
+                    movementTimer.Start();
+                    pressedKeys.Clear();
+                }
+            }
+        }
+        private void MoveRoom4()
+        {
+            if (hasReachedTarget == false && pbPlayer.Bounds.IntersectsWith(pbRoom4p.Bounds)) // 4번방
+            {
+                if (hasKeyToRoom4 == true && hasKeyToEscape == false)
+                {
+                    hasReachedTarget = true;
+                    Room4 room4 = new Room4(this);
+                    room4.Show();
+                    this.Hide();
+                }
+                else if (hasKeyToEscape == true)
+                {
+                    movementTimer.Stop();
+                    MessageBox.Show("여긴 더 볼 필요 없을 거 같아.");
+                    pbPlayer.Top += 20;
+                    movementTimer.Start();
+                    pressedKeys.Clear();
+                }
+                else
+                {
+                    movementTimer.Stop();
+                    MessageBox.Show("잠겨있다.");
+                    pbPlayer.Top += 20;
+                    movementTimer.Start();
+                    pressedKeys.Clear();
+                }
+            }
+        }
+        private void MoveEscape()
+        {
+            if (hasReachedTarget == false && pbPlayer.Bounds.IntersectsWith(pbEscape.Bounds)) // 현관문
+            {
+                if (hasKeyToEscape == true)
+                {
+                    hasReachedTarget = true;
+                    MessageBox.Show("문이 열렸다. 어서 나가자.");
+                }
+                else
+                {
+                    movementTimer.Stop();
+                    MessageBox.Show("문이 잠겨있다. 열쇠가 필요해보인다.");
+                    pbPlayer.Top -= 20;
+                    movementTimer.Start();
+                    pressedKeys.Clear();
+                }
+            }
+        }
+        public void SetPlayerPosition(int x, int y)
+        {
+            pbPlayer.Location = new Point(x, y);
+            pressedKeys.Clear();
+            hasReachedTarget = false;
+        }
+    }
+}
