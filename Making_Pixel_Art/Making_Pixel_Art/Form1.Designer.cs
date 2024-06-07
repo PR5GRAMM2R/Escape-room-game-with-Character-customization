@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pbxCurrentFrame = new System.Windows.Forms.PictureBox();
-            this.pbxPreviousFrame = new System.Windows.Forms.PictureBox();
             this.gbxPalette = new System.Windows.Forms.GroupBox();
             this.btnColorEdit = new System.Windows.Forms.Button();
             this.btnColor00 = new System.Windows.Forms.Button();
@@ -50,7 +48,6 @@
             this.btnTool03 = new System.Windows.Forms.Button();
             this.btnTool02 = new System.Windows.Forms.Button();
             this.btnTool01 = new System.Windows.Forms.Button();
-            this.pbxNextFrame = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSaveAndExit = new System.Windows.Forms.Button();
@@ -66,29 +63,16 @@
             this.cbxShowPreviousFrame = new System.Windows.Forms.CheckBox();
             this.btnCopyPreviousFrameToCurrentFrame = new System.Windows.Forms.Button();
             this.cld = new System.Windows.Forms.ColorDialog();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxCurrentFrame)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxPreviousFrame)).BeginInit();
+            this.pbxNextFrame = new System.Windows.Forms.PictureBox();
+            this.pbxPreviousFrame = new System.Windows.Forms.PictureBox();
+            this.pbxCurrentFrame = new System.Windows.Forms.PictureBox();
             this.gbxPalette.SuspendLayout();
             this.gbxTools.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxNextFrame)).BeginInit();
             this.gbxFrames.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxNextFrame)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPreviousFrame)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCurrentFrame)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pbxCurrentFrame
-            // 
-            this.pbxCurrentFrame.Location = new System.Drawing.Point(100, 100);
-            this.pbxCurrentFrame.Name = "pbxCurrentFrame";
-            this.pbxCurrentFrame.Size = new System.Drawing.Size(640, 640);
-            this.pbxCurrentFrame.TabIndex = 0;
-            this.pbxCurrentFrame.TabStop = false;
-            // 
-            // pbxPreviousFrame
-            // 
-            this.pbxPreviousFrame.Location = new System.Drawing.Point(789, 100);
-            this.pbxPreviousFrame.Name = "pbxPreviousFrame";
-            this.pbxPreviousFrame.Size = new System.Drawing.Size(256, 256);
-            this.pbxPreviousFrame.TabIndex = 1;
-            this.pbxPreviousFrame.TabStop = false;
             // 
             // gbxPalette
             // 
@@ -251,54 +235,67 @@
             this.btnTool06.Size = new System.Drawing.Size(55, 40);
             this.btnTool06.TabIndex = 16;
             this.btnTool06.UseVisualStyleBackColor = true;
+            this.btnTool06.Click += new System.EventHandler(this.btnTool01_Click);
             // 
             // btnTool05
             // 
+            this.btnTool05.BackgroundImage = global::Making_Pixel_Art.Properties.Resources.Tool05_Eraser;
+            this.btnTool05.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnTool05.Location = new System.Drawing.Point(6, 204);
             this.btnTool05.Name = "btnTool05";
             this.btnTool05.Size = new System.Drawing.Size(55, 40);
             this.btnTool05.TabIndex = 15;
+            this.btnTool05.Tag = "Tools.Eraser";
             this.btnTool05.UseVisualStyleBackColor = true;
+            this.btnTool05.Click += new System.EventHandler(this.btnTool01_Click);
             // 
             // btnTool04
             // 
+            this.btnTool04.BackgroundImage = global::Making_Pixel_Art.Properties.Resources.Tool04_Circle;
+            this.btnTool04.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnTool04.Location = new System.Drawing.Point(6, 158);
             this.btnTool04.Name = "btnTool04";
             this.btnTool04.Size = new System.Drawing.Size(55, 40);
             this.btnTool04.TabIndex = 14;
+            this.btnTool04.Tag = "Tools.Circle";
             this.btnTool04.UseVisualStyleBackColor = true;
+            this.btnTool04.Click += new System.EventHandler(this.btnTool01_Click);
             // 
             // btnTool03
             // 
+            this.btnTool03.BackgroundImage = global::Making_Pixel_Art.Properties.Resources.Tool03_Rectangle;
+            this.btnTool03.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnTool03.Location = new System.Drawing.Point(5, 112);
             this.btnTool03.Name = "btnTool03";
             this.btnTool03.Size = new System.Drawing.Size(55, 40);
             this.btnTool03.TabIndex = 13;
+            this.btnTool03.Tag = "Tools.Rectangle";
             this.btnTool03.UseVisualStyleBackColor = true;
+            this.btnTool03.Click += new System.EventHandler(this.btnTool01_Click);
             // 
             // btnTool02
             // 
+            this.btnTool02.BackgroundImage = global::Making_Pixel_Art.Properties.Resources.Tool02_Line;
+            this.btnTool02.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnTool02.Location = new System.Drawing.Point(6, 66);
             this.btnTool02.Name = "btnTool02";
             this.btnTool02.Size = new System.Drawing.Size(55, 40);
             this.btnTool02.TabIndex = 12;
+            this.btnTool02.Tag = "Tools.Line";
             this.btnTool02.UseVisualStyleBackColor = true;
+            this.btnTool02.Click += new System.EventHandler(this.btnTool01_Click);
             // 
             // btnTool01
             // 
+            this.btnTool01.BackgroundImage = global::Making_Pixel_Art.Properties.Resources.Tool01_Pen;
+            this.btnTool01.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnTool01.Location = new System.Drawing.Point(6, 20);
             this.btnTool01.Name = "btnTool01";
             this.btnTool01.Size = new System.Drawing.Size(55, 40);
             this.btnTool01.TabIndex = 11;
+            this.btnTool01.Tag = "Tools.Pen";
             this.btnTool01.UseVisualStyleBackColor = true;
-            // 
-            // pbxNextFrame
-            // 
-            this.pbxNextFrame.Location = new System.Drawing.Point(789, 484);
-            this.pbxNextFrame.Name = "pbxNextFrame";
-            this.pbxNextFrame.Size = new System.Drawing.Size(256, 256);
-            this.pbxNextFrame.TabIndex = 5;
-            this.pbxNextFrame.TabStop = false;
+            this.btnTool01.Click += new System.EventHandler(this.btnTool01_Click);
             // 
             // label2
             // 
@@ -317,6 +314,7 @@
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSaveAndExit
             // 
@@ -344,6 +342,7 @@
             this.btnPrevious.TabIndex = 10;
             this.btnPrevious.Text = "Previous";
             this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // gbxFrames
             // 
@@ -364,6 +363,7 @@
             this.btnNext.TabIndex = 11;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // label3
             // 
@@ -429,10 +429,41 @@
             this.btnCopyPreviousFrameToCurrentFrame.Text = "Copy Previous Frame To Current Frame";
             this.btnCopyPreviousFrameToCurrentFrame.UseVisualStyleBackColor = true;
             // 
+            // pbxNextFrame
+            // 
+            this.pbxNextFrame.Location = new System.Drawing.Point(789, 484);
+            this.pbxNextFrame.Name = "pbxNextFrame";
+            this.pbxNextFrame.Size = new System.Drawing.Size(256, 256);
+            this.pbxNextFrame.TabIndex = 5;
+            this.pbxNextFrame.TabStop = false;
+            this.pbxNextFrame.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxNextFrame_Paint);
+            // 
+            // pbxPreviousFrame
+            // 
+            this.pbxPreviousFrame.Location = new System.Drawing.Point(789, 100);
+            this.pbxPreviousFrame.Name = "pbxPreviousFrame";
+            this.pbxPreviousFrame.Size = new System.Drawing.Size(256, 256);
+            this.pbxPreviousFrame.TabIndex = 1;
+            this.pbxPreviousFrame.TabStop = false;
+            this.pbxPreviousFrame.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxPreviousFrame_Paint);
+            // 
+            // pbxCurrentFrame
+            // 
+            this.pbxCurrentFrame.Location = new System.Drawing.Point(100, 100);
+            this.pbxCurrentFrame.Name = "pbxCurrentFrame";
+            this.pbxCurrentFrame.Size = new System.Drawing.Size(640, 640);
+            this.pbxCurrentFrame.TabIndex = 0;
+            this.pbxCurrentFrame.TabStop = false;
+            this.pbxCurrentFrame.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxCurrentFrame_Paint);
+            this.pbxCurrentFrame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbxCurrentFrame_MouseDown);
+            this.pbxCurrentFrame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbxCurrentFrame_MouseMove);
+            this.pbxCurrentFrame.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbxCurrentFrame_MouseUp);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1084, 961);
             this.Controls.Add(this.btnCopyPreviousFrameToCurrentFrame);
             this.Controls.Add(this.cbxShowPreviousFrame);
@@ -454,12 +485,13 @@
             this.Controls.Add(this.pbxCurrentFrame);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pbxCurrentFrame)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxPreviousFrame)).EndInit();
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.gbxPalette.ResumeLayout(false);
             this.gbxTools.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxNextFrame)).EndInit();
             this.gbxFrames.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxNextFrame)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPreviousFrame)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCurrentFrame)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
