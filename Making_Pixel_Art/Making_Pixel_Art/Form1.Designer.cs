@@ -66,12 +66,19 @@
             this.pbxNextFrame = new System.Windows.Forms.PictureBox();
             this.pbxPreviousFrame = new System.Windows.Forms.PictureBox();
             this.pbxCurrentFrame = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblCurrentFrameNum = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.gbxPalette.SuspendLayout();
             this.gbxTools.SuspendLayout();
             this.gbxFrames.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxNextFrame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPreviousFrame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCurrentFrame)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbxPalette
@@ -340,7 +347,7 @@
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(116, 46);
             this.btnPrevious.TabIndex = 10;
-            this.btnPrevious.Text = "Previous";
+            this.btnPrevious.Text = "Previous Frame";
             this.btnPrevious.UseVisualStyleBackColor = true;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
@@ -348,20 +355,20 @@
             // 
             this.gbxFrames.Controls.Add(this.btnNext);
             this.gbxFrames.Controls.Add(this.btnPrevious);
-            this.gbxFrames.Location = new System.Drawing.Point(426, 755);
+            this.gbxFrames.Location = new System.Drawing.Point(459, 755);
             this.gbxFrames.Name = "gbxFrames";
-            this.gbxFrames.Size = new System.Drawing.Size(314, 77);
+            this.gbxFrames.Size = new System.Drawing.Size(279, 77);
             this.gbxFrames.TabIndex = 11;
             this.gbxFrames.TabStop = false;
-            this.gbxFrames.Text = "Frames";
+            this.gbxFrames.Text = "Move Frames";
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(184, 20);
+            this.btnNext.Location = new System.Drawing.Point(148, 20);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(116, 46);
             this.btnNext.TabIndex = 11;
-            this.btnNext.Text = "Next";
+            this.btnNext.Text = "Next Frame";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
@@ -459,12 +466,64 @@
             this.pbxCurrentFrame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbxCurrentFrame_MouseMove);
             this.pbxCurrentFrame.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbxCurrentFrame_MouseUp);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblCurrentFrameNum);
+            this.groupBox1.Location = new System.Drawing.Point(12, 436);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(66, 55);
+            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Frame";
+            // 
+            // lblCurrentFrameNum
+            // 
+            this.lblCurrentFrameNum.AutoSize = true;
+            this.lblCurrentFrameNum.Location = new System.Drawing.Point(11, 23);
+            this.lblCurrentFrameNum.Name = "lblCurrentFrameNum";
+            this.lblCurrentFrameNum.Size = new System.Drawing.Size(31, 12);
+            this.lblCurrentFrameNum.TabIndex = 0;
+            this.lblCurrentFrameNum.Text = "1 / 1";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnAdd);
+            this.groupBox2.Controls.Add(this.btnRemove);
+            this.groupBox2.Location = new System.Drawing.Point(174, 755);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(279, 77);
+            this.groupBox2.TabIndex = 12;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Control Frames";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(148, 20);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(116, 46);
+            this.btnAdd.TabIndex = 11;
+            this.btnAdd.Text = "Add New Frame Next To This";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(16, 20);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(116, 46);
+            this.btnRemove.TabIndex = 10;
+            this.btnRemove.Text = "Remove This Frame";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1084, 961);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCopyPreviousFrameToCurrentFrame);
             this.Controls.Add(this.cbxShowPreviousFrame);
             this.Controls.Add(this.label6);
@@ -492,6 +551,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxNextFrame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPreviousFrame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCurrentFrame)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -537,6 +599,11 @@
         private System.Windows.Forms.CheckBox cbxShowPreviousFrame;
         private System.Windows.Forms.Button btnCopyPreviousFrameToCurrentFrame;
         private System.Windows.Forms.ColorDialog cld;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblCurrentFrameNum;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnRemove;
     }
 }
 
