@@ -1,6 +1,6 @@
 ﻿namespace Making_Pixel_Art
 {
-    partial class Form1
+    partial class MakingPixelArtForm
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -71,6 +71,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.btnCopyNextFrameToCurrentFrame = new System.Windows.Forms.Button();
             this.gbxPalette.SuspendLayout();
             this.gbxTools.SuspendLayout();
             this.gbxFrames.SuspendLayout();
@@ -340,6 +341,7 @@
             this.btnPreview.TabIndex = 9;
             this.btnPreview.Text = "Preview";
             this.btnPreview.UseVisualStyleBackColor = true;
+            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
             // 
             // btnPrevious
             // 
@@ -420,7 +422,7 @@
             // cbxShowPreviousFrame
             // 
             this.cbxShowPreviousFrame.AutoSize = true;
-            this.cbxShowPreviousFrame.Location = new System.Drawing.Point(789, 416);
+            this.cbxShowPreviousFrame.Location = new System.Drawing.Point(789, 400);
             this.cbxShowPreviousFrame.Name = "cbxShowPreviousFrame";
             this.cbxShowPreviousFrame.Size = new System.Drawing.Size(149, 16);
             this.cbxShowPreviousFrame.TabIndex = 0;
@@ -429,12 +431,13 @@
             // 
             // btnCopyPreviousFrameToCurrentFrame
             // 
-            this.btnCopyPreviousFrameToCurrentFrame.Location = new System.Drawing.Point(789, 377);
+            this.btnCopyPreviousFrameToCurrentFrame.Location = new System.Drawing.Point(789, 367);
             this.btnCopyPreviousFrameToCurrentFrame.Name = "btnCopyPreviousFrameToCurrentFrame";
             this.btnCopyPreviousFrameToCurrentFrame.Size = new System.Drawing.Size(256, 24);
             this.btnCopyPreviousFrameToCurrentFrame.TabIndex = 17;
             this.btnCopyPreviousFrameToCurrentFrame.Text = "Copy Previous Frame To Current Frame";
             this.btnCopyPreviousFrameToCurrentFrame.UseVisualStyleBackColor = true;
+            this.btnCopyPreviousFrameToCurrentFrame.Click += new System.EventHandler(this.btnCopyPreviousFrameToCurrentFrame_Click);
             // 
             // pbxNextFrame
             // 
@@ -479,9 +482,10 @@
             // lblCurrentFrameNum
             // 
             this.lblCurrentFrameNum.AutoSize = true;
+            this.lblCurrentFrameNum.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblCurrentFrameNum.Location = new System.Drawing.Point(11, 23);
             this.lblCurrentFrameNum.Name = "lblCurrentFrameNum";
-            this.lblCurrentFrameNum.Size = new System.Drawing.Size(31, 12);
+            this.lblCurrentFrameNum.Size = new System.Drawing.Size(40, 13);
             this.lblCurrentFrameNum.TabIndex = 0;
             this.lblCurrentFrameNum.Text = "1 / 1";
             // 
@@ -516,12 +520,23 @@
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
-            // Form1
+            // btnCopyNextFrameToCurrentFrame
+            // 
+            this.btnCopyNextFrameToCurrentFrame.Location = new System.Drawing.Point(789, 426);
+            this.btnCopyNextFrameToCurrentFrame.Name = "btnCopyNextFrameToCurrentFrame";
+            this.btnCopyNextFrameToCurrentFrame.Size = new System.Drawing.Size(256, 24);
+            this.btnCopyNextFrameToCurrentFrame.TabIndex = 19;
+            this.btnCopyNextFrameToCurrentFrame.Text = "Copy Next Frame To Current Frame";
+            this.btnCopyNextFrameToCurrentFrame.UseVisualStyleBackColor = true;
+            this.btnCopyNextFrameToCurrentFrame.Click += new System.EventHandler(this.btnCopyNextFrameToCurrentFrame_Click);
+            // 
+            // MakingPixelArtForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1084, 961);
+            this.Controls.Add(this.btnCopyNextFrameToCurrentFrame);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCopyPreviousFrameToCurrentFrame);
@@ -542,8 +557,8 @@
             this.Controls.Add(this.gbxPalette);
             this.Controls.Add(this.pbxPreviousFrame);
             this.Controls.Add(this.pbxCurrentFrame);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "MakingPixelArtForm";
+            this.Text = "Making Pixel Art";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.gbxPalette.ResumeLayout(false);
             this.gbxTools.ResumeLayout(false);
@@ -604,6 +619,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnCopyNextFrameToCurrentFrame;
     }
 }
 

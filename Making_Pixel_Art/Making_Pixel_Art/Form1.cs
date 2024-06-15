@@ -20,7 +20,7 @@ namespace Making_Pixel_Art
         Eraser
     }
 
-    public partial class Form1 : Form
+    public partial class MakingPixelArtForm : Form
     {
         private List<Button> colorButtons;
         private Button currentColorButton;
@@ -39,7 +39,7 @@ namespace Making_Pixel_Art
         Color[,] currentFrame = new Color[numCells, numCells];      // 현재 프레임
         List<Color[,]> Frames = new List<Color[,]> ();              // 그려온 프레임들을 저장
 
-        public Form1()
+        public MakingPixelArtForm()
         {
             InitializeComponent();
         }
@@ -197,7 +197,7 @@ namespace Making_Pixel_Art
 
             int x = e.X;
             int y = e.Y;
-
+            
             int cellX = x / cellSizeX;
             int cellY = y / cellSizeY;
 
@@ -476,6 +476,7 @@ namespace Making_Pixel_Art
 
         ////////////////////////////////////////////////////////////////////////////////////////////
 
+        //                  도형을 그리는 기능들
         ////////////////////////////////////////////////////////////////////////////////////////////
 
         private void UseTools(int cellX, int cellY)
@@ -496,6 +497,51 @@ namespace Making_Pixel_Art
                 default:
                     break;
             }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////
+
+        //                  Previous Frame 또는 Next Frame 의 그림을 Current Frame 에 복사하기
+        ////////////////////////////////////////////////////////////////////////////////////////////
+
+        private void btnCopyPreviousFrameToCurrentFrame_Click(object sender, EventArgs e)
+        {
+            if(currentFrameNum != 0)
+            {
+                for (int i = 0; i < numCells; i++)
+                    for (int j = 0; j < numCells; j++)
+                        currentFrame[i, j] = Frames[currentFrameNum - 1][i, j];
+
+                pbxCurrentFrame.Invalidate();
+            }
+        }
+
+        private void btnCopyNextFrameToCurrentFrame_Click(object sender, EventArgs e)
+        {
+            if (currentFrameNum != totalFramesNum - 1)
+            {
+                for (int i = 0; i < numCells; i++)
+                    for (int j = 0; j < numCells; j++)
+                        currentFrame[i, j] = Frames[currentFrameNum + 1][i, j];
+
+                pbxCurrentFrame.Invalidate();
+            }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////
+
+        //                  Preview 을 위한 창을 띄우기 (Modal 창)
+        ////////////////////////////////////////////////////////////////////////////////////////////
+
+        private void btnPreview_Click(object sender, EventArgs e)
+        {
+            Color[,] frame = new Color[numCells, numCells];
+            frame = (Color[,])currentFrame.Clone();
+
+            Frames[currentFrameNum] = frame;
+
+            PreviewForm pvf = new PreviewForm(Frames, numCells);
+            DialogResult dialogResult = pvf.ShowDialog();
         }
     }
 }
