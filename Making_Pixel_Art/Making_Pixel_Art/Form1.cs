@@ -151,7 +151,8 @@ namespace Making_Pixel_Art
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////
-
+        
+        //                  현재 Frame (PictureBox) 에 그리기
         ////////////////////////////////////////////////////////////////////////////////////////////
 
         private void pbxCurrentFrame_MouseDown(object sender, MouseEventArgs e)
@@ -170,12 +171,8 @@ namespace Making_Pixel_Art
                 if (e.Button == MouseButtons.Left)
                 {
                     /////////////////// 도구 사용 여기에
-                    switch (currentTool) 
-                    {
-                        case Tools.Pen:
-                            currentFrame[cellX, cellY] = currentColor;
-                            break;
-                    }
+                    
+                    UseTools(cellX, cellY);
                 }
                 else if(e.Button == MouseButtons.Right)
                 {
@@ -213,12 +210,8 @@ namespace Making_Pixel_Art
                     if (e.Button == MouseButtons.Left)
                     {
                         /////////////////// 도구 사용 여기에
-                        switch (currentTool)
-                        {
-                            case Tools.Pen:
-                                currentFrame[cellX, cellY] = currentColor;
-                                break;
-                        }
+
+                        UseTools(cellX, cellY);
                     }
                     else if (e.Button == MouseButtons.Right)
                     {
@@ -231,7 +224,8 @@ namespace Making_Pixel_Art
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////
-
+        
+        //                  프레임 이동 시 Current, Previous, Next PictureBox 에 그리기
         ////////////////////////////////////////////////////////////////////////////////////////////
 
         private void pbxCurrentFrame_Paint(object sender, PaintEventArgs e)
@@ -362,6 +356,7 @@ namespace Making_Pixel_Art
 
         ////////////////////////////////////////////////////////////////////////////////////////////
 
+        //                  Next Frame 버튼과 Previous Frame 버튼에 대한 동작
         ////////////////////////////////////////////////////////////////////////////////////////////
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -412,6 +407,7 @@ namespace Making_Pixel_Art
 
         ////////////////////////////////////////////////////////////////////////////////////////////
 
+        //                  기존의 Frame 다음에 새로운 프레임 추가 & 기존의 Frame 제거
         ////////////////////////////////////////////////////////////////////////////////////////////
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -482,5 +478,24 @@ namespace Making_Pixel_Art
 
         ////////////////////////////////////////////////////////////////////////////////////////////
 
+        private void UseTools(int cellX, int cellY)
+        {
+            switch (currentTool)
+            {
+                case Tools.Pen:
+                    currentFrame[cellX, cellY] = currentColor;
+                    break;
+                case Tools.Line:
+                    break;
+                case Tools.Rectangle:
+                    break;
+                case Tools.Circle:
+                    break;
+                case Tools.Eraser:
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
