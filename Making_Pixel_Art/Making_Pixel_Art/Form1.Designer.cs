@@ -332,6 +332,7 @@
             this.btnSaveAndExit.TabIndex = 8;
             this.btnSaveAndExit.Text = "Save And Exit";
             this.btnSaveAndExit.UseVisualStyleBackColor = true;
+            this.btnSaveAndExit.Click += new System.EventHandler(this.btnSaveAndExit_Click);
             // 
             // btnPreview
             // 

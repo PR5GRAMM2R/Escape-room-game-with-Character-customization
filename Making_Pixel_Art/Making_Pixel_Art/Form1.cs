@@ -543,5 +543,31 @@ namespace Making_Pixel_Art
             PreviewForm pvf = new PreviewForm(Frames, numCells);
             DialogResult dialogResult = pvf.ShowDialog();
         }
+
+        private void btnSaveAndExit_Click(object sender, EventArgs e)
+        {
+            for(int i=0;i<totalFramesNum;i++)
+            {
+                Bitmap bitmap = new Bitmap(numCells, numCells);
+                for(int x=0;x<numCells;x++)
+                {
+                    for (int y=0;y<numCells;y++)
+                    {
+                        bitmap.SetPixel(x, y, Frames[i][x, y]);
+                    }
+                }
+
+                try
+                {
+                    bitmap.Save("..\\..\\Resources\\frame" + (i+1) + ".png", System.Drawing.Imaging.ImageFormat.Png);
+                }
+                catch (Exception ex)
+                {
+                    
+                }
+            }
+
+            Application.Exit();
+        }
     }
 }
