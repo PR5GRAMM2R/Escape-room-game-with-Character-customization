@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pbPlayer = new System.Windows.Forms.PictureBox();
             this.pbRoom1p = new System.Windows.Forms.PictureBox();
             this.pbRoom2p = new System.Windows.Forms.PictureBox();
             this.pbRoom3p = new System.Windows.Forms.PictureBox();
             this.pbEscape = new System.Windows.Forms.PictureBox();
             this.pbRoom4p = new System.Windows.Forms.PictureBox();
+            this.tmrImage = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRoom1p)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRoom2p)).BeginInit();
@@ -103,6 +105,11 @@
             this.pbRoom4p.TabIndex = 8;
             this.pbRoom4p.TabStop = false;
             // 
+            // tmrImage
+            // 
+            this.tmrImage.Interval = 50;
+            this.tmrImage.Tick += new System.EventHandler(this.tmrImage_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -136,6 +143,7 @@
         private System.Windows.Forms.PictureBox pbRoom3p;
         private System.Windows.Forms.PictureBox pbEscape;
         private System.Windows.Forms.PictureBox pbRoom4p;
+        private System.Windows.Forms.Timer tmrImage;
     }
 }
 

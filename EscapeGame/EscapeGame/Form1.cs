@@ -20,6 +20,9 @@ namespace EscapeGame
         public bool hasKeyToRoom4 = false;
         public bool hasKeyToEscape = false;
 
+        private List<Image> images = new List<Image>();     //// gif처럼 나타낼 이미지를 저장하는 List
+        private int imgClock = 0;                           //// 
+
         public Form1()
         {
             InitializeComponent();
@@ -32,16 +35,21 @@ namespace EscapeGame
             movementTimer.Interval = 20; // 20ms 간격으로 움직임을 업데이트
             movementTimer.Tick += MovementTimer_Tick;
             movementTimer.Start();
+
+            LoadImages();   //// 이미지 불러오기
+            pbPlayer.Image = images[0];     //// 초기 이미지 설정
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             pressedKeys.Add(e.KeyCode);
+            tmrImage.Start();      //// 이미지 변환 시작
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             pressedKeys.Remove(e.KeyCode);
+            tmrImage.Stop();       //// 이미지 변환을 멈춤
         }
 
         private void MovementTimer_Tick(object sender, EventArgs e)
@@ -203,6 +211,29 @@ namespace EscapeGame
             pbPlayer.Location = new Point(x, y);
             pressedKeys.Clear();
             hasReachedTarget = false;
+        }
+
+        // images List에 이미지를 저장
+        private void LoadImages()
+        {
+            images.Add(Image.FromFile("..\\..\\Resources\\c1.png"));
+            images.Add(Image.FromFile("..\\..\\Resources\\c2.png"));
+            images.Add(Image.FromFile("..\\..\\Resources\\c3.png"));
+            images.Add(Image.FromFile("..\\..\\Resources\\c4.png"));
+            images.Add(Image.FromFile("..\\..\\Resources\\c5.png"));
+            images.Add(Image.FromFile("..\\..\\Resources\\c6.png"));
+            images.Add(Image.FromFile("..\\..\\Resources\\c7.png"));
+            images.Add(Image.FromFile("..\\..\\Resources\\c8.png"));
+            images.Add(Image.FromFile("..\\..\\Resources\\c9.png"));
+            images.Add(Image.FromFile("..\\..\\Resources\\c10.png"));
+        }
+
+        // gif 움직일 때 사용할 타이머
+        private void tmrImage_Tick(object sender, EventArgs e)
+        {
+            imgClock++;
+            pbPlayer.Image = images[imgClock % 10];
+            if(imgClock % 10 == 0) { imgClock = 0; }
         }
     }
 }
