@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Room1));
             this.pbPlayer = new System.Windows.Forms.PictureBox();
             this.pbMainp = new System.Windows.Forms.PictureBox();
             this.pbRunnerGameMachine = new System.Windows.Forms.PictureBox();
             this.pbHint = new System.Windows.Forms.PictureBox();
+            this.tmrImage2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMainp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRunnerGameMachine)).BeginInit();
@@ -86,6 +88,11 @@
             this.pbHint.TabIndex = 5;
             this.pbHint.TabStop = false;
             // 
+            // tmrImage2
+            // 
+            this.tmrImage2.Interval = 50;
+            this.tmrImage2.Tick += new System.EventHandler(this.tmrImage2_Tick);
+            // 
             // Room1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -114,5 +121,6 @@
         private System.Windows.Forms.PictureBox pbPlayer;
         private System.Windows.Forms.PictureBox pbRunnerGameMachine;
         private System.Windows.Forms.PictureBox pbHint;
+        private System.Windows.Forms.Timer tmrImage2;
     }
 }

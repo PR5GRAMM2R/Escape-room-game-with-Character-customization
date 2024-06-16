@@ -19,6 +19,9 @@ namespace EscapeGame
         private Form1 mainForm;
         private string correctPassword = "1052"; //금고 비밀번호
 
+        private List<System.Drawing.Image> images = new List<System.Drawing.Image>();     //// gif처럼 나타낼 이미지를 저장하는 List
+        private int imgClock = 0;
+
         public Room4(Form1 form)
         {
             InitializeComponent();
@@ -32,16 +35,21 @@ namespace EscapeGame
             movementTimer.Interval = 20; // 20ms 간격으로 움직임을 업데이트
             movementTimer.Tick += MovementTimer_Tick;
             movementTimer.Start();
+
+            images = form.images;           //// 이미지 불러오기
+            pbPlayer.Image = images[0];     //// 초기 이미지 설정
         }
 
         private void Room1_KeyDown(object sender, KeyEventArgs e)
         {
             pressedKeys.Add(e.KeyCode);
+            tmrImage.Start();      //// 이미지 변환 시작
         }
 
         private void Room1_KeyUp(object sender, KeyEventArgs e)
         {
             pressedKeys.Remove(e.KeyCode);
+            tmrImage.Stop();       //// 이미지 변환을 멈춤
         }
 
         private void MovementTimer_Tick(object sender, EventArgs e)
@@ -152,6 +160,13 @@ namespace EscapeGame
                 mainForm.Show();
                 this.Hide();
             }
+        }
+
+        private void tmrImage_Tick(object sender, EventArgs e)
+        {
+            imgClock++;
+            pbPlayer.Image = images[imgClock % 10];
+            if (imgClock % 10 == 0) { imgClock = 0; }
         }
     }
 }

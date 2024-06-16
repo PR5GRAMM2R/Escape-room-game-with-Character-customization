@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Room4));
             this.pbKeyBox = new System.Windows.Forms.PictureBox();
             this.pbQ3 = new System.Windows.Forms.PictureBox();
@@ -35,6 +36,7 @@
             this.pbQ1 = new System.Windows.Forms.PictureBox();
             this.pbPlayer = new System.Windows.Forms.PictureBox();
             this.pbMainp = new System.Windows.Forms.PictureBox();
+            this.tmrImage = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbKeyBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbQ3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbQ2)).BeginInit();
@@ -114,6 +116,11 @@
             this.pbMainp.TabIndex = 7;
             this.pbMainp.TabStop = false;
             // 
+            // tmrImage
+            // 
+            this.tmrImage.Interval = 50;
+            this.tmrImage.Tick += new System.EventHandler(this.tmrImage_Tick);
+            // 
             // Room4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -148,5 +155,6 @@
         private System.Windows.Forms.PictureBox pbQ2;
         private System.Windows.Forms.PictureBox pbQ3;
         private System.Windows.Forms.PictureBox pbKeyBox;
+        private System.Windows.Forms.Timer tmrImage;
     }
 }

@@ -20,7 +20,7 @@ namespace EscapeGame
         public bool hasKeyToRoom4 = false;
         public bool hasKeyToEscape = false;
 
-        private List<Image> images = new List<Image>();     //// gif처럼 나타낼 이미지를 저장하는 List
+        public List<Image> images = new List<Image>();     //// gif처럼 나타낼 이미지를 저장하는 List
         private int imgClock = 0;                           //// 
 
         public Form1()

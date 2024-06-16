@@ -44,8 +44,8 @@
             // trex
             // 
             this.trex.Image = global::EscapeGame.Properties.Resources.running;
-            this.trex.Location = new System.Drawing.Point(175, 338);
-            this.trex.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.trex.Location = new System.Drawing.Point(153, 270);
+            this.trex.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.trex.Name = "trex";
             this.trex.Size = new System.Drawing.Size(40, 43);
             this.trex.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -56,18 +56,18 @@
             // 
             this.txtScore.AutoSize = true;
             this.txtScore.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtScore.Location = new System.Drawing.Point(17, 15);
+            this.txtScore.Location = new System.Drawing.Point(15, 12);
             this.txtScore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtScore.Name = "txtScore";
-            this.txtScore.Size = new System.Drawing.Size(134, 32);
+            this.txtScore.Size = new System.Drawing.Size(106, 24);
             this.txtScore.TabIndex = 2;
             this.txtScore.Text = "Score: 0";
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::EscapeGame.Properties.Resources.obstacle_2;
-            this.pictureBox4.Location = new System.Drawing.Point(847, 435);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBox4.Location = new System.Drawing.Point(741, 348);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(32, 33);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -78,8 +78,8 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::EscapeGame.Properties.Resources.obstacle_1;
-            this.pictureBox3.Location = new System.Drawing.Point(700, 420);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBox3.Location = new System.Drawing.Point(612, 336);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(23, 46);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -90,10 +90,10 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.Location = new System.Drawing.Point(-16, 472);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(-14, 378);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1101, 58);
+            this.pictureBox1.Size = new System.Drawing.Size(963, 46);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -104,14 +104,15 @@
             // 
             // RunnerGame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1087, 527);
+            this.ClientSize = new System.Drawing.Size(951, 422);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.txtScore);
             this.Controls.Add(this.trex);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "RunnerGame";
             this.Text = "RunnerGame";
             this.Load += new System.EventHandler(this.MainGameTimerEvent);

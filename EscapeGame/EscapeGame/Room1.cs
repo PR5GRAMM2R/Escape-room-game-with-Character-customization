@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace EscapeGame
 {
@@ -19,6 +20,8 @@ namespace EscapeGame
         private bool hasKeyToRoom2 = false; // Room2 열쇠 획득 여부
         private Form1 mainForm; // Form1 인스턴스를 저장
 
+        private List<System.Drawing.Image> images = new List<System.Drawing.Image>();     //// gif처럼 나타낼 이미지를 저장하는 List
+        private int imgClock = 0;                           ////
 
         public Room1(Form1 form)
         {
@@ -33,16 +36,21 @@ namespace EscapeGame
             movementTimer.Interval = 20; // 20ms 간격으로 움직임을 업데이트
             movementTimer.Tick += MovementTimer_Tick;
             movementTimer.Start();
+
+            images = form.images;
+            pbPlayer.Image = images[0];     //// 초기 이미지 설정
         }
 
         private void Room1_KeyDown(object sender, KeyEventArgs e)
         {
             pressedKeys.Add(e.KeyCode);
+            tmrImage2.Start();      //// 이미지 변환 시작
         }
 
         private void Room1_KeyUp(object sender, KeyEventArgs e)
         {
             pressedKeys.Remove(e.KeyCode);
+            tmrImage2.Stop();       //// 이미지 변환을 멈춤
         }
 
         private void MovementTimer_Tick(object sender, EventArgs e)
@@ -128,6 +136,14 @@ namespace EscapeGame
                 mainForm.Show();
                 this.Hide();
             }
+        }
+
+        // gif 움직일 때 사용할 타이머
+        private void tmrImage2_Tick(object sender, EventArgs e)
+        {
+            imgClock++;
+            pbPlayer.Image = images[imgClock % 10];
+            if (imgClock % 10 == 0) { imgClock = 0; }
         }
     }
 }

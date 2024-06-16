@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Room3));
             this.pbHint = new System.Windows.Forms.PictureBox();
             this.pbRunnerGameMachine = new System.Windows.Forms.PictureBox();
             this.pbMainp = new System.Windows.Forms.PictureBox();
             this.pbPlayer = new System.Windows.Forms.PictureBox();
+            this.tmrImage = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbHint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRunnerGameMachine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMainp)).BeginInit();
@@ -87,6 +89,11 @@
             this.pbPlayer.TabIndex = 5;
             this.pbPlayer.TabStop = false;
             // 
+            // tmrImage
+            // 
+            this.tmrImage.Interval = 50;
+            this.tmrImage.Tick += new System.EventHandler(this.tmrImage_Tick);
+            // 
             // Room3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -101,7 +108,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Room3";
             this.Text = "Room3";
-            this.Load += new System.EventHandler(this.Room3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbHint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRunnerGameMachine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMainp)).EndInit();
@@ -116,5 +122,6 @@
         private System.Windows.Forms.PictureBox pbMainp;
         private System.Windows.Forms.PictureBox pbRunnerGameMachine;
         private System.Windows.Forms.PictureBox pbHint;
+        private System.Windows.Forms.Timer tmrImage;
     }
 }
