@@ -97,6 +97,12 @@
     <Compile Include="RunnerGameMenu.Designer.cs">
       <DependentUpon>RunnerGameMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tic-Tac-Toe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tic-Tac-Toe.Designer.cs">
+      <DependentUpon>Tic-Tac-Toe.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Blackjack.resx">
       <DependentUpon>Blackjack.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RunnerGameMenu.resx">
       <DependentUpon>RunnerGameMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tic-Tac-Toe.resx">
+      <DependentUpon>Tic-Tac-Toe.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -320,6 +329,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\o.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\게임기2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\오락기2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BGs.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\잠긴 문.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\열린 문.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\팻말1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\왼쪽 오락기2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\오른쪽 오락기2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\금고1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

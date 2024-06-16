@@ -124,7 +124,7 @@ namespace EscapeGame
             if (hasReachedTarget == false && pbPlayer.Bounds.IntersectsWith(pbMainp.Bounds))
             {
                 hasReachedTarget = true;
-                mainForm.SetPlayerPosition(785, 200);
+                mainForm.SetPlayerPosition(685, 212);
                 mainForm.Show();
                 this.Hide();
             }

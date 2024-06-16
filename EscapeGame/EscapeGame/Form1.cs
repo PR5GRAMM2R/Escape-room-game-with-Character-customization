@@ -102,6 +102,7 @@ namespace EscapeGame
         }
         private void MoveRoom2()
         {
+            pictures();
             if (hasReachedTarget == false && pbPlayer.Bounds.IntersectsWith(pbRoom2p.Bounds)) // 2번방
             {
                 if (hasKeyToRoom2 == true && hasKeyToRoom3 == false)
@@ -131,6 +132,7 @@ namespace EscapeGame
         }
         private void MoveRoom3()
         {
+            pictures();
             if (hasReachedTarget == false && pbPlayer.Bounds.IntersectsWith(pbRoom3p.Bounds)) // 3번방
             {
                 if (hasKeyToRoom3 == true && hasKeyToRoom4 == false)
@@ -160,6 +162,7 @@ namespace EscapeGame
         }
         private void MoveRoom4()
         {
+            pictures();
             if (hasReachedTarget == false && pbPlayer.Bounds.IntersectsWith(pbRoom4p.Bounds)) // 4번방
             {
                 if (hasKeyToRoom4 == true && hasKeyToEscape == false)
@@ -189,6 +192,7 @@ namespace EscapeGame
         }
         private void MoveEscape()
         {
+            pictures();
             if (hasReachedTarget == false && pbPlayer.Bounds.IntersectsWith(pbEscape.Bounds)) // 현관문
             {
                 if (hasKeyToEscape == true)
@@ -211,6 +215,26 @@ namespace EscapeGame
             pbPlayer.Location = new Point(x, y);
             pressedKeys.Clear();
             hasReachedTarget = false;
+        }
+        public void pictures()
+        {
+            if (hasKeyToRoom2 == true)
+            {
+                pbRoom2p.Image = Properties.Resources.열린_문;
+            }
+            if (hasKeyToRoom3 == true)
+            {
+                pbRoom3p.Image = Properties.Resources.열린_문;
+            }
+            if (hasKeyToRoom4 == true)
+            {
+                pbRoom4p.Image = Properties.Resources.열린_문;
+            }
+            if (hasKeyToEscape == true)
+            {
+                pbEscape.Image = Properties.Resources.열린_문;
+            }
+
         }
 
         // images List에 이미지를 저장
