@@ -9,6 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.AxHost;
 
 namespace Making_Pixel_Art
 {
@@ -39,6 +40,9 @@ namespace Making_Pixel_Art
         private int totalFramesNum = 0;
         Color[,] currentFrame = new Color[numCells, numCells];      // 현재 프레임
         List<Color[,]> Frames = new List<Color[,]> ();              // 그려온 프레임들을 저장
+
+        private static Point clickPoint;
+        private static Point upPoint;
 
         public MakingPixelArtForm()
         {
@@ -167,13 +171,38 @@ namespace Making_Pixel_Art
             int cellX = x / cellSizeX;
             int cellY = y / cellSizeY;
 
+            clickPoint = new Point(e.X, e.Y);
+
+            float w = Math.Abs(clickPoint.X - e.X);
+            float h = Math.Abs(clickPoint.Y - e.Y);
+
+            Pen pn = new Pen(currentColor);
+            pn.Width = 3;
+            Graphics g = pbxCurrentFrame.CreateGraphics();
+
             if (x >= 0 &&  x < pbxCurrentFrame.Width && y >= 0 && y < pbxCurrentFrame.Height)
             {
                 if (e.Button == MouseButtons.Left)
                 {
                     /////////////////// 도구 사용 여기에
-                    
-                    UseTools(cellX, cellY);
+
+                    switch (currentTool)
+                    {
+                        case Tools.Pen:
+                            currentFrame[cellX, cellY] = currentColor;
+                            break;
+                        case Tools.Line:
+                            break;
+                        case Tools.Rectangle:
+                            break;
+                        case Tools.Circle:
+                            break;
+                        case Tools.Eraser:
+                            currentFrame[cellX, cellY] = Color.FromArgb(0, 255, 255, 255);
+                            break;
+                        default:
+                            break;
+                    }
                 }
                 else if(e.Button == MouseButtons.Right)
                 {
@@ -188,7 +217,192 @@ namespace Making_Pixel_Art
 
         private void pbxCurrentFrame_MouseUp(object sender, MouseEventArgs e)
         {
+            int cellSizeX = pbxCurrentFrame.Width / numCells;
+            int cellSizeY = pbxCurrentFrame.Height / numCells;
+
+            float w = Math.Abs(clickPoint.X - e.X);
+            float h = Math.Abs(clickPoint.Y - e.Y);
+
+            Pen pn = new Pen(currentColor);
+            pn.Width = 3;
+            Graphics g = pbxCurrentFrame.CreateGraphics();
+
+            if (e.Button == MouseButtons.Left)
+            {
+                /////////////////// 도구 사용 여기에
+
+                switch (currentTool)
+                {
+                    case Tools.Pen:
+                        break;
+                    case Tools.Line:
+                        DrawLine(clickPoint.X, clickPoint.Y, e.X, e.Y, cellSizeX, cellSizeY);
+                        break;
+                    case Tools.Rectangle:
+                        DrawLine(clickPoint.X, clickPoint.Y, e.X, clickPoint.Y, cellSizeX, cellSizeY);
+                        DrawLine(e.X, clickPoint.Y, e.X, e.Y, cellSizeX, cellSizeY);
+                        DrawLine(e.X, e.Y, clickPoint.X, e.Y, cellSizeX, cellSizeY);
+                        DrawLine(clickPoint.X, e.Y, clickPoint.X, clickPoint.Y, cellSizeX, cellSizeY);
+                        break;
+                    case Tools.Circle:
+                        float midX = (float)(clickPoint.X + e.X) / 2;
+                        float midY = (float)(clickPoint.Y + e.Y) / 2;
+                        w /= 2;
+                        h /= 2;
+
+                        int devideNumX = Math.Abs((int)((e.X - clickPoint.X) / (float)cellSizeX));
+
+                        if (devideNumX == 0)
+                            break;
+
+                        if(e.X > clickPoint.X)
+                        {
+                            int tempRangeX = (e.X - clickPoint.X) / devideNumX;
+
+                            for (int x = clickPoint.X; x < e.X; x += tempRangeX)
+                            {
+                                int cellX = (int)(x / (float)cellSizeX);
+
+                                if (cellX >= 0 && cellX < numCells)
+                                {
+                                    int ellipsePlusY = (int)(midY + h * (float)Math.Sqrt(1 - ((float)Math.Pow((x - midX), 2) / (float)Math.Pow(w, 2))));
+                                    int ellipseMinusY = (int)(midY - h * (float)Math.Sqrt(1 - ((float)Math.Pow((x - midX), 2) / (float)Math.Pow(w, 2))));
+
+                                    int cellPlusY = (int)(ellipsePlusY / (float)cellSizeY);
+                                    int cellMinusY = (int)(ellipseMinusY / (float)cellSizeY);
+
+                                    if (cellPlusY >= 0 && cellPlusY < numCells && currentFrame[cellX, cellPlusY] != currentColor)
+                                    {
+                                        currentFrame[cellX, cellPlusY] = currentColor;
+                                    }
+                                    if (cellMinusY >= 0 && cellMinusY < numCells && currentFrame[cellX, cellMinusY] != currentColor)
+                                    {
+                                        currentFrame[cellX, cellMinusY] = currentColor;
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            int tempRangeX = (clickPoint.X - e.X) / devideNumX;
+
+                            for (int x = e.X; x < clickPoint.X; x += tempRangeX)
+                            {
+                                int cellX = (int)(x / (float)cellSizeX);
+
+                                if (cellX >= 0 && cellX < numCells)
+                                {
+                                    int ellipsePlusY = (int)(midY + h * (float)Math.Sqrt(1 - ((float)Math.Pow((x - midX), 2) / (float)Math.Pow(w, 2))));
+                                    int ellipseMinusY = (int)(midY - h * (float)Math.Sqrt(1 - ((float)Math.Pow((x - midX), 2) / (float)Math.Pow(w, 2))));
+
+                                    int cellPlusY = (int)(ellipsePlusY / (float)cellSizeY);
+                                    int cellMinusY = (int)(ellipseMinusY / (float)cellSizeY);
+
+                                    if (cellPlusY >= 0 && cellPlusY < numCells && currentFrame[cellX, cellPlusY] != currentColor)
+                                    {
+                                        currentFrame[cellX, cellPlusY] = currentColor;
+                                    }
+                                    if (cellMinusY >= 0 && cellMinusY < numCells && currentFrame[cellX, cellMinusY] != currentColor)
+                                    {
+                                        currentFrame[cellX, cellMinusY] = currentColor;
+                                    }
+                                }
+                            }
+                        }
+
+                        int devideNumY = Math.Abs((int)((e.Y - clickPoint.Y) / (float)cellSizeY));
+
+                        if (devideNumY == 0)
+                            break;
+
+                        if (e.Y > clickPoint.Y)
+                        {
+                            int tempRangeY = (e.Y - clickPoint.Y) / devideNumY;
+
+                            for (int y = clickPoint.Y; y < e.Y; y += tempRangeY)
+                            {
+                                int cellY = (int)(y / (float)cellSizeY);
+
+                                if (cellY >= 0 && cellY < numCells)
+                                {
+                                    int ellipsePlusX = (int)(midX + w * (float)Math.Sqrt(1 - ((float)Math.Pow((y - midY), 2) / (float)Math.Pow(h, 2))));
+                                    int ellipseMinusX = (int)(midX - w * (float)Math.Sqrt(1 - ((float)Math.Pow((y - midY), 2) / (float)Math.Pow(h, 2))));
+
+                                    int cellPlusX = (int)(ellipsePlusX / (float)cellSizeX);
+                                    int cellMinusX = (int)(ellipseMinusX / (float)cellSizeX);
+
+                                    if (cellPlusX >= 0 && cellPlusX < numCells && currentFrame[cellPlusX, cellY] != currentColor)
+                                    {
+                                        currentFrame[cellPlusX, cellY] = currentColor;
+                                    }
+                                    if (cellMinusX >= 0 && cellMinusX < numCells && currentFrame[cellMinusX, cellY] != currentColor)
+                                    {
+                                        currentFrame[cellMinusX, cellY] = currentColor;
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            int tempRangeY = (clickPoint.Y - e.Y) / devideNumY;
+
+                            for (int y = e.Y; y < clickPoint.Y; y += tempRangeY)
+                            {
+                                int cellY = (int)(y / (float)cellSizeY);
+
+                                if (cellY >= 0 && cellY < numCells)
+                                {
+                                    int ellipsePlusX = (int)(midX + w * (float)Math.Sqrt(1 - ((float)Math.Pow((y - midY), 2) / (float)Math.Pow(h, 2))));
+                                    int ellipseMinusX = (int)(midX - w * (float)Math.Sqrt(1 - ((float)Math.Pow((y - midY), 2) / (float)Math.Pow(h, 2))));
+
+                                    int cellPlusX = (int)(ellipsePlusX / (float)cellSizeX);
+                                    int cellMinusX = (int)(ellipseMinusX / (float)cellSizeX);
+
+                                    if (cellPlusX >= 0 && cellPlusX < numCells && currentFrame[cellPlusX, cellY] != currentColor)
+                                    {
+                                        currentFrame[cellPlusX, cellY] = currentColor;
+                                    }
+                                    if (cellMinusX >= 0 && cellMinusX < numCells && currentFrame[cellMinusX, cellY] != currentColor)
+                                    {
+                                        currentFrame[cellMinusX, cellY] = currentColor;
+                                    }
+                                }
+                            }
+                        }
+                        break;
+                    case Tools.Eraser:
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            pbxCurrentFrame.Invalidate();
+
             isMouseDown = false;
+        }
+
+        private void DrawLine(int startX, int startY, int endX, int endY, int cellSizeX, int cellSizeY)
+        {
+            float tempX = startX;
+            float tempY = startY;
+            int devideNumX = Math.Abs((int)((endX - startX) / (float)cellSizeX));
+            int devideNumY = Math.Abs((int)((endY - startY) / (float)cellSizeY));
+            float devide = (devideNumX > devideNumY ? devideNumX : devideNumY) + 1;
+            float tempRangeX = (endX - tempX) / devide;
+            float tempRangeY = (endY - tempY) / devide;
+
+            for (int i = 0; i <= devide; i++)
+            {
+                int cellX = (int)(tempX / (float)cellSizeX);
+                int cellY = (int)(tempY / (float)cellSizeY);
+                if ((cellX >= 0 && cellX < numCells) && (cellY >= 0 && cellY < numCells))
+                {
+                    currentFrame[cellX, cellY] = currentColor;
+                }
+                tempX += tempRangeX;
+                tempY += tempRangeY;
+            }
         }
 
         private void pbxCurrentFrame_MouseMove(object sender, MouseEventArgs e)
@@ -204,28 +418,101 @@ namespace Making_Pixel_Art
 
             if (isMouseDown)
             {
-                if (x >= 0 && x < pbxCurrentFrame.Width && y >= 0 && y < pbxCurrentFrame.Height)
+                float w = Math.Abs(clickPoint.X - e.X);
+                float h = Math.Abs(clickPoint.Y - e.Y);
+
+                Pen pn = new Pen(currentColor);
+                pn.Width = 3;
+                Graphics g = pbxCurrentFrame.CreateGraphics();
+
+                pbxCurrentFrame.Refresh();
+
+                if (e.Button == MouseButtons.Left)
                 {
-                    Color previousColor = currentFrame[cellX, cellY];
+                    /////////////////// 도구 사용 여기에
 
-                    if (e.Button == MouseButtons.Left)
+                    switch (currentTool)
                     {
-                        /////////////////// 도구 사용 여기에
-
-                        UseTools(cellX, cellY);
+                        case Tools.Pen:
+                            if (x >= 0 && x < pbxCurrentFrame.Width && y >= 0 && y < pbxCurrentFrame.Height)
+                            {
+                                currentFrame[cellX, cellY] = currentColor;
+                                pbxCurrentFrame.Invalidate();
+                            }
+                            break;
+                        case Tools.Line:
+                            g.DrawLine(pn, clickPoint.X, clickPoint.Y, e.X, e.Y);
+                            break;
+                        case Tools.Rectangle:
+                            if (e.X > clickPoint.X)
+                            {
+                                if (e.Y > clickPoint.Y)
+                                {
+                                    g.DrawRectangle(pn, clickPoint.X, clickPoint.Y, w, h);
+                                }
+                                else
+                                {
+                                    g.DrawRectangle(pn, clickPoint.X, e.Y, w, h);
+                                }
+                            }
+                            else
+                            {
+                                if (e.Y > clickPoint.Y)
+                                {
+                                    g.DrawRectangle(pn, e.X, clickPoint.Y, w, h);
+                                }
+                                else
+                                {
+                                    g.DrawRectangle(pn, e.X, e.Y, w, h);
+                                }
+                            }
+                            break;
+                        case Tools.Circle:
+                            if (e.X > clickPoint.X)
+                            {
+                                if (e.Y > clickPoint.Y)
+                                {
+                                    g.DrawEllipse(pn, clickPoint.X, clickPoint.Y, w, h);
+                                }
+                                else
+                                {
+                                    g.DrawEllipse(pn, clickPoint.X, e.Y, w, h);
+                                }
+                            }
+                            else
+                            {
+                                if (e.Y > clickPoint.Y)
+                                {
+                                    g.DrawEllipse(pn, e.X, clickPoint.Y, w, h);
+                                }
+                                else
+                                {
+                                    g.DrawEllipse(pn, e.X, e.Y, w, h);
+                                }
+                            }
+                            break;
+                        case Tools.Eraser:
+                            currentFrame[cellX, cellY] = Color.FromArgb(0, 255, 255, 255);
+                            break;
+                        default:
+                            break;
                     }
-                    else if (e.Button == MouseButtons.Right)
+                }
+                else if (e.Button == MouseButtons.Right)
+                {
+                    if (x >= 0 && x < pbxCurrentFrame.Width && y >= 0 && y < pbxCurrentFrame.Height)
                     {
                         currentFrame[cellX, cellY] = Color.FromArgb(0, 255, 255, 255);
+                        pbxCurrentFrame.Invalidate();
                     }
                 }
 
-                pbxCurrentFrame.Invalidate();
+                //pbxCurrentFrame.Invalidate();
             }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////
-        
+
         //                  프레임 이동 시 Current, Previous, Next PictureBox 에 그리기
         ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -473,31 +760,6 @@ namespace Making_Pixel_Art
             pbxCurrentFrame.Invalidate();
             pbxPreviousFrame.Invalidate();
             pbxNextFrame.Invalidate();
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////
-
-        //                  도형을 그리는 기능들
-        ////////////////////////////////////////////////////////////////////////////////////////////
-
-        private void UseTools(int cellX, int cellY)
-        {
-            switch (currentTool)
-            {
-                case Tools.Pen:
-                    currentFrame[cellX, cellY] = currentColor;
-                    break;
-                case Tools.Line:
-                    break;
-                case Tools.Rectangle:
-                    break;
-                case Tools.Circle:
-                    break;
-                case Tools.Eraser:
-                    break;
-                default:
-                    break;
-            }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////
