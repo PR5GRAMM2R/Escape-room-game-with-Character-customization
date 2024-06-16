@@ -204,6 +204,11 @@ namespace EscapeGame
             }
         }
 
+        public void SetDraw()
+        {
+            MessageBox.Show("Draw!");
+        }
+
         public int CalcScore()
         {
             int retScore = 0;
@@ -368,6 +373,10 @@ namespace EscapeGame
             else if (iWin == 2)
             {
                 user.SetWin(false);
+            }
+            else
+            {
+                user.SetDraw();
             }
 
             showResult = true;

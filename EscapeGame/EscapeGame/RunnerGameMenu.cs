@@ -27,7 +27,7 @@ namespace EscapeGame
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit(); // 수정해야함
+            this.Close();
         }
     }
 }

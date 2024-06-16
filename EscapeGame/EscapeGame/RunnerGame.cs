@@ -128,7 +128,7 @@ namespace EscapeGame
         private void EndGame(int finalScore)
         {
             Score = finalScore;
-            this.Close(); // exit 버튼 수정하면 없애야함
+            this.Close();
         }
     }
 }

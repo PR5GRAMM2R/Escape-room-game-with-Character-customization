@@ -84,6 +84,7 @@ namespace EscapeGame
 
             if (gameManager.user.Win)
             {
+                this.Close();
                 room2.BlackjackGameWon();
             }
 

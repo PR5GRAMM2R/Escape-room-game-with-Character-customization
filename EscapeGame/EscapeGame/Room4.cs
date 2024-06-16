@@ -17,6 +17,7 @@ namespace EscapeGame
         private const int step = 10; // 캐릭터 이동 거리
         private bool hasReachedTarget = false; // 목표 위치 도달 여부를 추적
         private Form1 mainForm;
+        private string correctPassword = "1052"; //금고 비밀번호
 
         public Room4(Form1 form)
         {
@@ -47,6 +48,8 @@ namespace EscapeGame
         {
             MovePlayer();
             MoveMainRoom();
+            MoveHint();
+            MoveKeyBox();
         }
 
         private void MovePlayer()
@@ -68,6 +71,78 @@ namespace EscapeGame
                 pbPlayer.Left += step;
             }
         }
+        private void MoveHint()
+        {
+            if (pbPlayer.Bounds.IntersectsWith(pbQ1.Bounds))
+            {
+                movementTimer.Stop();
+                MessageBox.Show("멈춘다는 것은 냄비와 같고\n살아있다는 것은 악마와 같다.\n그렇다면, 그물은 무엇일까? "); // stop->pots, live->evil, net->ten 정답 10
+                pbPlayer.Top += 20;
+                movementTimer.Start();
+                pressedKeys.Clear();
+            }
+            else if (pbPlayer.Bounds.IntersectsWith(pbQ2.Bounds))
+            {
+                movementTimer.Stop();
+                MessageBox.Show("0123 = 1\n8472 = 2\n6854 = 3\n9481 = 3\n8803 = ?"); //숫자에 들어가는 동그라미의 개수 정답 5
+                pbPlayer.Top += 20;
+                movementTimer.Start();
+                pressedKeys.Clear();
+            }
+            else if (pbPlayer.Bounds.IntersectsWith(pbQ3.Bounds))
+            {
+                movementTimer.Stop();
+                MessageBox.Show("오늘은 무슨 요일일까요?\n\n어제가 내일이었으면 좋겠다.\n그럼 오늘이 금요일일 텐데..\n\n 1. 토요일 2. 일요일 3. 월요일 4. 화요일"); // 일요일
+                pbPlayer.Top += 20;
+                movementTimer.Start();
+                pressedKeys.Clear();
+            }
+        }
+
+        private void MoveKeyBox()
+        {
+            if (pbPlayer.Bounds.IntersectsWith(pbKeyBox.Bounds))
+            {
+                movementTimer.Stop();
+                string inputPassword = ShowPasswordInputBox();
+
+                if (inputPassword == correctPassword)
+                {
+                    MessageBox.Show("금고가 열렸습니다! 열쇠를 획득했습니다.");
+                    mainForm.hasKeyToEscape = true;
+                }
+                else
+                {
+                    MessageBox.Show("비밀번호가 틀렸습니다. 다시 시도하세요.");
+                }
+
+                pbPlayer.Top += 20;
+                movementTimer.Start();
+                pressedKeys.Clear();
+            }
+        }
+
+        private string ShowPasswordInputBox()
+        {
+            Form prompt = new Form();
+            prompt.Width = 250;
+            prompt.Height = 150;
+            prompt.Text = "금고";
+
+            Label textLabel = new Label() { Left = 20, Top = 20, Text = "비밀번호" };
+            TextBox inputBox = new TextBox() { Left = 20, Top = 50, Width = 200 };
+            Button confirmation = new Button() { Text = "확인", Left = 150, Width = 70, Top = 80 };
+
+            confirmation.Click += (sender, e) => { prompt.Close(); };
+            prompt.Controls.Add(confirmation);
+            prompt.Controls.Add(textLabel);
+            prompt.Controls.Add(inputBox);
+            prompt.AcceptButton = confirmation;
+
+            prompt.ShowDialog();
+            return inputBox.Text;
+        }
+
         private void MoveMainRoom()
         {
             if (hasReachedTarget == false && pbPlayer.Bounds.IntersectsWith(pbMainp.Bounds))
