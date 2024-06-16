@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -544,9 +545,33 @@ namespace Making_Pixel_Art
             DialogResult dialogResult = pvf.ShowDialog();
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////
+
+        //                  그렸던 Image 들을 순차적으로 저장하기
+        ////////////////////////////////////////////////////////////////////////////////////////////
+
         private void btnSaveAndExit_Click(object sender, EventArgs e)
         {
-            for(int i=0;i<totalFramesNum;i++)
+            Color[,] frame = new Color[numCells, numCells];
+            frame = (Color[,])currentFrame.Clone();
+
+            Frames[currentFrameNum] = frame;
+
+            int customizeNum = 0;
+
+            string directory = "..\\..\\Resources\\Customize\\" + customizeNum.ToString();
+
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+            else
+            {
+                Directory.Delete(directory, true);
+                Directory.CreateDirectory(directory);
+            }
+
+            for (int i=0;i<totalFramesNum;i++)
             {
                 Bitmap bitmap = new Bitmap(numCells, numCells);
                 for(int x=0;x<numCells;x++)
@@ -559,11 +584,11 @@ namespace Making_Pixel_Art
 
                 try
                 {
-                    bitmap.Save("..\\..\\Resources\\frame" + (i+1) + ".png", System.Drawing.Imaging.ImageFormat.Png);
+                    bitmap.Save(directory + "\\" + "frame" + (i+1) + ".png", System.Drawing.Imaging.ImageFormat.Png);
                 }
                 catch (Exception ex)
                 {
-                    
+                    Console.WriteLine(ex.Message);
                 }
             }
 
