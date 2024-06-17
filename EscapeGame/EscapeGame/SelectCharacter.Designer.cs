@@ -68,6 +68,7 @@
             this.btnCustomize.TabIndex = 4;
             this.btnCustomize.Text = "새로운 캐릭터 만들기\r\n( 커스터마이징 )";
             this.btnCustomize.UseVisualStyleBackColor = true;
+            this.btnCustomize.Click += new System.EventHandler(this.btnCustomize_Click);
             // 
             // btnSelectCharacter
             // 

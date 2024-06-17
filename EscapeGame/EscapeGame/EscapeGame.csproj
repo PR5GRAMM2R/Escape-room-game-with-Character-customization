@@ -53,6 +53,12 @@
       <DependentUpon>Blackjack.cs</DependentUpon>
     </Compile>
     <Compile Include="BlackJackGameClass.cs" />
+    <Compile Include="Customize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customize.Designer.cs">
+      <DependentUpon>Customize.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,12 @@
     </Compile>
     <Compile Include="MainGameMenu.Designer.cs">
       <DependentUpon>MainGameMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Preview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Preview.Designer.cs">
+      <DependentUpon>Preview.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -119,11 +131,17 @@
     <EmbeddedResource Include="Blackjack.resx">
       <DependentUpon>Blackjack.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customize.resx">
+      <DependentUpon>Customize.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainGameMenu.resx">
       <DependentUpon>MainGameMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preview.resx">
+      <DependentUpon>Preview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -393,6 +411,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\판자 마지막.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tool01_Pen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tool02_Line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tool03_Rectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tool04_Circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tool05_Eraser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tool06_Fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tool07_Spoid.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

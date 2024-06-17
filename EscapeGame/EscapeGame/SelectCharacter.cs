@@ -17,6 +17,8 @@ namespace EscapeGame
         int frameNum = 0;
         int numCells = 32;
 
+        int directoryNum = 0;
+
         int characterNum = 0;
         int framesCount = 0;
         List<Color[,]> frames = new List<Color[,]>();
@@ -28,7 +30,6 @@ namespace EscapeGame
             InitializeComponent();
 
             bool isEndDirectory = true;
-            int directoryNum = 0;
 
             while (isEndDirectory)
             {
@@ -129,14 +130,27 @@ namespace EscapeGame
 
         private void btnSelectCharacter_Click(object sender, EventArgs e)
         {
-            //MainGameMenu main = new MainGameMenu();
+            MainGameMenu main = new MainGameMenu();
 
             GlobalSettings.Instance.characterNum = characterNum;
             GlobalSettings.Instance.frameCount = framesCount;
             GlobalSettings.Instance.frames.Clear();
             GlobalSettings.Instance.frames = frames;
 
-            this.Close();
+            main.Show();
+
+            this.Hide();
+        }
+
+        private void btnCustomize_Click(object sender, EventArgs e)
+        {
+            MakingPixelArtForm makingPixelArtForm = new MakingPixelArtForm(directoryNum - 1);
+
+            //makingPixelArtForm.FormClosed += MakingPixelArtForm_FormClosed;
+
+            makingPixelArtForm.Show();
+
+            this.Hide();
         }
     }
 }
