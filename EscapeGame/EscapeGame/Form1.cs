@@ -124,6 +124,12 @@ namespace EscapeGame
             }
         }
 
+        private void room1Message()
+        {
+            MessageBox.Show("여긴 더 볼 필요 없을 거 같아.");
+            hasReachedTarget = false;
+        }
+
         private void MoveRoom1()
         {
             if (hasReachedTarget == false && hasKeyToRoom2 == false && pbPlayer.Bounds.IntersectsWith(pbRoom1p.Bounds)) // 1번방
@@ -133,10 +139,11 @@ namespace EscapeGame
                 room1.Show();
                 this.Hide();
             }
-            else if (hasKeyToRoom2 == true && pbPlayer.Bounds.IntersectsWith(pbRoom1p.Bounds))
+            else if (hasReachedTarget == false && hasKeyToRoom2 == true && pbPlayer.Bounds.IntersectsWith(pbRoom1p.Bounds))
             {
+                hasReachedTarget = true;
                 movementTimer.Stop(); // 타이머 멈춤으로써 플레이어 이동 멈춤
-                MessageBox.Show("여긴 더 볼 필요 없을 거 같아.");
+                room1Message();
                 pbPlayer.Left -= 20;
                 movementTimer.Start(); // 타이머 시작
                 pressedKeys.Clear(); // 입력된 키 초기화

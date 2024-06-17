@@ -39,7 +39,7 @@ namespace EscapeGame
 
             // 방향키 두 개를 동시에 눌렀을 때 대각선으로 이동시키기 위함
             movementTimer = new Timer();
-            movementTimer.Interval = 20; // 30ms 간격으로 움직임을 업데이트
+            movementTimer.Interval = 30; // 30ms 간격으로 움직임을 업데이트
             movementTimer.Tick += MovementTimer_Tick;
             movementTimer.Start();
 
