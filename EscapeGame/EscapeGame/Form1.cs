@@ -31,7 +31,7 @@ namespace EscapeGame
         public Form1()
         {
             InitializeComponent();
-            backgroundMusicPlayer = new SoundPlayer("sample.wav");
+            
             this.KeyDown += new KeyEventHandler(Form1_KeyDown);
             this.KeyUp += new KeyEventHandler(Form1_KeyUp);
             this.KeyPreview = true;
@@ -49,6 +49,8 @@ namespace EscapeGame
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            var musicStream = Properties.Resources.sample;
+            backgroundMusicPlayer = new SoundPlayer(musicStream);
             // 폼이 로드될 때 음악 재생
             backgroundMusicPlayer.PlayLooping();
         }
