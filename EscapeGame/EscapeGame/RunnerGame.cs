@@ -22,7 +22,7 @@ namespace EscapeGame
         int position;
         bool isGameOver = false;
 
-        public static int Score { get; private set; } // 점수를 저장할 정적 변수
+        public static int Score { get; set; } // 점수를 저장할 정적 변수
 
         public RunnerGame()
         {

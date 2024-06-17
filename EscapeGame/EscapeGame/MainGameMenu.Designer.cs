@@ -38,27 +38,38 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(666, 121);
+            this.pictureBox1.Location = new System.Drawing.Point(583, 97);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(293, 355);
+            this.pictureBox1.Size = new System.Drawing.Size(256, 284);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(368, 151);
+            this.btnStart.BackgroundImage = global::EscapeGame.Properties.Resources.BG;
+            this.btnStart.Font = new System.Drawing.Font("한컴산뜻돋움", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnStart.ForeColor = System.Drawing.Color.Orange;
+            this.btnStart.Image = global::EscapeGame.Properties.Resources.판자_위;
+            this.btnStart.Location = new System.Drawing.Point(322, 147);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(217, 70);
+            this.btnStart.Size = new System.Drawing.Size(203, 116);
             this.btnStart.TabIndex = 1;
-            this.btnStart.Text = "시작하기";
+            this.btnStart.Text = "                            시작하기";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // btnCharacter
             // 
-            this.btnCharacter.Location = new System.Drawing.Point(368, 259);
+            this.btnCharacter.BackgroundImage = global::EscapeGame.Properties.Resources.BG;
+            this.btnCharacter.Font = new System.Drawing.Font("한컴산뜻돋움", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCharacter.ForeColor = System.Drawing.Color.Orange;
+            this.btnCharacter.Image = global::EscapeGame.Properties.Resources.판자_중간;
+            this.btnCharacter.Location = new System.Drawing.Point(322, 267);
+            this.btnCharacter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCharacter.Name = "btnCharacter";
-            this.btnCharacter.Size = new System.Drawing.Size(217, 70);
+            this.btnCharacter.Size = new System.Drawing.Size(200, 72);
             this.btnCharacter.TabIndex = 2;
             this.btnCharacter.Text = "캐릭터 선택";
             this.btnCharacter.UseVisualStyleBackColor = true;
@@ -66,9 +77,14 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(368, 373);
+            this.btnExit.BackgroundImage = global::EscapeGame.Properties.Resources.BG;
+            this.btnExit.Font = new System.Drawing.Font("한컴산뜻돋움", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnExit.ForeColor = System.Drawing.Color.Orange;
+            this.btnExit.Image = global::EscapeGame.Properties.Resources.판자_마지막;
+            this.btnExit.Location = new System.Drawing.Point(322, 343);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(217, 70);
+            this.btnExit.Size = new System.Drawing.Size(203, 73);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "나가기";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -77,22 +93,24 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("휴먼엑스포", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(324, 67);
+            this.label1.Location = new System.Drawing.Point(284, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(318, 71);
+            this.label1.Size = new System.Drawing.Size(278, 57);
             this.label1.TabIndex = 4;
             this.label1.Text = "Prison Break";
             // 
             // MainGameMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 553);
+            this.BackgroundImage = global::EscapeGame.Properties.Resources.BG;
+            this.ClientSize = new System.Drawing.Size(859, 442);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnCharacter);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainGameMenu";
             this.Text = "MainGameMenu";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

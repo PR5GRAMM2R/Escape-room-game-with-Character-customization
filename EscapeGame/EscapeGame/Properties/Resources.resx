@@ -331,4 +331,13 @@
   <data name="팻말1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\팻말1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="판자_마지막" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\판자 마지막.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="판자_위" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\판자 위.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="판자_중간" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\판자 중간.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

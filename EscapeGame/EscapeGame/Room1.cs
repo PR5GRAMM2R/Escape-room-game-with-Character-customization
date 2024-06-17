@@ -39,6 +39,7 @@ namespace EscapeGame
 
             images = form.images;
             pbPlayer.Image = images[0];     //// 초기 이미지 설정
+            RunnerGame.Score = 0;
         }
 
         private void Room1_KeyDown(object sender, KeyEventArgs e)

@@ -375,5 +375,14 @@
   <ItemGroup>
     <None Include="Resources\금고1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\판자 중간.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\판자 위.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\판자 마지막.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

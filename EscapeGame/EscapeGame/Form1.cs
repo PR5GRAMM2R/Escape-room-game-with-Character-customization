@@ -190,6 +190,14 @@ namespace EscapeGame
                 }
             }
         }
+        private void rest()
+        {
+            hasReachedTarget = false; // 목표 위치 도달 여부를 추적
+            hasKeyToRoom2 = false;
+            hasKeyToRoom3 = false;
+            hasKeyToRoom4 = false;
+            hasKeyToEscape = false;
+        }
         private void MoveEscape()
         {
             pictures();
@@ -199,6 +207,10 @@ namespace EscapeGame
                 {
                     hasReachedTarget = true;
                     MessageBox.Show("문이 열렸다. 어서 나가자.");
+                    MainGameMenu main = new MainGameMenu();
+                    rest();
+                    main.Show();
+                    this.Close();
                 }
                 else
                 {
