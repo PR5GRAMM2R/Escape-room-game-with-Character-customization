@@ -15,6 +15,7 @@ namespace EscapeGame
     {
         int numCells = 32;
         int frameNum = 0;
+        int count = 1;
 
         private HashSet<Keys> pressedKeys = new HashSet<Keys>();
         private Timer movementTimer;
@@ -89,7 +90,6 @@ namespace EscapeGame
         }
         private void CheckForKeyEvent()
         {
-            int count = 1;
                 if (hasKeyToRoom2 == false && RunnerGame.Score >= 2 && count ==1) // 점수 확인
                 {
                     count = 0;
