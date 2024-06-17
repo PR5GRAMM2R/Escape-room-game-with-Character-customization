@@ -56,10 +56,7 @@
             this.btnPrevious = new System.Windows.Forms.Button();
             this.gbxFrames = new System.Windows.Forms.GroupBox();
             this.btnNext = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.lblColorValue = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.cbxShowPreviousFrame = new System.Windows.Forms.CheckBox();
             this.btnCopyPreviousFrameToCurrentFrame = new System.Windows.Forms.Button();
             this.cld = new System.Windows.Forms.ColorDialog();
@@ -72,10 +69,15 @@
             this.pbxNextFrame = new System.Windows.Forms.PictureBox();
             this.pbxPreviousFrame = new System.Windows.Forms.PictureBox();
             this.pbxCurrentFrame = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.gbxPalette.SuspendLayout();
             this.gbxTools.SuspendLayout();
             this.gbxFrames.SuspendLayout();
@@ -84,6 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxNextFrame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPreviousFrame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCurrentFrame)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbxPalette
@@ -424,16 +427,6 @@
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 1257);
-            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(736, 18);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "키보드에서 숫자키 1부터 0까지 중 하나를 누르면 해당 번호의 색상을 선택할 수 있습니다.";
-            // 
             // lblColorValue
             // 
             this.lblColorValue.AutoSize = true;
@@ -443,26 +436,6 @@
             this.lblColorValue.Size = new System.Drawing.Size(254, 18);
             this.lblColorValue.TabIndex = 13;
             this.lblColorValue.Text = "현재 색상 : ( 255 . 255 . 255 )";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 1346);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(752, 18);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Previous 버튼을 누르면 이전 프레임이 나오고, Next 버튼을 누르면 다음 프레임이 나옵니다.";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 1368);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(771, 18);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Preview 버튼을 누르면 지금까지 그렸던 프레임들의 애니메이션을 볼 수 있습니다. ( FPS : 10 )";
             // 
             // cbxShowPreviousFrame
             // 
@@ -493,7 +466,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.groupBox1.Size = new System.Drawing.Size(95, 82);
+            this.groupBox1.Size = new System.Drawing.Size(108, 82);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Frame";
@@ -501,11 +474,11 @@
             // lblCurrentFrameNum
             // 
             this.lblCurrentFrameNum.AutoSize = true;
-            this.lblCurrentFrameNum.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblCurrentFrameNum.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblCurrentFrameNum.Location = new System.Drawing.Point(15, 34);
             this.lblCurrentFrameNum.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblCurrentFrameNum.Name = "lblCurrentFrameNum";
-            this.lblCurrentFrameNum.Size = new System.Drawing.Size(59, 20);
+            this.lblCurrentFrameNum.Size = new System.Drawing.Size(64, 24);
             this.lblCurrentFrameNum.TabIndex = 0;
             this.lblCurrentFrameNum.Text = "1 / 1";
             // 
@@ -588,67 +561,119 @@
             this.pbxCurrentFrame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbxCurrentFrame_MouseMove);
             this.pbxCurrentFrame.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbxCurrentFrame_MouseUp);
             // 
-            // label7
+            // groupBox3
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 1279);
-            this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(1217, 18);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "키보드에서 Q , W , E , R , A , S , D 를 누르면 누른 키에 해당하는 도구를 사용할 수 있고, 키보드에서 F 키를 누르면 현재 " +
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox3.Location = new System.Drawing.Point(17, 1248);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1549, 207);
+            this.groupBox3.TabIndex = 24;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "사용설명서";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 158);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(1534, 18);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Copy Previous Frame To Current Frame 버튼을 누르면 이전 프레임이 현재 프레임에 복사되고, Copy Next Fram" +
+    "e To Current Frame 버튼을 누르면 다음 프레임이 현재 프레임에 복사됩니다.";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 90);
+            this.label11.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(769, 18);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "Add New Frame Next To This 버튼을 누르면 현재 프레임 다음에 새로운 프레임이 생성됩니다.";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 68);
+            this.label12.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(512, 18);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "Remove This Frame 버튼을 누르면 현재 프레임이 삭제됩니다.";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 46);
+            this.label13.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(1217, 18);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "키보드에서 Q , W , E , R , A , S , D 를 누르면 누른 키에 해당하는 도구를 사용할 수 있고, 키보드에서 F 키를 누르면 현재 " +
     "색상을 변경할 수 있습니다.\r\n";
             // 
-            // label8
+            // label14
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(25, 1301);
-            this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(512, 18);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Remove This Frame 버튼을 누르면 현재 프레임이 삭제됩니다.";
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 135);
+            this.label14.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(771, 18);
+            this.label14.TabIndex = 26;
+            this.label14.Text = "Preview 버튼을 누르면 지금까지 그렸던 프레임들의 애니메이션을 볼 수 있습니다. ( FPS : 10 )";
             // 
-            // label9
+            // label15
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(25, 1323);
-            this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(769, 18);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "Add New Frame Next To This 버튼을 누르면 현재 프레임 다음에 새로운 프레임이 생성됩니다.";
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 113);
+            this.label15.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(752, 18);
+            this.label15.TabIndex = 25;
+            this.label15.Text = "Previous 버튼을 누르면 이전 프레임이 나오고, Next 버튼을 누르면 다음 프레임이 나옵니다.";
             // 
-            // label10
+            // label16
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(25, 1391);
-            this.label10.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(1534, 18);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "Copy Previous Frame To Current Frame 버튼을 누르면 이전 프레임이 현재 프레임에 복사되고, Copy Next Fram" +
-    "e To Current Frame 버튼을 누르면 다음 프레임이 현재 프레임에 복사됩니다.";
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 24);
+            this.label16.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(736, 18);
+            this.label16.TabIndex = 24;
+            this.label16.Text = "키보드에서 숫자키 1부터 0까지 중 하나를 누르면 해당 번호의 색상을 선택할 수 있습니다.";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 181);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(969, 18);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "Cancel 버튼을 누르면 저장 없이 종료되고, Save And Exit 버튼을 누르면 지금까지 작업한 내용이 저장되고 종료됩니다.";
             // 
             // MakingPixelArtForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1578, 1442);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
+            this.ClientSize = new System.Drawing.Size(1578, 1467);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnCopyNextFrameToCurrentFrame);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCopyPreviousFrameToCurrentFrame);
             this.Controls.Add(this.cbxShowPreviousFrame);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.lblColorValue);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.gbxFrames);
             this.Controls.Add(this.btnPreview);
             this.Controls.Add(this.btnSaveAndExit);
@@ -675,6 +700,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxNextFrame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPreviousFrame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCurrentFrame)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -712,10 +739,7 @@
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.GroupBox gbxFrames;
         private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblColorValue;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox cbxShowPreviousFrame;
         private System.Windows.Forms.Button btnCopyPreviousFrameToCurrentFrame;
         private System.Windows.Forms.ColorDialog cld;
@@ -726,10 +750,15 @@
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnCopyNextFrameToCurrentFrame;
         private System.Windows.Forms.Button btnTool07;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label3;
     }
 }
 
