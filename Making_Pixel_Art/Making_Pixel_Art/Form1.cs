@@ -847,7 +847,7 @@ namespace Making_Pixel_Art
             {
                 for (int i = 0; i < numCells; i++)
                     for (int j = 0; j < numCells; j++)
-                        currentFrame[i, j] = Color.Empty;
+                        currentFrame[i, j] = Color.FromArgb(0, 255, 255, 255);
             }
 
             lblCurrentFrameNum.Text = (currentFrameNum + 1).ToString() + " / " + totalFramesNum.ToString();
