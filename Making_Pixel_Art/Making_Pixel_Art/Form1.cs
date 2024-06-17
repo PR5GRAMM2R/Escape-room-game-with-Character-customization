@@ -19,7 +19,9 @@ namespace Making_Pixel_Art
         Line,
         Rectangle,
         Circle,
-        Eraser
+        Eraser,
+        Fill,
+        Spoid
     }
 
     public partial class MakingPixelArtForm : Form
@@ -56,7 +58,8 @@ namespace Making_Pixel_Art
             btnTool03.Tag = Tools.Rectangle;
             btnTool04.Tag = Tools.Circle;
             btnTool05.Tag = Tools.Eraser;
-            btnTool06.Tag = Tools.Eraser;   //////////
+            btnTool06.Tag = Tools.Fill;
+            btnTool07.Tag = Tools.Spoid;
 
             pbxCurrentFrame.BackColor = Color.FromArgb(0, 255, 255, 255);       // 색상을 전부 투명으로 설정
             pbxPreviousFrame.BackColor = Color.FromArgb(0, 255, 255, 255);
@@ -199,6 +202,12 @@ namespace Making_Pixel_Art
                             break;
                         case Tools.Eraser:
                             currentFrame[cellX, cellY] = Color.FromArgb(0, 255, 255, 255);
+                            break;
+                        case Tools.Fill:
+                            Fill(clickPoint, currentFrame[cellX, cellY], currentColor);
+                            break;
+                        case Tools.Spoid:
+                            Spoid(clickPoint);
                             break;
                         default:
                             break;
@@ -371,6 +380,10 @@ namespace Making_Pixel_Art
                         }
                         break;
                     case Tools.Eraser:
+                        break;
+                    case Tools.Fill:
+                        break;
+                    case Tools.Spoid:
                         break;
                     default:
                         break;
@@ -855,6 +868,100 @@ namespace Making_Pixel_Art
             }
 
             Application.Exit();
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////
+
+        //                  채우기 기능
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        private void Fill(Point pt, Color targetColor, Color replacementColor)
+        {
+            int cellSizeX = pbxCurrentFrame.Width / numCells;
+            int cellSizeY = pbxCurrentFrame.Height / numCells;
+
+            if (targetColor == replacementColor)
+                return;
+
+            Queue<Point> pixels = new Queue<Point>();
+            pixels.Enqueue(pt);
+
+            while (pixels.Count > 0)
+            {
+                Point temp = pixels.Dequeue();
+                int x = temp.X;
+                int y = temp.Y;
+
+                int cellX = x / cellSizeX;
+                int cellY = y / cellSizeY;
+
+                if (x < 0 || x >= pbxCurrentFrame.Width || y < 0 || y >= pbxCurrentFrame.Height)
+                    continue;
+
+                if (currentFrame[cellX, cellY] == targetColor)
+                {
+                    for (int i = 0; i < cellSizeX; i++)
+                    {
+                        for (int j = 0; j < cellSizeY; j++)
+                        {
+                            currentFrame[cellX, cellY] = replacementColor;
+                        }
+                    }
+
+                    pixels.Enqueue(new Point(x - cellSizeX, y));
+                    pixels.Enqueue(new Point(x + cellSizeX, y));
+                    pixels.Enqueue(new Point(x, y - cellSizeY));
+                    pixels.Enqueue(new Point(x, y + cellSizeY));
+                }
+            }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////
+
+        //                  스포이드 기능
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        private void Spoid(Point pt)
+        {
+            int cellSizeX = pbxCurrentFrame.Width / numCells;
+            int cellSizeY = pbxCurrentFrame.Height / numCells;
+
+            int cellX = pt.X / cellSizeX;
+            int cellY = pt.Y / cellSizeY;
+
+
+            for (int i = gbxPalette.Controls.Count - 1; i >= 0; i--)
+            {
+                Control control = gbxPalette.Controls[i];
+                if (control is Button)
+                {
+                    Button button = (Button)control;
+
+                    
+
+                    if (button.BackColor == currentFrame[cellX, cellY])
+                    {
+                        button.BackColor = currentFrame[cellX, cellY];
+                        button.PerformClick();
+                        btnTool01.PerformClick();
+                        break;
+                    }
+                    else if (button.BackColor == Color.White)
+                    {
+                        button.BackColor = currentFrame[cellX, cellY];
+                        button.PerformClick();
+                        btnTool01.PerformClick();
+                        break;
+                    }
+                    else if (button == btnColorEdit)
+                    {
+                        btnColor00.BackColor = currentFrame[cellX, cellY];
+                        btnColor00.PerformClick();
+                        btnTool01.PerformClick();
+                        break;
+                    }
+
+
+                }
+            }
         }
     }
 }
