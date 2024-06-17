@@ -36,7 +36,7 @@ namespace EscapeGame
 
             // 방향키 두 개를 동시에 눌렀을 때 대각선으로 이동시키기 위함
             movementTimer = new Timer();
-            movementTimer.Interval = 20; // 20ms 간격으로 움직임을 업데이트
+            movementTimer.Interval = 30; // 30ms 간격으로 움직임을 업데이트
             movementTimer.Tick += MovementTimer_Tick;
             movementTimer.Start();
 
@@ -103,7 +103,7 @@ namespace EscapeGame
             {
                 movementTimer.Stop();
                 MessageBox.Show("1점을 넘기면?"); // 임시로 1점으로 해놈
-                pbPlayer.Left -= 20;
+                pbPlayer.Left -= 30;
                 movementTimer.Start();
                 pressedKeys.Clear();
             }
@@ -118,7 +118,7 @@ namespace EscapeGame
                     movementTimer.Stop();
                     RunnerGameMenu runnerGameMenu = new RunnerGameMenu();
                     runnerGameMenu.Show();
-                    pbPlayer.Left -= 20;
+                    pbPlayer.Left -= 30;
                     movementTimer.Start();
                     pressedKeys.Clear();
                 }
@@ -126,7 +126,7 @@ namespace EscapeGame
                 {
                     movementTimer.Stop();
                     MessageBox.Show("어서 열린 곳으로 가보자.");
-                    pbPlayer.Left -= 20;
+                    pbPlayer.Left -= 30;
                     movementTimer.Start();
                     pressedKeys.Clear();
                 }
@@ -138,7 +138,7 @@ namespace EscapeGame
             if (hasReachedTarget == false && pbPlayer.Bounds.IntersectsWith(pbMainp.Bounds))
             {
                 hasReachedTarget = true;
-                mainForm.SetPlayerPosition(685, 212);
+                mainForm.SetPlayerPosition(670, 200);
                 mainForm.Show();
                 this.Hide();
             }

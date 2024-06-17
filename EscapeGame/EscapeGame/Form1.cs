@@ -211,6 +211,7 @@ namespace EscapeGame
                 if (hasKeyToEscape == true)
                 {
                     hasReachedTarget = true;
+                    movementTimer.Stop();
                     MessageBox.Show("문이 열렸다. 어서 나가자.");
                     MainGameMenu main = new MainGameMenu();
                     rest();

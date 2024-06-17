@@ -97,7 +97,7 @@ namespace EscapeGame
             {
                 movementTimer.Stop();
                 MessageBox.Show("게임에서 승리하라.");
-                pbPlayer.Top += 20;
+                pbPlayer.Top += 30;
                 movementTimer.Start();
                 pressedKeys.Clear();
             }
@@ -111,7 +111,7 @@ namespace EscapeGame
                     movementTimer.Stop();
                     Blackjack blackjackgame = new Blackjack(this);
                     blackjackgame.Show();
-                    pbPlayer.Top += 20;
+                    pbPlayer.Top += 30;
                     movementTimer.Start();
                     pressedKeys.Clear();
                 }
@@ -119,7 +119,7 @@ namespace EscapeGame
                 {
                     movementTimer.Stop();
                     MessageBox.Show("이럴 시간 없어. 어서 열린 곳으로 가보자.");
-                    pbPlayer.Top += 20;
+                    pbPlayer.Top += 30;
                     movementTimer.Start();
                     pressedKeys.Clear();
                 }

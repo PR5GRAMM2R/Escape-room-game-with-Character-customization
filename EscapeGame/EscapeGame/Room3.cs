@@ -98,7 +98,7 @@ namespace EscapeGame
             {
                 movementTimer.Stop();
                 MessageBox.Show("게임에서 승리하라.");
-                pbPlayer.Top += 20;
+                pbPlayer.Top += 30;
                 movementTimer.Start();
                 pressedKeys.Clear();
             }
@@ -113,7 +113,7 @@ namespace EscapeGame
                     movementTimer.Stop();
                     Tic_Tac_Toe tic_Tac_Toe = new Tic_Tac_Toe(this);
                     tic_Tac_Toe.Show();
-                    pbPlayer.Top += 20;
+                    pbPlayer.Top += 30;
                     movementTimer.Start();
                     pressedKeys.Clear();
                 }
@@ -121,7 +121,7 @@ namespace EscapeGame
                 {
                     movementTimer.Stop();
                     MessageBox.Show("어서 열린 곳으로 가보자.");
-                    pbPlayer.Top += 20;
+                    pbPlayer.Top += 30;
                     movementTimer.Start();
                     pressedKeys.Clear();
                 }
