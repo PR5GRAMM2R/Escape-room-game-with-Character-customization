@@ -89,8 +89,10 @@ namespace EscapeGame
         }
         private void CheckForKeyEvent()
         {
-                if (hasKeyToRoom2 == false && RunnerGame.Score >= 2) // 점수 확인
+            int count = 1;
+                if (hasKeyToRoom2 == false && RunnerGame.Score >= 2 && count ==1) // 점수 확인
                 {
+                    count = 0;
                     hasKeyToRoom2 = true;
                     mainForm.hasKeyToRoom2 = true; // Form1의 hasKeyToRoom2를 업데이트
                     MessageBox.Show("어디선가 문이 열리는 소리가 들린다.");
