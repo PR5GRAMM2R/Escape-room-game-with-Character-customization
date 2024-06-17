@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +15,7 @@ namespace EscapeGame
         int numCells = 32;
         int frameNum = 0;
 
+        private SoundPlayer backgroundMusicPlayer;
         private HashSet<Keys> pressedKeys = new HashSet<Keys>();
         private Timer movementTimer;
         private const int step = 10; // 캐릭터 이동 거리
@@ -29,6 +31,7 @@ namespace EscapeGame
         public Form1()
         {
             InitializeComponent();
+            backgroundMusicPlayer = new SoundPlayer("sample.wav");
             this.KeyDown += new KeyEventHandler(Form1_KeyDown);
             this.KeyUp += new KeyEventHandler(Form1_KeyUp);
             this.KeyPreview = true;
@@ -43,6 +46,11 @@ namespace EscapeGame
             //pbPlayer.Image = images[0];     //// 초기 이미지 설정
 
             pbPlayer.BackColor = Color.FromArgb(0, 255, 255, 255);
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // 폼이 로드될 때 음악 재생
+            backgroundMusicPlayer.PlayLooping();
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
