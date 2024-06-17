@@ -91,7 +91,7 @@ namespace EscapeGame
             if (pbPlayer.Bounds.IntersectsWith(pbHint.Bounds))
             {
                 movementTimer.Stop();
-                MessageBox.Show("게임에서 승리한다면..");
+                MessageBox.Show("게임에서 승리하라.");
                 pbPlayer.Top += 20;
                 movementTimer.Start();
                 pressedKeys.Clear();

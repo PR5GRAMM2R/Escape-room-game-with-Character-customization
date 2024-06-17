@@ -96,7 +96,7 @@ namespace EscapeGame
             if (pbPlayer.Bounds.IntersectsWith(pbHint.Bounds))
             {
                 movementTimer.Stop();
-                MessageBox.Show("1점을 넘기면.."); // 임시로 1점으로 해놈
+                MessageBox.Show("1점을 넘기면?"); // 임시로 1점으로 해놈
                 pbPlayer.Left -= 20;
                 movementTimer.Start();
                 pressedKeys.Clear();
