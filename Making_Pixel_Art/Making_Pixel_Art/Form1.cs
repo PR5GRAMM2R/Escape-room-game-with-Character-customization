@@ -1128,8 +1128,7 @@ namespace Making_Pixel_Art
                 undoList.RemoveAt(undoList.Count - 1);
                 pbxCurrentFrame.Invalidate();
             }
-
-            if (e.Control && e.KeyCode == Keys.Y && redoList.Count > 0)
+            else if (e.Control && e.Shift && e.KeyCode == Keys.Z && redoList.Count > 0)
             {
                 undoList.Add(currentFrame);
                 currentFrame = redoList[redoList.Count - 1];
