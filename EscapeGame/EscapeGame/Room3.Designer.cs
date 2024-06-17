@@ -62,7 +62,8 @@
             this.pbRunnerGameMachine.Location = new System.Drawing.Point(295, -1);
             this.pbRunnerGameMachine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbRunnerGameMachine.Name = "pbRunnerGameMachine";
-            this.pbRunnerGameMachine.Size = new System.Drawing.Size(52, 72);
+            this.pbRunnerGameMachine.Size = new System.Drawing.Size(50, 70);
+            this.pbRunnerGameMachine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbRunnerGameMachine.TabIndex = 7;
             this.pbRunnerGameMachine.TabStop = false;
             // 
@@ -74,7 +75,8 @@
             this.pbMainp.Location = new System.Drawing.Point(419, 411);
             this.pbMainp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbMainp.Name = "pbMainp";
-            this.pbMainp.Size = new System.Drawing.Size(138, 131);
+            this.pbMainp.Size = new System.Drawing.Size(150, 100);
+            this.pbMainp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbMainp.TabIndex = 6;
             this.pbMainp.TabStop = false;
             // 
@@ -112,6 +114,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMainp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

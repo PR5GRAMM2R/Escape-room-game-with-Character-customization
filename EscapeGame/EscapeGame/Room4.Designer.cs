@@ -53,7 +53,8 @@
             this.pbKeyBox.Location = new System.Drawing.Point(819, -1);
             this.pbKeyBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbKeyBox.Name = "pbKeyBox";
-            this.pbKeyBox.Size = new System.Drawing.Size(30, 33);
+            this.pbKeyBox.Size = new System.Drawing.Size(30, 30);
+            this.pbKeyBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbKeyBox.TabIndex = 15;
             this.pbKeyBox.TabStop = false;
             // 
@@ -143,6 +144,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMainp)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

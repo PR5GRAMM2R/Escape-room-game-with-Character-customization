@@ -45,7 +45,10 @@ namespace EscapeGame
 
             walls = new Rectangle[]
           {
-                new Rectangle(850, 0, 30, 600)
+                new Rectangle(850, 0, 40, 600),
+                new Rectangle(0, 0, 1000, 2),
+                new Rectangle(0, 440, 1000, 2),
+                new Rectangle(0, 0, 2, 600)
           };
 
             //images = form.images;
@@ -144,7 +147,7 @@ namespace EscapeGame
                     movementTimer.Stop();
                     RunnerGameMenu runnerGameMenu = new RunnerGameMenu();
                     runnerGameMenu.Show();
-                    pbPlayer.Left -= 30;
+                    pbPlayer.Left -= 40;
                     movementTimer.Start();
                     pressedKeys.Clear();
                 }
@@ -152,7 +155,7 @@ namespace EscapeGame
                 {
                     movementTimer.Stop();
                     MessageBox.Show("어서 열린 곳으로 가보자.");
-                    pbPlayer.Left -= 30;
+                    pbPlayer.Left -= 40;
                     movementTimer.Start();
                     pressedKeys.Clear();
                 }

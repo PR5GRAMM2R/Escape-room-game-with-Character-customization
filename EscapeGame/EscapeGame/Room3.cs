@@ -43,7 +43,10 @@ namespace EscapeGame
 
             walls = new Rectangle[]
            {
-                new Rectangle(0, 0, 1000, 30)
+                new Rectangle(0, 0, 1000, 30),
+                new Rectangle(0, 0, 2, 600),
+                new Rectangle(0, 440, 1000, 2),
+                new Rectangle(850, 0, 2, 600)
            };
 
             //images = form.images;           //// 이미지 불러오기
@@ -137,7 +140,7 @@ namespace EscapeGame
                     movementTimer.Stop();
                     Tic_Tac_Toe tic_Tac_Toe = new Tic_Tac_Toe(this);
                     tic_Tac_Toe.Show();
-                    pbPlayer.Top += 30;
+                    pbPlayer.Top += 40;
                     movementTimer.Start();
                     pressedKeys.Clear();
                 }
@@ -145,7 +148,7 @@ namespace EscapeGame
                 {
                     movementTimer.Stop();
                     MessageBox.Show("어서 열린 곳으로 가보자.");
-                    pbPlayer.Top += 30;
+                    pbPlayer.Top += 40;
                     movementTimer.Start();
                     pressedKeys.Clear();
                 }

@@ -21,6 +21,7 @@ namespace EscapeGame
         private bool hasReachedTarget = false; // 목표 위치 도달 여부를 추적
         private Form1 mainForm;
         private string correctPassword = "1052"; //금고 비밀번호
+        private bool hasKeyToEscape = false;
 
         private Rectangle[] walls;
 
@@ -43,7 +44,10 @@ namespace EscapeGame
 
             walls = new Rectangle[]
             {
-                new Rectangle(0, 0, 1000, 10)
+                new Rectangle(0, 0, 1000, 10),
+                new Rectangle(0, 0, 2, 600),
+                new Rectangle(0, 440, 1000, 2),
+                new Rectangle(850, 0, 2, 600)
             };
 
             //images = form.images;           //// 이미지 불러오기
@@ -141,16 +145,28 @@ namespace EscapeGame
             if (pbPlayer.Bounds.IntersectsWith(pbKeyBox.Bounds))
             {
                 movementTimer.Stop();
-                string inputPassword = ShowPasswordInputBox();
 
-                if (inputPassword == correctPassword)
+                if (hasKeyToEscape == false)
                 {
-                    MessageBox.Show("금고가 열렸습니다! 열쇠를 획득했습니다.");
-                    mainForm.hasKeyToEscape = true;
+                    string inputPassword = ShowPasswordInputBox();
+                    if (inputPassword == correctPassword)
+                    {
+                        MessageBox.Show("금고가 열렸습니다! 열쇠를 획득했습니다.");
+                        hasKeyToEscape = true;
+                        mainForm.hasKeyToEscape = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("비밀번호가 틀렸습니다. 다시 시도하세요.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("비밀번호가 틀렸습니다. 다시 시도하세요.");
+                    movementTimer.Stop();
+                    MessageBox.Show("이미 열쇠를 얻었어. 밖으로 나가자");
+                    //pbPlayer.Top += 30;
+                    movementTimer.Start();
+                    pressedKeys.Clear();
                 }
 
                 pbPlayer.Top += 30;

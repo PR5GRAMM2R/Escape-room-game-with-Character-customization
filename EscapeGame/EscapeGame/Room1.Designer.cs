@@ -43,7 +43,7 @@
             // 
             // pbPlayer
             // 
-            this.pbPlayer.Location = new System.Drawing.Point(145, 241);
+            this.pbPlayer.Location = new System.Drawing.Point(189, 244);
             this.pbPlayer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbPlayer.Name = "pbPlayer";
             this.pbPlayer.Size = new System.Drawing.Size(73, 80);
@@ -57,10 +57,11 @@
             this.pbMainp.BackColor = System.Drawing.Color.Blue;
             this.pbMainp.BackgroundImage = global::EscapeGame.Properties.Resources.BGs;
             this.pbMainp.Image = ((System.Drawing.Image)(resources.GetObject("pbMainp.Image")));
-            this.pbMainp.Location = new System.Drawing.Point(0, 208);
+            this.pbMainp.Location = new System.Drawing.Point(12, 224);
             this.pbMainp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbMainp.Name = "pbMainp";
-            this.pbMainp.Size = new System.Drawing.Size(138, 126);
+            this.pbMainp.Size = new System.Drawing.Size(150, 100);
+            this.pbMainp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbMainp.TabIndex = 2;
             this.pbMainp.TabStop = false;
             // 
@@ -69,10 +70,11 @@
             this.pbRunnerGameMachine.BackColor = System.Drawing.Color.White;
             this.pbRunnerGameMachine.BackgroundImage = global::EscapeGame.Properties.Resources.BGs;
             this.pbRunnerGameMachine.Image = global::EscapeGame.Properties.Resources.오른쪽_오락기2;
-            this.pbRunnerGameMachine.Location = new System.Drawing.Point(932, 164);
+            this.pbRunnerGameMachine.Location = new System.Drawing.Point(931, 164);
             this.pbRunnerGameMachine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbRunnerGameMachine.Name = "pbRunnerGameMachine";
-            this.pbRunnerGameMachine.Size = new System.Drawing.Size(51, 72);
+            this.pbRunnerGameMachine.Size = new System.Drawing.Size(50, 70);
+            this.pbRunnerGameMachine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbRunnerGameMachine.TabIndex = 4;
             this.pbRunnerGameMachine.TabStop = false;
             // 
@@ -111,6 +113,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbRunnerGameMachine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHint)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

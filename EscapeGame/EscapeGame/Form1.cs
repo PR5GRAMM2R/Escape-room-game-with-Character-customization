@@ -25,6 +25,8 @@ namespace EscapeGame
         public bool hasKeyToRoom4 = false;
         public bool hasKeyToEscape = false;
 
+        private Rectangle[] walls;
+
         public List<Image> images = new List<Image>();     //// gif처럼 나타낼 이미지를 저장하는 List
         private int imgClock = 0;                           //// 
 
@@ -41,6 +43,14 @@ namespace EscapeGame
             movementTimer.Interval = 20; // 20ms 간격으로 움직임을 업데이트
             movementTimer.Tick += MovementTimer_Tick;
             movementTimer.Start();
+
+            walls = new Rectangle[]
+          {
+                new Rectangle(850, 0, 40, 600),
+                new Rectangle(0, 0, 1000, 2),
+                new Rectangle(0, 440, 1000, 2),
+                new Rectangle(0, 0, 2, 600)
+          };
 
             //LoadImages();   //// 이미지 불러오기
             //pbPlayer.Image = images[0];     //// 초기 이미지 설정
@@ -77,21 +87,38 @@ namespace EscapeGame
 
         private void MovePlayer()
         {
+            Point newPosition = pbPlayer.Location;
+
             if (pressedKeys.Contains(Keys.Up))
             {
-                pbPlayer.Top -= step;
+                newPosition.Y -= step;
             }
             if (pressedKeys.Contains(Keys.Down))
             {
-                pbPlayer.Top += step;
+                newPosition.Y += step;
             }
             if (pressedKeys.Contains(Keys.Left))
             {
-                pbPlayer.Left -= step;
+                newPosition.X -= step;
             }
             if (pressedKeys.Contains(Keys.Right))
             {
-                pbPlayer.Left += step;
+                newPosition.X += step;
+            }
+
+            bool collision = false;
+            foreach (var wall in walls)
+            {
+                if (new Rectangle(newPosition, pbPlayer.Size).IntersectsWith(wall))
+                {
+                    collision = true;
+                    break;
+                }
+            }
+
+            if (!collision)
+            {
+                pbPlayer.Location = newPosition;
             }
         }
 
