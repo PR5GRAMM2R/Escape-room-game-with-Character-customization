@@ -28,56 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.components = new System.ComponentModel.Container();
+            this.cbxCharacters = new System.Windows.Forms.ComboBox();
+            this.pbxCharacter = new System.Windows.Forms.PictureBox();
+            this.btnCustomize = new System.Windows.Forms.Button();
+            this.btnSelectCharacter = new System.Windows.Forms.Button();
+            this.characterTimer = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCharacter)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cbxCharacters
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(103, 207);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(122, 20);
-            this.comboBox1.TabIndex = 0;
+            this.cbxCharacters.FormattingEnabled = true;
+            this.cbxCharacters.Location = new System.Drawing.Point(103, 207);
+            this.cbxCharacters.Name = "cbxCharacters";
+            this.cbxCharacters.Size = new System.Drawing.Size(122, 20);
+            this.cbxCharacters.TabIndex = 0;
+            this.cbxCharacters.SelectedIndexChanged += new System.EventHandler(this.cbxCharacters_SelectedIndexChanged);
             // 
-            // pictureBox1
+            // pbxCharacter
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(270, 91);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(256, 256);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.pbxCharacter.Location = new System.Drawing.Point(270, 91);
+            this.pbxCharacter.Name = "pbxCharacter";
+            this.pbxCharacter.Size = new System.Drawing.Size(256, 256);
+            this.pbxCharacter.TabIndex = 1;
+            this.pbxCharacter.TabStop = false;
+            this.pbxCharacter.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxCharacter_Paint);
             // 
-            // btnExit
+            // btnCustomize
             // 
-            this.btnExit.BackgroundImage = global::EscapeGame.Properties.Resources.BG;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnExit.ForeColor = System.Drawing.Color.Orange;
-            this.btnExit.Image = global::EscapeGame.Properties.Resources.판자_마지막;
-            this.btnExit.Location = new System.Drawing.Point(556, 128);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(203, 73);
-            this.btnExit.TabIndex = 4;
-            this.btnExit.Text = "새로운 캐릭터 만들기";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnCustomize.BackgroundImage = global::EscapeGame.Properties.Resources.BG;
+            this.btnCustomize.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCustomize.ForeColor = System.Drawing.Color.Orange;
+            this.btnCustomize.Image = global::EscapeGame.Properties.Resources.판자_마지막;
+            this.btnCustomize.Location = new System.Drawing.Point(556, 128);
+            this.btnCustomize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCustomize.Name = "btnCustomize";
+            this.btnCustomize.Size = new System.Drawing.Size(203, 73);
+            this.btnCustomize.TabIndex = 4;
+            this.btnCustomize.Text = "새로운 캐릭터 만들기\r\n( 커스터마이징 )";
+            this.btnCustomize.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnSelectCharacter
             // 
-            this.button1.BackgroundImage = global::EscapeGame.Properties.Resources.BG;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.ForeColor = System.Drawing.Color.Orange;
-            this.button1.Image = global::EscapeGame.Properties.Resources.판자_마지막;
-            this.button1.Location = new System.Drawing.Point(556, 245);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(203, 73);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "캐릭터 선택";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSelectCharacter.BackgroundImage = global::EscapeGame.Properties.Resources.BG;
+            this.btnSelectCharacter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSelectCharacter.ForeColor = System.Drawing.Color.Orange;
+            this.btnSelectCharacter.Image = global::EscapeGame.Properties.Resources.판자_마지막;
+            this.btnSelectCharacter.Location = new System.Drawing.Point(556, 245);
+            this.btnSelectCharacter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSelectCharacter.Name = "btnSelectCharacter";
+            this.btnSelectCharacter.Size = new System.Drawing.Size(203, 73);
+            this.btnSelectCharacter.TabIndex = 5;
+            this.btnSelectCharacter.Text = "캐릭터 선택";
+            this.btnSelectCharacter.UseVisualStyleBackColor = true;
+            this.btnSelectCharacter.Click += new System.EventHandler(this.btnSelectCharacter_Click);
+            // 
+            // characterTimer
+            // 
+            this.characterTimer.Tick += new System.EventHandler(this.characterTimer_Tick);
             // 
             // SelectCharacter
             // 
@@ -85,22 +94,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::EscapeGame.Properties.Resources.BG;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btnSelectCharacter);
+            this.Controls.Add(this.btnCustomize);
+            this.Controls.Add(this.pbxCharacter);
+            this.Controls.Add(this.cbxCharacters);
             this.Name = "SelectCharacter";
             this.Text = "SelectCharacter";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCharacter)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cbxCharacters;
+        private System.Windows.Forms.PictureBox pbxCharacter;
+        private System.Windows.Forms.Button btnCustomize;
+        private System.Windows.Forms.Button btnSelectCharacter;
+        private System.Windows.Forms.Timer characterTimer;
     }
 }

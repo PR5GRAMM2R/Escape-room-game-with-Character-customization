@@ -83,7 +83,8 @@ namespace EscapeGame
 
         private void btnCharacter_Click(object sender, EventArgs e)
         {
-
+            SelectCharacter selectCharacter = new SelectCharacter();
+            DialogResult dialogResult = selectCharacter.ShowDialog();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
