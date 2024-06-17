@@ -70,6 +70,7 @@
             this.pbxPreviousFrame = new System.Windows.Forms.PictureBox();
             this.pbxCurrentFrame = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -77,7 +78,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.gbxPalette.SuspendLayout();
             this.gbxTools.SuspendLayout();
             this.gbxFrames.SuspendLayout();
@@ -102,21 +102,21 @@
             this.gbxPalette.Controls.Add(this.btnColor03);
             this.gbxPalette.Controls.Add(this.btnColor02);
             this.gbxPalette.Controls.Add(this.btnColor01);
-            this.gbxPalette.Location = new System.Drawing.Point(143, 18);
-            this.gbxPalette.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.gbxPalette.Location = new System.Drawing.Point(157, 21);
+            this.gbxPalette.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.gbxPalette.Name = "gbxPalette";
-            this.gbxPalette.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.gbxPalette.Size = new System.Drawing.Size(915, 99);
+            this.gbxPalette.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.gbxPalette.Size = new System.Drawing.Size(1006, 115);
             this.gbxPalette.TabIndex = 2;
             this.gbxPalette.TabStop = false;
             this.gbxPalette.Text = "Palette";
             // 
             // btnColorEdit
             // 
-            this.btnColorEdit.Location = new System.Drawing.Point(808, 30);
-            this.btnColorEdit.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnColorEdit.Location = new System.Drawing.Point(889, 35);
+            this.btnColorEdit.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnColorEdit.Name = "btnColorEdit";
-            this.btnColorEdit.Size = new System.Drawing.Size(97, 60);
+            this.btnColorEdit.Size = new System.Drawing.Size(107, 70);
             this.btnColorEdit.TabIndex = 10;
             this.btnColorEdit.Text = "Edit";
             this.btnColorEdit.UseVisualStyleBackColor = true;
@@ -124,10 +124,10 @@
             // 
             // btnColor00
             // 
-            this.btnColor00.Location = new System.Drawing.Point(728, 30);
-            this.btnColor00.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnColor00.Location = new System.Drawing.Point(801, 35);
+            this.btnColor00.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnColor00.Name = "btnColor00";
-            this.btnColor00.Size = new System.Drawing.Size(72, 60);
+            this.btnColor00.Size = new System.Drawing.Size(79, 70);
             this.btnColor00.TabIndex = 9;
             this.btnColor00.Text = "0";
             this.btnColor00.UseVisualStyleBackColor = true;
@@ -135,10 +135,10 @@
             // 
             // btnColor09
             // 
-            this.btnColor09.Location = new System.Drawing.Point(648, 30);
-            this.btnColor09.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnColor09.Location = new System.Drawing.Point(713, 35);
+            this.btnColor09.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnColor09.Name = "btnColor09";
-            this.btnColor09.Size = new System.Drawing.Size(72, 60);
+            this.btnColor09.Size = new System.Drawing.Size(79, 70);
             this.btnColor09.TabIndex = 8;
             this.btnColor09.Text = "9";
             this.btnColor09.UseVisualStyleBackColor = true;
@@ -146,10 +146,10 @@
             // 
             // btnColor08
             // 
-            this.btnColor08.Location = new System.Drawing.Point(568, 30);
-            this.btnColor08.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnColor08.Location = new System.Drawing.Point(625, 35);
+            this.btnColor08.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnColor08.Name = "btnColor08";
-            this.btnColor08.Size = new System.Drawing.Size(72, 60);
+            this.btnColor08.Size = new System.Drawing.Size(79, 70);
             this.btnColor08.TabIndex = 7;
             this.btnColor08.Text = "8";
             this.btnColor08.UseVisualStyleBackColor = true;
@@ -157,10 +157,10 @@
             // 
             // btnColor07
             // 
-            this.btnColor07.Location = new System.Drawing.Point(488, 30);
-            this.btnColor07.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnColor07.Location = new System.Drawing.Point(537, 35);
+            this.btnColor07.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnColor07.Name = "btnColor07";
-            this.btnColor07.Size = new System.Drawing.Size(72, 60);
+            this.btnColor07.Size = new System.Drawing.Size(79, 70);
             this.btnColor07.TabIndex = 6;
             this.btnColor07.Text = "7";
             this.btnColor07.UseVisualStyleBackColor = true;
@@ -168,10 +168,10 @@
             // 
             // btnColor06
             // 
-            this.btnColor06.Location = new System.Drawing.Point(408, 30);
-            this.btnColor06.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnColor06.Location = new System.Drawing.Point(449, 35);
+            this.btnColor06.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnColor06.Name = "btnColor06";
-            this.btnColor06.Size = new System.Drawing.Size(72, 60);
+            this.btnColor06.Size = new System.Drawing.Size(79, 70);
             this.btnColor06.TabIndex = 5;
             this.btnColor06.Text = "6";
             this.btnColor06.UseVisualStyleBackColor = true;
@@ -179,10 +179,10 @@
             // 
             // btnColor05
             // 
-            this.btnColor05.Location = new System.Drawing.Point(328, 30);
-            this.btnColor05.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnColor05.Location = new System.Drawing.Point(361, 35);
+            this.btnColor05.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnColor05.Name = "btnColor05";
-            this.btnColor05.Size = new System.Drawing.Size(72, 60);
+            this.btnColor05.Size = new System.Drawing.Size(79, 70);
             this.btnColor05.TabIndex = 4;
             this.btnColor05.Text = "5";
             this.btnColor05.UseVisualStyleBackColor = true;
@@ -190,10 +190,10 @@
             // 
             // btnColor04
             // 
-            this.btnColor04.Location = new System.Drawing.Point(248, 30);
-            this.btnColor04.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnColor04.Location = new System.Drawing.Point(273, 35);
+            this.btnColor04.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnColor04.Name = "btnColor04";
-            this.btnColor04.Size = new System.Drawing.Size(72, 60);
+            this.btnColor04.Size = new System.Drawing.Size(79, 70);
             this.btnColor04.TabIndex = 3;
             this.btnColor04.Text = "4";
             this.btnColor04.UseVisualStyleBackColor = true;
@@ -201,10 +201,10 @@
             // 
             // btnColor03
             // 
-            this.btnColor03.Location = new System.Drawing.Point(168, 30);
-            this.btnColor03.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnColor03.Location = new System.Drawing.Point(185, 35);
+            this.btnColor03.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnColor03.Name = "btnColor03";
-            this.btnColor03.Size = new System.Drawing.Size(72, 60);
+            this.btnColor03.Size = new System.Drawing.Size(79, 70);
             this.btnColor03.TabIndex = 2;
             this.btnColor03.Text = "3";
             this.btnColor03.UseVisualStyleBackColor = true;
@@ -212,10 +212,10 @@
             // 
             // btnColor02
             // 
-            this.btnColor02.Location = new System.Drawing.Point(88, 30);
-            this.btnColor02.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnColor02.Location = new System.Drawing.Point(97, 35);
+            this.btnColor02.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnColor02.Name = "btnColor02";
-            this.btnColor02.Size = new System.Drawing.Size(72, 60);
+            this.btnColor02.Size = new System.Drawing.Size(79, 70);
             this.btnColor02.TabIndex = 1;
             this.btnColor02.Text = "2";
             this.btnColor02.UseVisualStyleBackColor = true;
@@ -223,10 +223,10 @@
             // 
             // btnColor01
             // 
-            this.btnColor01.Location = new System.Drawing.Point(8, 30);
-            this.btnColor01.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnColor01.Location = new System.Drawing.Point(9, 35);
+            this.btnColor01.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnColor01.Name = "btnColor01";
-            this.btnColor01.Size = new System.Drawing.Size(72, 60);
+            this.btnColor01.Size = new System.Drawing.Size(79, 70);
             this.btnColor01.TabIndex = 0;
             this.btnColor01.Text = "1";
             this.btnColor01.UseVisualStyleBackColor = true;
@@ -235,10 +235,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1250, 114);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Location = new System.Drawing.Point(1375, 133);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 18);
+            this.label1.Size = new System.Drawing.Size(140, 21);
             this.label1.TabIndex = 3;
             this.label1.Text = "Previous Frame";
             // 
@@ -251,11 +251,11 @@
             this.gbxTools.Controls.Add(this.btnTool03);
             this.gbxTools.Controls.Add(this.btnTool02);
             this.gbxTools.Controls.Add(this.btnTool01);
-            this.gbxTools.Location = new System.Drawing.Point(17, 150);
-            this.gbxTools.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.gbxTools.Location = new System.Drawing.Point(19, 175);
+            this.gbxTools.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.gbxTools.Name = "gbxTools";
-            this.gbxTools.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.gbxTools.Size = new System.Drawing.Size(95, 510);
+            this.gbxTools.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.gbxTools.Size = new System.Drawing.Size(104, 595);
             this.gbxTools.TabIndex = 4;
             this.gbxTools.TabStop = false;
             this.gbxTools.Text = "Tools";
@@ -264,10 +264,10 @@
             // 
             this.btnTool07.BackgroundImage = global::Making_Pixel_Art.Properties.Resources.Tool07_Spoid;
             this.btnTool07.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnTool07.Location = new System.Drawing.Point(8, 444);
-            this.btnTool07.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnTool07.Location = new System.Drawing.Point(9, 518);
+            this.btnTool07.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnTool07.Name = "btnTool07";
-            this.btnTool07.Size = new System.Drawing.Size(78, 60);
+            this.btnTool07.Size = new System.Drawing.Size(86, 70);
             this.btnTool07.TabIndex = 16;
             this.btnTool07.UseVisualStyleBackColor = true;
             this.btnTool07.Click += new System.EventHandler(this.btnTool01_Click);
@@ -276,10 +276,10 @@
             // 
             this.btnTool06.BackgroundImage = global::Making_Pixel_Art.Properties.Resources.Tool06_Fill;
             this.btnTool06.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnTool06.Location = new System.Drawing.Point(8, 375);
-            this.btnTool06.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnTool06.Location = new System.Drawing.Point(9, 438);
+            this.btnTool06.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnTool06.Name = "btnTool06";
-            this.btnTool06.Size = new System.Drawing.Size(78, 60);
+            this.btnTool06.Size = new System.Drawing.Size(86, 70);
             this.btnTool06.TabIndex = 16;
             this.btnTool06.UseVisualStyleBackColor = true;
             this.btnTool06.Click += new System.EventHandler(this.btnTool01_Click);
@@ -288,10 +288,10 @@
             // 
             this.btnTool05.BackgroundImage = global::Making_Pixel_Art.Properties.Resources.Tool05_Eraser;
             this.btnTool05.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnTool05.Location = new System.Drawing.Point(8, 306);
-            this.btnTool05.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnTool05.Location = new System.Drawing.Point(9, 357);
+            this.btnTool05.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnTool05.Name = "btnTool05";
-            this.btnTool05.Size = new System.Drawing.Size(78, 60);
+            this.btnTool05.Size = new System.Drawing.Size(86, 70);
             this.btnTool05.TabIndex = 15;
             this.btnTool05.Tag = "Tools.Eraser";
             this.btnTool05.UseVisualStyleBackColor = true;
@@ -301,10 +301,10 @@
             // 
             this.btnTool04.BackgroundImage = global::Making_Pixel_Art.Properties.Resources.Tool04_Circle;
             this.btnTool04.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnTool04.Location = new System.Drawing.Point(8, 237);
-            this.btnTool04.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnTool04.Location = new System.Drawing.Point(9, 276);
+            this.btnTool04.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnTool04.Name = "btnTool04";
-            this.btnTool04.Size = new System.Drawing.Size(78, 60);
+            this.btnTool04.Size = new System.Drawing.Size(86, 70);
             this.btnTool04.TabIndex = 14;
             this.btnTool04.Tag = "Tools.Circle";
             this.btnTool04.UseVisualStyleBackColor = true;
@@ -314,10 +314,10 @@
             // 
             this.btnTool03.BackgroundImage = global::Making_Pixel_Art.Properties.Resources.Tool03_Rectangle;
             this.btnTool03.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnTool03.Location = new System.Drawing.Point(7, 168);
-            this.btnTool03.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnTool03.Location = new System.Drawing.Point(8, 196);
+            this.btnTool03.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnTool03.Name = "btnTool03";
-            this.btnTool03.Size = new System.Drawing.Size(78, 60);
+            this.btnTool03.Size = new System.Drawing.Size(86, 70);
             this.btnTool03.TabIndex = 13;
             this.btnTool03.Tag = "Tools.Rectangle";
             this.btnTool03.UseVisualStyleBackColor = true;
@@ -327,10 +327,10 @@
             // 
             this.btnTool02.BackgroundImage = global::Making_Pixel_Art.Properties.Resources.Tool02_Line;
             this.btnTool02.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnTool02.Location = new System.Drawing.Point(8, 99);
-            this.btnTool02.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnTool02.Location = new System.Drawing.Point(9, 115);
+            this.btnTool02.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnTool02.Name = "btnTool02";
-            this.btnTool02.Size = new System.Drawing.Size(78, 60);
+            this.btnTool02.Size = new System.Drawing.Size(86, 70);
             this.btnTool02.TabIndex = 12;
             this.btnTool02.Tag = "Tools.Line";
             this.btnTool02.UseVisualStyleBackColor = true;
@@ -340,10 +340,10 @@
             // 
             this.btnTool01.BackgroundImage = global::Making_Pixel_Art.Properties.Resources.Tool01_Pen;
             this.btnTool01.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnTool01.Location = new System.Drawing.Point(8, 30);
-            this.btnTool01.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnTool01.Location = new System.Drawing.Point(9, 35);
+            this.btnTool01.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnTool01.Name = "btnTool01";
-            this.btnTool01.Size = new System.Drawing.Size(78, 60);
+            this.btnTool01.Size = new System.Drawing.Size(86, 70);
             this.btnTool01.TabIndex = 11;
             this.btnTool01.Tag = "Tools.Pen";
             this.btnTool01.UseVisualStyleBackColor = true;
@@ -352,19 +352,19 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1268, 690);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Location = new System.Drawing.Point(1395, 805);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 18);
+            this.label2.Size = new System.Drawing.Size(108, 21);
             this.label2.TabIndex = 6;
             this.label2.Text = "Next Frame";
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(47, 1162);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnCancel.Location = new System.Drawing.Point(52, 1356);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(143, 60);
+            this.btnCancel.Size = new System.Drawing.Size(157, 70);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -372,10 +372,10 @@
             // 
             // btnSaveAndExit
             // 
-            this.btnSaveAndExit.Location = new System.Drawing.Point(1363, 1162);
-            this.btnSaveAndExit.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnSaveAndExit.Location = new System.Drawing.Point(1499, 1356);
+            this.btnSaveAndExit.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnSaveAndExit.Name = "btnSaveAndExit";
-            this.btnSaveAndExit.Size = new System.Drawing.Size(143, 60);
+            this.btnSaveAndExit.Size = new System.Drawing.Size(157, 70);
             this.btnSaveAndExit.TabIndex = 8;
             this.btnSaveAndExit.Text = "Save And Exit";
             this.btnSaveAndExit.UseVisualStyleBackColor = true;
@@ -383,10 +383,10 @@
             // 
             // btnPreview
             // 
-            this.btnPreview.Location = new System.Drawing.Point(1153, 1162);
-            this.btnPreview.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnPreview.Location = new System.Drawing.Point(1254, 1356);
+            this.btnPreview.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnPreview.Name = "btnPreview";
-            this.btnPreview.Size = new System.Drawing.Size(143, 60);
+            this.btnPreview.Size = new System.Drawing.Size(157, 70);
             this.btnPreview.TabIndex = 9;
             this.btnPreview.Text = "Preview";
             this.btnPreview.UseVisualStyleBackColor = true;
@@ -394,10 +394,10 @@
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(23, 30);
-            this.btnPrevious.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnPrevious.Location = new System.Drawing.Point(25, 35);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(165, 69);
+            this.btnPrevious.Size = new System.Drawing.Size(182, 80);
             this.btnPrevious.TabIndex = 10;
             this.btnPrevious.Text = "Previous Frame";
             this.btnPrevious.UseVisualStyleBackColor = true;
@@ -407,21 +407,21 @@
             // 
             this.gbxFrames.Controls.Add(this.btnNext);
             this.gbxFrames.Controls.Add(this.btnPrevious);
-            this.gbxFrames.Location = new System.Drawing.Point(655, 1132);
-            this.gbxFrames.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.gbxFrames.Location = new System.Drawing.Point(720, 1321);
+            this.gbxFrames.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.gbxFrames.Name = "gbxFrames";
-            this.gbxFrames.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.gbxFrames.Size = new System.Drawing.Size(398, 116);
+            this.gbxFrames.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.gbxFrames.Size = new System.Drawing.Size(438, 135);
             this.gbxFrames.TabIndex = 11;
             this.gbxFrames.TabStop = false;
             this.gbxFrames.Text = "Move Frames";
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(212, 30);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnNext.Location = new System.Drawing.Point(233, 35);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(165, 69);
+            this.btnNext.Size = new System.Drawing.Size(182, 80);
             this.btnNext.TabIndex = 11;
             this.btnNext.Text = "Next Frame";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -430,30 +430,33 @@
             // lblColorValue
             // 
             this.lblColorValue.AutoSize = true;
-            this.lblColorValue.Location = new System.Drawing.Point(1082, 69);
-            this.lblColorValue.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblColorValue.Location = new System.Drawing.Point(1190, 80);
+            this.lblColorValue.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblColorValue.Name = "lblColorValue";
-            this.lblColorValue.Size = new System.Drawing.Size(254, 18);
+            this.lblColorValue.Size = new System.Drawing.Size(289, 21);
             this.lblColorValue.TabIndex = 13;
             this.lblColorValue.Text = "현재 색상 : ( 255 . 255 . 255 )";
             // 
             // cbxShowPreviousFrame
             // 
             this.cbxShowPreviousFrame.AutoSize = true;
-            this.cbxShowPreviousFrame.Location = new System.Drawing.Point(1140, 601);
-            this.cbxShowPreviousFrame.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.cbxShowPreviousFrame.Checked = true;
+            this.cbxShowPreviousFrame.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxShowPreviousFrame.Location = new System.Drawing.Point(1254, 703);
+            this.cbxShowPreviousFrame.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.cbxShowPreviousFrame.Name = "cbxShowPreviousFrame";
-            this.cbxShowPreviousFrame.Size = new System.Drawing.Size(213, 22);
+            this.cbxShowPreviousFrame.Size = new System.Drawing.Size(221, 25);
             this.cbxShowPreviousFrame.TabIndex = 0;
             this.cbxShowPreviousFrame.Text = "Show Previous Frame";
             this.cbxShowPreviousFrame.UseVisualStyleBackColor = true;
+            this.cbxShowPreviousFrame.CheckedChanged += new System.EventHandler(this.cbxShowPreviousFrame_CheckedChanged);
             // 
             // btnCopyPreviousFrameToCurrentFrame
             // 
-            this.btnCopyPreviousFrameToCurrentFrame.Location = new System.Drawing.Point(1140, 550);
-            this.btnCopyPreviousFrameToCurrentFrame.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnCopyPreviousFrameToCurrentFrame.Location = new System.Drawing.Point(1254, 642);
+            this.btnCopyPreviousFrameToCurrentFrame.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnCopyPreviousFrameToCurrentFrame.Name = "btnCopyPreviousFrameToCurrentFrame";
-            this.btnCopyPreviousFrameToCurrentFrame.Size = new System.Drawing.Size(365, 36);
+            this.btnCopyPreviousFrameToCurrentFrame.Size = new System.Drawing.Size(402, 42);
             this.btnCopyPreviousFrameToCurrentFrame.TabIndex = 17;
             this.btnCopyPreviousFrameToCurrentFrame.Text = "Copy Previous Frame To Current Frame";
             this.btnCopyPreviousFrameToCurrentFrame.UseVisualStyleBackColor = true;
@@ -462,11 +465,11 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblCurrentFrameNum);
-            this.groupBox1.Location = new System.Drawing.Point(17, 704);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.groupBox1.Location = new System.Drawing.Point(19, 821);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.groupBox1.Size = new System.Drawing.Size(108, 82);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.groupBox1.Size = new System.Drawing.Size(119, 96);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Frame";
@@ -475,8 +478,8 @@
             // 
             this.lblCurrentFrameNum.AutoSize = true;
             this.lblCurrentFrameNum.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblCurrentFrameNum.Location = new System.Drawing.Point(15, 34);
-            this.lblCurrentFrameNum.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblCurrentFrameNum.Location = new System.Drawing.Point(16, 40);
+            this.lblCurrentFrameNum.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblCurrentFrameNum.Name = "lblCurrentFrameNum";
             this.lblCurrentFrameNum.Size = new System.Drawing.Size(64, 24);
             this.lblCurrentFrameNum.TabIndex = 0;
@@ -486,21 +489,21 @@
             // 
             this.groupBox2.Controls.Add(this.btnAdd);
             this.groupBox2.Controls.Add(this.btnRemove);
-            this.groupBox2.Location = new System.Drawing.Point(248, 1132);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.groupBox2.Location = new System.Drawing.Point(273, 1321);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.groupBox2.Size = new System.Drawing.Size(398, 116);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.groupBox2.Size = new System.Drawing.Size(438, 135);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Control Frames";
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(212, 30);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnAdd.Location = new System.Drawing.Point(233, 35);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(165, 69);
+            this.btnAdd.Size = new System.Drawing.Size(182, 80);
             this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "Add New Frame Next To This";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -508,10 +511,10 @@
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(23, 30);
-            this.btnRemove.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnRemove.Location = new System.Drawing.Point(25, 35);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(165, 69);
+            this.btnRemove.Size = new System.Drawing.Size(182, 80);
             this.btnRemove.TabIndex = 10;
             this.btnRemove.Text = "Remove This Frame";
             this.btnRemove.UseVisualStyleBackColor = true;
@@ -519,10 +522,10 @@
             // 
             // btnCopyNextFrameToCurrentFrame
             // 
-            this.btnCopyNextFrameToCurrentFrame.Location = new System.Drawing.Point(1140, 639);
-            this.btnCopyNextFrameToCurrentFrame.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnCopyNextFrameToCurrentFrame.Location = new System.Drawing.Point(1254, 746);
+            this.btnCopyNextFrameToCurrentFrame.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnCopyNextFrameToCurrentFrame.Name = "btnCopyNextFrameToCurrentFrame";
-            this.btnCopyNextFrameToCurrentFrame.Size = new System.Drawing.Size(365, 36);
+            this.btnCopyNextFrameToCurrentFrame.Size = new System.Drawing.Size(402, 42);
             this.btnCopyNextFrameToCurrentFrame.TabIndex = 19;
             this.btnCopyNextFrameToCurrentFrame.Text = "Copy Next Frame To Current Frame";
             this.btnCopyNextFrameToCurrentFrame.UseVisualStyleBackColor = true;
@@ -530,30 +533,30 @@
             // 
             // pbxNextFrame
             // 
-            this.pbxNextFrame.Location = new System.Drawing.Point(1140, 726);
-            this.pbxNextFrame.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.pbxNextFrame.Location = new System.Drawing.Point(1254, 847);
+            this.pbxNextFrame.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.pbxNextFrame.Name = "pbxNextFrame";
-            this.pbxNextFrame.Size = new System.Drawing.Size(365, 384);
+            this.pbxNextFrame.Size = new System.Drawing.Size(402, 448);
             this.pbxNextFrame.TabIndex = 5;
             this.pbxNextFrame.TabStop = false;
             this.pbxNextFrame.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxNextFrame_Paint);
             // 
             // pbxPreviousFrame
             // 
-            this.pbxPreviousFrame.Location = new System.Drawing.Point(1140, 150);
-            this.pbxPreviousFrame.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.pbxPreviousFrame.Location = new System.Drawing.Point(1254, 175);
+            this.pbxPreviousFrame.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.pbxPreviousFrame.Name = "pbxPreviousFrame";
-            this.pbxPreviousFrame.Size = new System.Drawing.Size(365, 384);
+            this.pbxPreviousFrame.Size = new System.Drawing.Size(402, 448);
             this.pbxPreviousFrame.TabIndex = 1;
             this.pbxPreviousFrame.TabStop = false;
             this.pbxPreviousFrame.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxPreviousFrame_Paint);
             // 
             // pbxCurrentFrame
             // 
-            this.pbxCurrentFrame.Location = new System.Drawing.Point(143, 150);
-            this.pbxCurrentFrame.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.pbxCurrentFrame.Location = new System.Drawing.Point(157, 175);
+            this.pbxCurrentFrame.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.pbxCurrentFrame.Name = "pbxCurrentFrame";
-            this.pbxCurrentFrame.Size = new System.Drawing.Size(915, 960);
+            this.pbxCurrentFrame.Size = new System.Drawing.Size(1006, 1120);
             this.pbxCurrentFrame.TabIndex = 0;
             this.pbxCurrentFrame.TabStop = false;
             this.pbxCurrentFrame.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxCurrentFrame_Paint);
@@ -572,18 +575,30 @@
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox3.Location = new System.Drawing.Point(17, 1248);
+            this.groupBox3.Location = new System.Drawing.Point(19, 1456);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1549, 207);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox3.Size = new System.Drawing.Size(1704, 241);
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "사용설명서";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 211);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(969, 18);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "Cancel 버튼을 누르면 저장 없이 종료되고, Save And Exit 버튼을 누르면 지금까지 작업한 내용이 저장되고 종료됩니다.";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 158);
-            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.Location = new System.Drawing.Point(7, 184);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(1534, 18);
             this.label4.TabIndex = 30;
@@ -593,8 +608,8 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 90);
-            this.label11.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label11.Location = new System.Drawing.Point(7, 105);
+            this.label11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(769, 18);
             this.label11.TabIndex = 29;
@@ -603,8 +618,8 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 68);
-            this.label12.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label12.Location = new System.Drawing.Point(7, 79);
+            this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(512, 18);
             this.label12.TabIndex = 28;
@@ -613,8 +628,8 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 46);
-            this.label13.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label13.Location = new System.Drawing.Point(7, 54);
+            this.label13.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(1217, 18);
             this.label13.TabIndex = 27;
@@ -624,8 +639,8 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 135);
-            this.label14.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label14.Location = new System.Drawing.Point(7, 158);
+            this.label14.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(771, 18);
             this.label14.TabIndex = 26;
@@ -634,8 +649,8 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 113);
-            this.label15.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label15.Location = new System.Drawing.Point(7, 132);
+            this.label15.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(752, 18);
             this.label15.TabIndex = 25;
@@ -644,29 +659,19 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 24);
-            this.label16.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label16.Location = new System.Drawing.Point(7, 28);
+            this.label16.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(736, 18);
             this.label16.TabIndex = 24;
             this.label16.Text = "키보드에서 숫자키 1부터 0까지 중 하나를 누르면 해당 번호의 색상을 선택할 수 있습니다.";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 181);
-            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(969, 18);
-            this.label3.TabIndex = 31;
-            this.label3.Text = "Cancel 버튼을 누르면 저장 없이 종료되고, Save And Exit 버튼을 누르면 지금까지 작업한 내용이 저장되고 종료됩니다.";
-            // 
             // MakingPixelArtForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1578, 1467);
+            this.ClientSize = new System.Drawing.Size(1736, 1712);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnCopyNextFrameToCurrentFrame);
             this.Controls.Add(this.groupBox2);
@@ -686,7 +691,7 @@
             this.Controls.Add(this.pbxPreviousFrame);
             this.Controls.Add(this.pbxCurrentFrame);
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "MakingPixelArtForm";
             this.Text = "Making Pixel Art";
             this.Load += new System.EventHandler(this.Form1_Load);

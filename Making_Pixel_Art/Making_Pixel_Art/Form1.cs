@@ -43,6 +43,8 @@ namespace Making_Pixel_Art
         Color[,] currentFrame = new Color[numCells, numCells];      // 현재 프레임
         List<Color[,]> Frames = new List<Color[,]> ();              // 그려온 프레임들을 저장
 
+        Color[,] previousFrame = new Color[numCells, numCells];      // 이전 프레임
+
         private static Point clickPoint;
         private static Point upPoint;
 
@@ -75,8 +77,17 @@ namespace Making_Pixel_Art
             btnTool01.PerformClick();
 
             Color[,] tempFrame = new Color[numCells, numCells];
+
+            for (int i = 0; i < numCells; i++)
+                for (int j = 0; j < numCells; j++)
+                    currentFrame[i, j] = Color.FromArgb(0, 255, 255, 255);
+
             Frames.Add(tempFrame);
             totalFramesNum++;
+
+            for (int i = 0; i < numCells; i++)
+                for (int j = 0; j < numCells; j++)
+                    previousFrame[i, j] = Color.FromArgb(0, 255, 255, 255);
         }
 
         private List<Button> GetAllButtons(Control control)     // 해당 group 내의 버튼들을 가져옴.
@@ -536,13 +547,32 @@ namespace Making_Pixel_Art
             int cellSizeX = pbxCurrentFrame.Width / numCells;
             int cellSizeY = pbxCurrentFrame.Height / numCells;
 
+            if (cbxShowPreviousFrame.Checked)
+            {
+                for (int x = 0; x < numCells; x++)
+                {
+                    for (int y = 0; y < numCells; y++)
+                    {
+                        if (previousFrame[x, y] != Color.FromArgb(0, 255, 255, 255))
+                        {
+                            Color temp = Color.FromArgb(96, previousFrame[x, y].R, previousFrame[x, y].G, previousFrame[x, y].B);
+                            using (SolidBrush brush = new SolidBrush(temp))
+                            {
+                                e.Graphics.FillRectangle(brush, x * cellSizeX, y * cellSizeY, cellSizeX, cellSizeY);
+                            }
+                        }
+                    }
+                }
+            }
+
             for (int x = 0; x < numCells; x++)
             {
                 for (int y = 0; y < numCells; y++)
                 {
                     using (SolidBrush brush = new SolidBrush(currentFrame[x, y]))
-                    {
-                        e.Graphics.FillRectangle(brush, x * cellSizeX, y * cellSizeY, cellSizeX, cellSizeY);
+                    {   
+                        if(brush.Color != Color.FromArgb(0, 255, 255, 255))
+                            e.Graphics.FillRectangle(brush, x * cellSizeX, y * cellSizeY, cellSizeX, cellSizeY);
                     }
                 }
             }
@@ -667,6 +697,8 @@ namespace Making_Pixel_Art
                 Color[,] frame = new Color[numCells, numCells];
                 frame = (Color[,])currentFrame.Clone();
 
+                previousFrame = (Color[,])currentFrame.Clone();
+
                 Frames[currentFrameNum] = frame;
 
                 currentFrameNum++;
@@ -688,8 +720,8 @@ namespace Making_Pixel_Art
             if(currentFrameNum > 0)
             {
                 Color[,] frame = new Color[numCells, numCells];
-                frame = (Color[,])currentFrame.Clone();
-                                
+                frame = (Color[,])currentFrame.Clone();                
+
                 Frames[currentFrameNum] = frame;
 
                 currentFrameNum--;
@@ -697,6 +729,17 @@ namespace Making_Pixel_Art
                 for (int i = 0; i < numCells; i++)
                     for (int j = 0; j < numCells; j++)
                         currentFrame[i, j] = Frames[currentFrameNum][i, j];
+
+                if (currentFrameNum == 0)
+                {
+                    for (int i = 0; i < numCells; i++)
+                        for (int j = 0; j < numCells; j++)
+                            previousFrame[i, j] = Color.FromArgb(0, 255, 255, 255);
+                }
+                else
+                {
+                    previousFrame = (Color[,])Frames[currentFrameNum - 1];
+                }
             }
 
             lblCurrentFrameNum.Text = (currentFrameNum + 1).ToString() + " / " + totalFramesNum.ToString();
@@ -717,6 +760,8 @@ namespace Making_Pixel_Art
             frame = (Color[,])currentFrame.Clone();
 
             Frames[currentFrameNum] = frame;
+
+            previousFrame = (Color[,])currentFrame.Clone();
 
             for (int i = 0; i < numCells; i++)
                 for (int j = 0; j < numCells; j++)
@@ -760,6 +805,17 @@ namespace Making_Pixel_Art
                         currentFrame[i, j] = Frames[currentFrameNum][i, j];
 
                 totalFramesNum--;
+
+                if (currentFrameNum == 0)
+                {
+                    for (int i = 0; i < numCells; i++)
+                        for (int j = 0; j < numCells; j++)
+                            previousFrame[i, j] = Color.FromArgb(0, 255, 255, 255);
+                }
+                else
+                {
+                    previousFrame = (Color[,])Frames[currentFrameNum - 1];
+                }
             }
             else
             {
@@ -1036,6 +1092,11 @@ namespace Making_Pixel_Art
                 default:
                     break;
             }
+        }
+
+        private void cbxShowPreviousFrame_CheckedChanged(object sender, EventArgs e)
+        {
+            pbxCurrentFrame.Invalidate();
         }
     }
 }
