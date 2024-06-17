@@ -727,6 +727,10 @@ namespace Making_Pixel_Art
             pbxCurrentFrame.Invalidate();
             pbxPreviousFrame.Invalidate();
             pbxNextFrame.Invalidate();
+
+            undoList.Clear();
+            redoList.Clear();
+            behaviors = null;
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
@@ -761,6 +765,10 @@ namespace Making_Pixel_Art
             pbxCurrentFrame.Invalidate();
             pbxPreviousFrame.Invalidate();
             pbxNextFrame.Invalidate();
+
+            undoList.Clear();
+            redoList.Clear();
+            behaviors = null;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////
@@ -801,6 +809,10 @@ namespace Making_Pixel_Art
             pbxCurrentFrame.Invalidate();
             pbxPreviousFrame.Invalidate();
             pbxNextFrame.Invalidate();
+
+            undoList.Clear();
+            redoList.Clear();
+            behaviors = null;
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -843,6 +855,10 @@ namespace Making_Pixel_Art
             pbxCurrentFrame.Invalidate();
             pbxPreviousFrame.Invalidate();
             pbxNextFrame.Invalidate();
+
+            undoList.Clear();
+            redoList.Clear();
+            behaviors = null;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////

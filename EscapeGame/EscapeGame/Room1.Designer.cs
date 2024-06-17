@@ -90,7 +90,6 @@
             // 
             // tmrImage2
             // 
-            this.tmrImage2.Interval = 50;
             this.tmrImage2.Tick += new System.EventHandler(this.tmrImage2_Tick);
             // 
             // Room1

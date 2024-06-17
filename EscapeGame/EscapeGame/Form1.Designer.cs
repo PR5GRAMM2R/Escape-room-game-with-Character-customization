@@ -47,7 +47,6 @@
             // 
             // tmrImage
             // 
-            this.tmrImage.Interval = 50;
             this.tmrImage.Tick += new System.EventHandler(this.tmrImage_Tick);
             // 
             // pbRoom4p
