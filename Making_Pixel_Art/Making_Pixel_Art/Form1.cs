@@ -919,6 +919,7 @@ namespace Making_Pixel_Art
 
         //                  스포이드 기능
         ////////////////////////////////////////////////////////////////////////////////////////////
+        
         private void Spoid(Point pt)
         {
             int cellSizeX = pbxCurrentFrame.Width / numCells;
@@ -927,40 +928,108 @@ namespace Making_Pixel_Art
             int cellX = pt.X / cellSizeX;
             int cellY = pt.Y / cellSizeY;
 
-
-            for (int i = gbxPalette.Controls.Count - 1; i >= 0; i--)
+            /*for (int i = gbxPalette.Controls.Count - 1; i >= 0; i--)
             {
                 Control control = gbxPalette.Controls[i];
                 if (control is Button)
                 {
                     Button button = (Button)control;
 
-                    
+
 
                     if (button.BackColor == currentFrame[cellX, cellY])
                     {
                         button.BackColor = currentFrame[cellX, cellY];
                         button.PerformClick();
-                        btnTool01.PerformClick();
                         break;
                     }
                     else if (button.BackColor == Color.White)
                     {
                         button.BackColor = currentFrame[cellX, cellY];
                         button.PerformClick();
-                        btnTool01.PerformClick();
                         break;
                     }
                     else if (button == btnColorEdit)
                     {
                         btnColor00.BackColor = currentFrame[cellX, cellY];
                         btnColor00.PerformClick();
-                        btnTool01.PerformClick();
                         break;
                     }
-
-
                 }
+            }*/
+
+            currentColor = currentFrame[cellX, cellY];
+
+            currentColorButton.BackColor = currentColor;
+            currentColorButton.ForeColor = Color.FromArgb(255 - currentColorButton.BackColor.R, 255 - currentColorButton.BackColor.G, 255 - currentColorButton.BackColor.B);
+            lblColorValue.Text = "현재 색상 : ( " + currentColor.R + " . " + currentColor.G + " . " + currentColor.B + " )";
+
+            btnTool01.PerformClick();
+        }
+
+        private void MakingPixelArtForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.D1:
+                    btnColor01.PerformClick();
+                    break;
+                case Keys.D2:
+                    btnColor02.PerformClick();
+                    break;
+                case Keys.D3:
+                    btnColor03.PerformClick();
+                    break;
+                case Keys.D4:
+                    btnColor04.PerformClick();
+                    break;
+                case Keys.D5:
+                    btnColor05.PerformClick();
+                    break;
+                case Keys.D6:
+                    btnColor06.PerformClick();
+                    break;
+                case Keys.D7:
+                    btnColor07.PerformClick();
+                    break;
+                case Keys.D8:
+                    btnColor08.PerformClick();
+                    break;
+                case Keys.D9:
+                    btnColor09.PerformClick();
+                    break;
+                case Keys.D0:
+                    btnColor00.PerformClick();
+                    break;
+
+                case Keys.F:
+                    btnColorEdit.PerformClick();
+                    break;
+
+                case Keys.Q:
+                    btnTool01.PerformClick();
+                    break;
+                case Keys.W:
+                    btnTool02.PerformClick();
+                    break;
+                case Keys.E:
+                    btnTool03.PerformClick();
+                    break;
+                case Keys.R:
+                    btnTool04.PerformClick();
+                    break;
+                case Keys.A:
+                    btnTool05.PerformClick();
+                    break;
+                case Keys.S:
+                    btnTool06.PerformClick();
+                    break;
+                case Keys.D:
+                    btnTool07.PerformClick();
+                    break;
+
+                default:
+                    break;
             }
         }
     }
