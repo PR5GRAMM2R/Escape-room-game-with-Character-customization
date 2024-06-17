@@ -24,6 +24,8 @@ namespace EscapeGame
         private bool hasKeyToRoom2 = false; // Room2 열쇠 획득 여부
         private Form1 mainForm; // Form1 인스턴스를 저장
 
+        private Rectangle[] walls;
+
         private List<System.Drawing.Image> images = new List<System.Drawing.Image>();     //// gif처럼 나타낼 이미지를 저장하는 List
         private int imgClock = 0;                           ////
 
@@ -37,9 +39,14 @@ namespace EscapeGame
 
             // 방향키 두 개를 동시에 눌렀을 때 대각선으로 이동시키기 위함
             movementTimer = new Timer();
-            movementTimer.Interval = 30; // 30ms 간격으로 움직임을 업데이트
+            movementTimer.Interval = 20; // 30ms 간격으로 움직임을 업데이트
             movementTimer.Tick += MovementTimer_Tick;
             movementTimer.Start();
+
+            walls = new Rectangle[]
+          {
+                new Rectangle(850, 0, 30, 600)
+          };
 
             //images = form.images;
             //pbPlayer.Image = images[0];     //// 초기 이미지 설정
@@ -71,21 +78,38 @@ namespace EscapeGame
 
         private void MovePlayer()
         {
+            Point newPosition = pbPlayer.Location;
+
             if (pressedKeys.Contains(Keys.Up))
             {
-                pbPlayer.Top -= step;
+                newPosition.Y -= step;
             }
             if (pressedKeys.Contains(Keys.Down))
             {
-                pbPlayer.Top += step;
+                newPosition.Y += step;
             }
             if (pressedKeys.Contains(Keys.Left))
             {
-                pbPlayer.Left -= step;
+                newPosition.X -= step;
             }
             if (pressedKeys.Contains(Keys.Right))
             {
-                pbPlayer.Left += step;
+                newPosition.X += step;
+            }
+
+            bool collision = false;
+            foreach (var wall in walls)
+            {
+                if (new Rectangle(newPosition, pbPlayer.Size).IntersectsWith(wall))
+                {
+                    collision = true;
+                    break;
+                }
+            }
+
+            if (!collision)
+            {
+                pbPlayer.Location = newPosition;
             }
         }
         private void CheckForKeyEvent()

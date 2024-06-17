@@ -43,10 +43,10 @@
             // 
             // pbPlayer
             // 
-            this.pbPlayer.Location = new System.Drawing.Point(127, 193);
+            this.pbPlayer.Location = new System.Drawing.Point(145, 241);
             this.pbPlayer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbPlayer.Name = "pbPlayer";
-            this.pbPlayer.Size = new System.Drawing.Size(64, 64);
+            this.pbPlayer.Size = new System.Drawing.Size(73, 80);
             this.pbPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPlayer.TabIndex = 3;
             this.pbPlayer.TabStop = false;
@@ -57,10 +57,10 @@
             this.pbMainp.BackColor = System.Drawing.Color.Blue;
             this.pbMainp.BackgroundImage = global::EscapeGame.Properties.Resources.BGs;
             this.pbMainp.Image = ((System.Drawing.Image)(resources.GetObject("pbMainp.Image")));
-            this.pbMainp.Location = new System.Drawing.Point(0, 166);
+            this.pbMainp.Location = new System.Drawing.Point(0, 208);
             this.pbMainp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbMainp.Name = "pbMainp";
-            this.pbMainp.Size = new System.Drawing.Size(121, 101);
+            this.pbMainp.Size = new System.Drawing.Size(138, 126);
             this.pbMainp.TabIndex = 2;
             this.pbMainp.TabStop = false;
             // 
@@ -69,10 +69,10 @@
             this.pbRunnerGameMachine.BackColor = System.Drawing.Color.White;
             this.pbRunnerGameMachine.BackgroundImage = global::EscapeGame.Properties.Resources.BGs;
             this.pbRunnerGameMachine.Image = global::EscapeGame.Properties.Resources.오른쪽_오락기2;
-            this.pbRunnerGameMachine.Location = new System.Drawing.Point(808, 76);
+            this.pbRunnerGameMachine.Location = new System.Drawing.Point(932, 164);
             this.pbRunnerGameMachine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbRunnerGameMachine.Name = "pbRunnerGameMachine";
-            this.pbRunnerGameMachine.Size = new System.Drawing.Size(51, 71);
+            this.pbRunnerGameMachine.Size = new System.Drawing.Size(51, 72);
             this.pbRunnerGameMachine.TabIndex = 4;
             this.pbRunnerGameMachine.TabStop = false;
             // 
@@ -81,10 +81,10 @@
             this.pbHint.BackColor = System.Drawing.Color.Violet;
             this.pbHint.BackgroundImage = global::EscapeGame.Properties.Resources.BGs;
             this.pbHint.Image = global::EscapeGame.Properties.Resources.팻말1;
-            this.pbHint.Location = new System.Drawing.Point(819, 151);
+            this.pbHint.Location = new System.Drawing.Point(938, 261);
             this.pbHint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbHint.Name = "pbHint";
-            this.pbHint.Size = new System.Drawing.Size(28, 28);
+            this.pbHint.Size = new System.Drawing.Size(32, 35);
             this.pbHint.TabIndex = 5;
             this.pbHint.TabStop = false;
             // 
@@ -94,11 +94,11 @@
             // 
             // Room1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::EscapeGame.Properties.Resources.BG;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(859, 442);
+            this.ClientSize = new System.Drawing.Size(982, 552);
             this.Controls.Add(this.pbHint);
             this.Controls.Add(this.pbRunnerGameMachine);
             this.Controls.Add(this.pbPlayer);
