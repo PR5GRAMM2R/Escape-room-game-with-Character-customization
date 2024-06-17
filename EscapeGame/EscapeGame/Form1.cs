@@ -49,7 +49,7 @@ namespace EscapeGame
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            var musicStream = Properties.Resources.sample;
+            var musicStream = Properties.Resources.sample2;
             backgroundMusicPlayer = new SoundPlayer(musicStream);
             // 폼이 로드될 때 음악 재생
             backgroundMusicPlayer.PlayLooping();

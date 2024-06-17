@@ -653,9 +653,9 @@ namespace EscapeGame.Properties {
         /// <summary>
         ///   System.IO.MemoryStream과(와) 유사한 System.IO.UnmanagedMemoryStream 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream sample {
+        internal static System.IO.UnmanagedMemoryStream sample2 {
             get {
-                return ResourceManager.GetStream("sample", resourceCulture);
+                return ResourceManager.GetStream("sample2", resourceCulture);
             }
         }
         
