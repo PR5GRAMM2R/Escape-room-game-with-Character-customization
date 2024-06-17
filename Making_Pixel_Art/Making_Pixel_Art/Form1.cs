@@ -67,9 +67,9 @@ namespace Making_Pixel_Art
             btnTool06.Tag = Tools.Fill;
             btnTool07.Tag = Tools.Spoid;
 
-            pbxCurrentFrame.BackColor = Color.Empty;       // 색상을 전부 투명으로 설정
-            pbxPreviousFrame.BackColor = Color.Empty;
-            pbxNextFrame.BackColor = Color.Empty;
+            pbxCurrentFrame.BackColor = Color.FromArgb(0, 255, 255, 255);       // 색상을 전부 투명으로 설정
+            pbxPreviousFrame.BackColor = Color.FromArgb(0, 255, 255, 255);
+            pbxNextFrame.BackColor = Color.FromArgb(0, 255, 255, 255);
 
             this.colorButtons = GetAllButtons(this.gbxPalette);
 
