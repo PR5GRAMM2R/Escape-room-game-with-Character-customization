@@ -78,6 +78,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.gbxPalette.SuspendLayout();
             this.gbxTools.SuspendLayout();
             this.gbxFrames.SuspendLayout();
@@ -566,6 +567,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label11);
@@ -576,10 +578,10 @@
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox3.Location = new System.Drawing.Point(12, 832);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox3.Size = new System.Drawing.Size(1084, 138);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Size = new System.Drawing.Size(1084, 162);
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "사용설명서";
@@ -666,12 +668,23 @@
             this.label16.TabIndex = 24;
             this.label16.Text = "키보드에서 숫자키 1부터 0까지 중 하나를 누르면 해당 번호의 색상을 선택할 수 있습니다.";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(4, 137);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(951, 12);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "Show Previous Frame 을 체크 해제하면 이전 프레임이 현재 프레임에서 보이지 않게 되고, Show Previous Frame 을 체" +
+    "크하면 이전 프레임이 현재 프레임에서 보이게 됩니다.";
+            // 
             // MakingPixelArtForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1105, 977);
+            this.ClientSize = new System.Drawing.Size(1105, 1005);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnCopyNextFrameToCurrentFrame);
             this.Controls.Add(this.groupBox2);
@@ -764,6 +777,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
     }
 }
 
