@@ -530,7 +530,10 @@ namespace Making_Pixel_Art
                             }
                             break;
                         case Tools.Eraser:
-                            currentFrame[cellX, cellY] = Color.FromArgb(0, 255, 255, 255);
+                            if (x >= 0 && x < pbxCurrentFrame.Width && y >= 0 && y < pbxCurrentFrame.Height)
+                            {
+                                currentFrame[cellX, cellY] = Color.FromArgb(0, 255, 255, 255);
+                            }
                             break;
                         default:
                             break;
