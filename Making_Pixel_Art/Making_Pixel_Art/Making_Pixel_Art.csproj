@@ -95,6 +95,8 @@
     <Content Include="Resources\Tool03_Rectangle.png" />
     <Content Include="Resources\Tool04_Circle.png" />
     <Content Include="Resources\Tool05_Eraser.png" />
+    <None Include="Resources\Tool07_Spoid.png" />
+    <None Include="Resources\Tool06_Fill.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

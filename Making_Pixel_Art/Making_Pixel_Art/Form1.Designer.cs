@@ -37,11 +37,12 @@
             this.btnColor06 = new System.Windows.Forms.Button();
             this.btnColor05 = new System.Windows.Forms.Button();
             this.btnColor04 = new System.Windows.Forms.Button();
-            this.button03 = new System.Windows.Forms.Button();
+            this.btnColor03 = new System.Windows.Forms.Button();
             this.btnColor02 = new System.Windows.Forms.Button();
             this.btnColor01 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.gbxTools = new System.Windows.Forms.GroupBox();
+            this.btnTool07 = new System.Windows.Forms.Button();
             this.btnTool06 = new System.Windows.Forms.Button();
             this.btnTool05 = new System.Windows.Forms.Button();
             this.btnTool04 = new System.Windows.Forms.Button();
@@ -55,31 +56,38 @@
             this.btnPrevious = new System.Windows.Forms.Button();
             this.gbxFrames = new System.Windows.Forms.GroupBox();
             this.btnNext = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.lblColorValue = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.cbxShowPreviousFrame = new System.Windows.Forms.CheckBox();
             this.btnCopyPreviousFrameToCurrentFrame = new System.Windows.Forms.Button();
             this.cld = new System.Windows.Forms.ColorDialog();
-            this.pbxNextFrame = new System.Windows.Forms.PictureBox();
-            this.pbxPreviousFrame = new System.Windows.Forms.PictureBox();
-            this.pbxCurrentFrame = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblCurrentFrameNum = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnCopyNextFrameToCurrentFrame = new System.Windows.Forms.Button();
+            this.pbxNextFrame = new System.Windows.Forms.PictureBox();
+            this.pbxPreviousFrame = new System.Windows.Forms.PictureBox();
+            this.pbxCurrentFrame = new System.Windows.Forms.PictureBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.gbxPalette.SuspendLayout();
             this.gbxTools.SuspendLayout();
             this.gbxFrames.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxNextFrame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPreviousFrame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCurrentFrame)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbxPalette
@@ -92,11 +100,13 @@
             this.gbxPalette.Controls.Add(this.btnColor06);
             this.gbxPalette.Controls.Add(this.btnColor05);
             this.gbxPalette.Controls.Add(this.btnColor04);
-            this.gbxPalette.Controls.Add(this.button03);
+            this.gbxPalette.Controls.Add(this.btnColor03);
             this.gbxPalette.Controls.Add(this.btnColor02);
             this.gbxPalette.Controls.Add(this.btnColor01);
             this.gbxPalette.Location = new System.Drawing.Point(100, 12);
+            this.gbxPalette.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbxPalette.Name = "gbxPalette";
+            this.gbxPalette.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbxPalette.Size = new System.Drawing.Size(640, 66);
             this.gbxPalette.TabIndex = 2;
             this.gbxPalette.TabStop = false;
@@ -105,6 +115,7 @@
             // btnColorEdit
             // 
             this.btnColorEdit.Location = new System.Drawing.Point(566, 20);
+            this.btnColorEdit.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnColorEdit.Name = "btnColorEdit";
             this.btnColorEdit.Size = new System.Drawing.Size(68, 40);
             this.btnColorEdit.TabIndex = 10;
@@ -115,6 +126,7 @@
             // btnColor00
             // 
             this.btnColor00.Location = new System.Drawing.Point(510, 20);
+            this.btnColor00.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnColor00.Name = "btnColor00";
             this.btnColor00.Size = new System.Drawing.Size(50, 40);
             this.btnColor00.TabIndex = 9;
@@ -125,6 +137,7 @@
             // btnColor09
             // 
             this.btnColor09.Location = new System.Drawing.Point(454, 20);
+            this.btnColor09.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnColor09.Name = "btnColor09";
             this.btnColor09.Size = new System.Drawing.Size(50, 40);
             this.btnColor09.TabIndex = 8;
@@ -135,6 +148,7 @@
             // btnColor08
             // 
             this.btnColor08.Location = new System.Drawing.Point(398, 20);
+            this.btnColor08.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnColor08.Name = "btnColor08";
             this.btnColor08.Size = new System.Drawing.Size(50, 40);
             this.btnColor08.TabIndex = 7;
@@ -145,6 +159,7 @@
             // btnColor07
             // 
             this.btnColor07.Location = new System.Drawing.Point(342, 20);
+            this.btnColor07.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnColor07.Name = "btnColor07";
             this.btnColor07.Size = new System.Drawing.Size(50, 40);
             this.btnColor07.TabIndex = 6;
@@ -155,6 +170,7 @@
             // btnColor06
             // 
             this.btnColor06.Location = new System.Drawing.Point(286, 20);
+            this.btnColor06.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnColor06.Name = "btnColor06";
             this.btnColor06.Size = new System.Drawing.Size(50, 40);
             this.btnColor06.TabIndex = 5;
@@ -165,6 +181,7 @@
             // btnColor05
             // 
             this.btnColor05.Location = new System.Drawing.Point(230, 20);
+            this.btnColor05.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnColor05.Name = "btnColor05";
             this.btnColor05.Size = new System.Drawing.Size(50, 40);
             this.btnColor05.TabIndex = 4;
@@ -175,6 +192,7 @@
             // btnColor04
             // 
             this.btnColor04.Location = new System.Drawing.Point(174, 20);
+            this.btnColor04.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnColor04.Name = "btnColor04";
             this.btnColor04.Size = new System.Drawing.Size(50, 40);
             this.btnColor04.TabIndex = 3;
@@ -182,19 +200,21 @@
             this.btnColor04.UseVisualStyleBackColor = true;
             this.btnColor04.Click += new System.EventHandler(this.btnColor01_Click);
             // 
-            // button03
+            // btnColor03
             // 
-            this.button03.Location = new System.Drawing.Point(118, 20);
-            this.button03.Name = "button03";
-            this.button03.Size = new System.Drawing.Size(50, 40);
-            this.button03.TabIndex = 2;
-            this.button03.Text = "3";
-            this.button03.UseVisualStyleBackColor = true;
-            this.button03.Click += new System.EventHandler(this.btnColor01_Click);
+            this.btnColor03.Location = new System.Drawing.Point(118, 20);
+            this.btnColor03.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnColor03.Name = "btnColor03";
+            this.btnColor03.Size = new System.Drawing.Size(50, 40);
+            this.btnColor03.TabIndex = 2;
+            this.btnColor03.Text = "3";
+            this.btnColor03.UseVisualStyleBackColor = true;
+            this.btnColor03.Click += new System.EventHandler(this.btnColor01_Click);
             // 
             // btnColor02
             // 
             this.btnColor02.Location = new System.Drawing.Point(62, 20);
+            this.btnColor02.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnColor02.Name = "btnColor02";
             this.btnColor02.Size = new System.Drawing.Size(50, 40);
             this.btnColor02.TabIndex = 1;
@@ -205,6 +225,7 @@
             // btnColor01
             // 
             this.btnColor01.Location = new System.Drawing.Point(6, 20);
+            this.btnColor01.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnColor01.Name = "btnColor01";
             this.btnColor01.Size = new System.Drawing.Size(50, 40);
             this.btnColor01.TabIndex = 0;
@@ -215,7 +236,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(866, 76);
+            this.label1.Location = new System.Drawing.Point(875, 76);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 12);
             this.label1.TabIndex = 3;
@@ -223,6 +245,7 @@
             // 
             // gbxTools
             // 
+            this.gbxTools.Controls.Add(this.btnTool07);
             this.gbxTools.Controls.Add(this.btnTool06);
             this.gbxTools.Controls.Add(this.btnTool05);
             this.gbxTools.Controls.Add(this.btnTool04);
@@ -230,15 +253,32 @@
             this.gbxTools.Controls.Add(this.btnTool02);
             this.gbxTools.Controls.Add(this.btnTool01);
             this.gbxTools.Location = new System.Drawing.Point(12, 100);
+            this.gbxTools.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbxTools.Name = "gbxTools";
-            this.gbxTools.Size = new System.Drawing.Size(66, 301);
+            this.gbxTools.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.gbxTools.Size = new System.Drawing.Size(66, 340);
             this.gbxTools.TabIndex = 4;
             this.gbxTools.TabStop = false;
             this.gbxTools.Text = "Tools";
             // 
+            // btnTool07
+            // 
+            this.btnTool07.BackgroundImage = global::Making_Pixel_Art.Properties.Resources.Tool07_Spoid;
+            this.btnTool07.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnTool07.Location = new System.Drawing.Point(6, 296);
+            this.btnTool07.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnTool07.Name = "btnTool07";
+            this.btnTool07.Size = new System.Drawing.Size(55, 40);
+            this.btnTool07.TabIndex = 16;
+            this.btnTool07.UseVisualStyleBackColor = true;
+            this.btnTool07.Click += new System.EventHandler(this.btnTool01_Click);
+            // 
             // btnTool06
             // 
+            this.btnTool06.BackgroundImage = global::Making_Pixel_Art.Properties.Resources.Tool06_Fill;
+            this.btnTool06.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnTool06.Location = new System.Drawing.Point(6, 250);
+            this.btnTool06.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnTool06.Name = "btnTool06";
             this.btnTool06.Size = new System.Drawing.Size(55, 40);
             this.btnTool06.TabIndex = 16;
@@ -250,6 +290,7 @@
             this.btnTool05.BackgroundImage = global::Making_Pixel_Art.Properties.Resources.Tool05_Eraser;
             this.btnTool05.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnTool05.Location = new System.Drawing.Point(6, 204);
+            this.btnTool05.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnTool05.Name = "btnTool05";
             this.btnTool05.Size = new System.Drawing.Size(55, 40);
             this.btnTool05.TabIndex = 15;
@@ -262,6 +303,7 @@
             this.btnTool04.BackgroundImage = global::Making_Pixel_Art.Properties.Resources.Tool04_Circle;
             this.btnTool04.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnTool04.Location = new System.Drawing.Point(6, 158);
+            this.btnTool04.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnTool04.Name = "btnTool04";
             this.btnTool04.Size = new System.Drawing.Size(55, 40);
             this.btnTool04.TabIndex = 14;
@@ -274,6 +316,7 @@
             this.btnTool03.BackgroundImage = global::Making_Pixel_Art.Properties.Resources.Tool03_Rectangle;
             this.btnTool03.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnTool03.Location = new System.Drawing.Point(5, 112);
+            this.btnTool03.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnTool03.Name = "btnTool03";
             this.btnTool03.Size = new System.Drawing.Size(55, 40);
             this.btnTool03.TabIndex = 13;
@@ -286,6 +329,7 @@
             this.btnTool02.BackgroundImage = global::Making_Pixel_Art.Properties.Resources.Tool02_Line;
             this.btnTool02.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnTool02.Location = new System.Drawing.Point(6, 66);
+            this.btnTool02.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnTool02.Name = "btnTool02";
             this.btnTool02.Size = new System.Drawing.Size(55, 40);
             this.btnTool02.TabIndex = 12;
@@ -298,6 +342,7 @@
             this.btnTool01.BackgroundImage = global::Making_Pixel_Art.Properties.Resources.Tool01_Pen;
             this.btnTool01.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnTool01.Location = new System.Drawing.Point(6, 20);
+            this.btnTool01.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnTool01.Name = "btnTool01";
             this.btnTool01.Size = new System.Drawing.Size(55, 40);
             this.btnTool01.TabIndex = 11;
@@ -308,7 +353,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(878, 460);
+            this.label2.Location = new System.Drawing.Point(888, 460);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 12);
             this.label2.TabIndex = 6;
@@ -317,6 +363,7 @@
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(33, 775);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 40);
             this.btnCancel.TabIndex = 7;
@@ -326,7 +373,8 @@
             // 
             // btnSaveAndExit
             // 
-            this.btnSaveAndExit.Location = new System.Drawing.Point(945, 775);
+            this.btnSaveAndExit.Location = new System.Drawing.Point(954, 775);
+            this.btnSaveAndExit.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSaveAndExit.Name = "btnSaveAndExit";
             this.btnSaveAndExit.Size = new System.Drawing.Size(100, 40);
             this.btnSaveAndExit.TabIndex = 8;
@@ -337,6 +385,7 @@
             // btnPreview
             // 
             this.btnPreview.Location = new System.Drawing.Point(798, 775);
+            this.btnPreview.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnPreview.Name = "btnPreview";
             this.btnPreview.Size = new System.Drawing.Size(100, 40);
             this.btnPreview.TabIndex = 9;
@@ -347,6 +396,7 @@
             // btnPrevious
             // 
             this.btnPrevious.Location = new System.Drawing.Point(16, 20);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(116, 46);
             this.btnPrevious.TabIndex = 10;
@@ -358,8 +408,10 @@
             // 
             this.gbxFrames.Controls.Add(this.btnNext);
             this.gbxFrames.Controls.Add(this.btnPrevious);
-            this.gbxFrames.Location = new System.Drawing.Point(459, 755);
+            this.gbxFrames.Location = new System.Drawing.Point(458, 755);
+            this.gbxFrames.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbxFrames.Name = "gbxFrames";
+            this.gbxFrames.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbxFrames.Size = new System.Drawing.Size(279, 77);
             this.gbxFrames.TabIndex = 11;
             this.gbxFrames.TabStop = false;
@@ -368,6 +420,7 @@
             // btnNext
             // 
             this.btnNext.Location = new System.Drawing.Point(148, 20);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(116, 46);
             this.btnNext.TabIndex = 11;
@@ -375,64 +428,34 @@
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 852);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(489, 12);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "키보드에서 숫자키 1부터 0까지 중 하나를 누르면 해당 번호의 색상을 선택할 수 있습니다.";
-            // 
             // lblColorValue
             // 
             this.lblColorValue.AutoSize = true;
             this.lblColorValue.Location = new System.Drawing.Point(757, 46);
+            this.lblColorValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblColorValue.Name = "lblColorValue";
             this.lblColorValue.Size = new System.Drawing.Size(165, 12);
             this.lblColorValue.TabIndex = 13;
             this.lblColorValue.Text = "현재 색상 : ( 255 . 255 . 255 )";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 879);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(585, 12);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "키보드에서 Shift 키를 누르며 숫자키 1부터 0까지 중 하나를 누르면 해당 번호의 색상을 변경할 수 있습니다.";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 907);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(504, 12);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Previous 버튼을 누르면 이전 프레임이 나오고, Next 버튼을 누르면 다음 프레임이 나옵니다.";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 935);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(519, 12);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Preview 버튼을 누르면 지금까지 그렸던 프레임들의 애니메이션을 볼 수 있습니다. ( FPS : 10 )";
-            // 
             // cbxShowPreviousFrame
             // 
             this.cbxShowPreviousFrame.AutoSize = true;
-            this.cbxShowPreviousFrame.Location = new System.Drawing.Point(789, 400);
+            this.cbxShowPreviousFrame.Checked = true;
+            this.cbxShowPreviousFrame.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxShowPreviousFrame.Location = new System.Drawing.Point(798, 402);
+            this.cbxShowPreviousFrame.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbxShowPreviousFrame.Name = "cbxShowPreviousFrame";
             this.cbxShowPreviousFrame.Size = new System.Drawing.Size(149, 16);
             this.cbxShowPreviousFrame.TabIndex = 0;
             this.cbxShowPreviousFrame.Text = "Show Previous Frame";
             this.cbxShowPreviousFrame.UseVisualStyleBackColor = true;
+            this.cbxShowPreviousFrame.CheckedChanged += new System.EventHandler(this.cbxShowPreviousFrame_CheckedChanged);
             // 
             // btnCopyPreviousFrameToCurrentFrame
             // 
-            this.btnCopyPreviousFrameToCurrentFrame.Location = new System.Drawing.Point(789, 367);
+            this.btnCopyPreviousFrameToCurrentFrame.Location = new System.Drawing.Point(798, 367);
+            this.btnCopyPreviousFrameToCurrentFrame.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCopyPreviousFrameToCurrentFrame.Name = "btnCopyPreviousFrameToCurrentFrame";
             this.btnCopyPreviousFrameToCurrentFrame.Size = new System.Drawing.Size(256, 24);
             this.btnCopyPreviousFrameToCurrentFrame.TabIndex = 17;
@@ -440,42 +463,14 @@
             this.btnCopyPreviousFrameToCurrentFrame.UseVisualStyleBackColor = true;
             this.btnCopyPreviousFrameToCurrentFrame.Click += new System.EventHandler(this.btnCopyPreviousFrameToCurrentFrame_Click);
             // 
-            // pbxNextFrame
-            // 
-            this.pbxNextFrame.Location = new System.Drawing.Point(789, 484);
-            this.pbxNextFrame.Name = "pbxNextFrame";
-            this.pbxNextFrame.Size = new System.Drawing.Size(256, 256);
-            this.pbxNextFrame.TabIndex = 5;
-            this.pbxNextFrame.TabStop = false;
-            this.pbxNextFrame.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxNextFrame_Paint);
-            // 
-            // pbxPreviousFrame
-            // 
-            this.pbxPreviousFrame.Location = new System.Drawing.Point(789, 100);
-            this.pbxPreviousFrame.Name = "pbxPreviousFrame";
-            this.pbxPreviousFrame.Size = new System.Drawing.Size(256, 256);
-            this.pbxPreviousFrame.TabIndex = 1;
-            this.pbxPreviousFrame.TabStop = false;
-            this.pbxPreviousFrame.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxPreviousFrame_Paint);
-            // 
-            // pbxCurrentFrame
-            // 
-            this.pbxCurrentFrame.Location = new System.Drawing.Point(100, 100);
-            this.pbxCurrentFrame.Name = "pbxCurrentFrame";
-            this.pbxCurrentFrame.Size = new System.Drawing.Size(640, 640);
-            this.pbxCurrentFrame.TabIndex = 0;
-            this.pbxCurrentFrame.TabStop = false;
-            this.pbxCurrentFrame.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxCurrentFrame_Paint);
-            this.pbxCurrentFrame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbxCurrentFrame_MouseDown);
-            this.pbxCurrentFrame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbxCurrentFrame_MouseMove);
-            this.pbxCurrentFrame.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbxCurrentFrame_MouseUp);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblCurrentFrameNum);
-            this.groupBox1.Location = new System.Drawing.Point(12, 436);
+            this.groupBox1.Location = new System.Drawing.Point(12, 469);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(66, 55);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox1.Size = new System.Drawing.Size(76, 55);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Frame";
@@ -483,10 +478,11 @@
             // lblCurrentFrameNum
             // 
             this.lblCurrentFrameNum.AutoSize = true;
-            this.lblCurrentFrameNum.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblCurrentFrameNum.Location = new System.Drawing.Point(11, 23);
+            this.lblCurrentFrameNum.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblCurrentFrameNum.Location = new System.Drawing.Point(10, 23);
+            this.lblCurrentFrameNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentFrameNum.Name = "lblCurrentFrameNum";
-            this.lblCurrentFrameNum.Size = new System.Drawing.Size(40, 13);
+            this.lblCurrentFrameNum.Size = new System.Drawing.Size(44, 16);
             this.lblCurrentFrameNum.TabIndex = 0;
             this.lblCurrentFrameNum.Text = "1 / 1";
             // 
@@ -495,7 +491,9 @@
             this.groupBox2.Controls.Add(this.btnAdd);
             this.groupBox2.Controls.Add(this.btnRemove);
             this.groupBox2.Location = new System.Drawing.Point(174, 755);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox2.Size = new System.Drawing.Size(279, 77);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
@@ -504,6 +502,7 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(148, 20);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(116, 46);
             this.btnAdd.TabIndex = 11;
@@ -514,6 +513,7 @@
             // btnRemove
             // 
             this.btnRemove.Location = new System.Drawing.Point(16, 20);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(116, 46);
             this.btnRemove.TabIndex = 10;
@@ -523,7 +523,8 @@
             // 
             // btnCopyNextFrameToCurrentFrame
             // 
-            this.btnCopyNextFrameToCurrentFrame.Location = new System.Drawing.Point(789, 426);
+            this.btnCopyNextFrameToCurrentFrame.Location = new System.Drawing.Point(798, 426);
+            this.btnCopyNextFrameToCurrentFrame.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCopyNextFrameToCurrentFrame.Name = "btnCopyNextFrameToCurrentFrame";
             this.btnCopyNextFrameToCurrentFrame.Size = new System.Drawing.Size(256, 24);
             this.btnCopyNextFrameToCurrentFrame.TabIndex = 19;
@@ -531,22 +532,166 @@
             this.btnCopyNextFrameToCurrentFrame.UseVisualStyleBackColor = true;
             this.btnCopyNextFrameToCurrentFrame.Click += new System.EventHandler(this.btnCopyNextFrameToCurrentFrame_Click);
             // 
+            // pbxNextFrame
+            // 
+            this.pbxNextFrame.Location = new System.Drawing.Point(798, 484);
+            this.pbxNextFrame.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pbxNextFrame.Name = "pbxNextFrame";
+            this.pbxNextFrame.Size = new System.Drawing.Size(256, 256);
+            this.pbxNextFrame.TabIndex = 5;
+            this.pbxNextFrame.TabStop = false;
+            this.pbxNextFrame.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxNextFrame_Paint);
+            // 
+            // pbxPreviousFrame
+            // 
+            this.pbxPreviousFrame.Location = new System.Drawing.Point(798, 100);
+            this.pbxPreviousFrame.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pbxPreviousFrame.Name = "pbxPreviousFrame";
+            this.pbxPreviousFrame.Size = new System.Drawing.Size(256, 256);
+            this.pbxPreviousFrame.TabIndex = 1;
+            this.pbxPreviousFrame.TabStop = false;
+            this.pbxPreviousFrame.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxPreviousFrame_Paint);
+            // 
+            // pbxCurrentFrame
+            // 
+            this.pbxCurrentFrame.Location = new System.Drawing.Point(100, 100);
+            this.pbxCurrentFrame.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pbxCurrentFrame.Name = "pbxCurrentFrame";
+            this.pbxCurrentFrame.Size = new System.Drawing.Size(640, 640);
+            this.pbxCurrentFrame.TabIndex = 0;
+            this.pbxCurrentFrame.TabStop = false;
+            this.pbxCurrentFrame.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxCurrentFrame_Paint);
+            this.pbxCurrentFrame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbxCurrentFrame_MouseDown);
+            this.pbxCurrentFrame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbxCurrentFrame_MouseMove);
+            this.pbxCurrentFrame.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbxCurrentFrame_MouseUp);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox3.Location = new System.Drawing.Point(12, 832);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Size = new System.Drawing.Size(1084, 162);
+            this.groupBox3.TabIndex = 24;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "사용설명서";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(4, 121);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(652, 12);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "Cancel 버튼을 누르면 저장 없이 종료되고, Save And Exit 버튼을 누르면 지금까지 작업한 내용이 저장되고 종료됩니다.";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(4, 105);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(1044, 12);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Copy Previous Frame To Current Frame 버튼을 누르면 이전 프레임이 현재 프레임에 복사되고, Copy Next Fram" +
+    "e To Current Frame 버튼을 누르면 다음 프레임이 현재 프레임에 복사됩니다.";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(4, 60);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(523, 12);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "Add New Frame Next To This 버튼을 누르면 현재 프레임 다음에 새로운 프레임이 생성됩니다.";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(4, 45);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(348, 12);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "Remove This Frame 버튼을 누르면 현재 프레임이 삭제됩니다.";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(4, 31);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(815, 12);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "키보드에서 Q , W , E , R , A , S , D 를 누르면 누른 키에 해당하는 도구를 사용할 수 있고, 키보드에서 F 키를 누르면 현재 " +
+    "색상을 변경할 수 있습니다.\r\n";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(4, 90);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(519, 12);
+            this.label14.TabIndex = 26;
+            this.label14.Text = "Preview 버튼을 누르면 지금까지 그렸던 프레임들의 애니메이션을 볼 수 있습니다. ( FPS : 10 )";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(4, 75);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(504, 12);
+            this.label15.TabIndex = 25;
+            this.label15.Text = "Previous 버튼을 누르면 이전 프레임이 나오고, Next 버튼을 누르면 다음 프레임이 나옵니다.";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(4, 16);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(489, 12);
+            this.label16.TabIndex = 24;
+            this.label16.Text = "키보드에서 숫자키 1부터 0까지 중 하나를 누르면 해당 번호의 색상을 선택할 수 있습니다.";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(4, 137);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(951, 12);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "Show Previous Frame 을 체크 해제하면 이전 프레임이 현재 프레임에서 보이지 않게 되고, Show Previous Frame 을 체" +
+    "크하면 이전 프레임이 현재 프레임에서 보이게 됩니다.";
+            // 
             // MakingPixelArtForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1084, 961);
+            this.ClientSize = new System.Drawing.Size(1105, 1005);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnCopyNextFrameToCurrentFrame);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCopyPreviousFrameToCurrentFrame);
             this.Controls.Add(this.cbxShowPreviousFrame);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblColorValue);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.gbxFrames);
             this.Controls.Add(this.btnPreview);
             this.Controls.Add(this.btnSaveAndExit);
@@ -558,18 +703,23 @@
             this.Controls.Add(this.gbxPalette);
             this.Controls.Add(this.pbxPreviousFrame);
             this.Controls.Add(this.pbxCurrentFrame);
+            this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "MakingPixelArtForm";
             this.Text = "Making Pixel Art";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MakingPixelArtForm_KeyDown);
             this.gbxPalette.ResumeLayout(false);
             this.gbxTools.ResumeLayout(false);
             this.gbxFrames.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxNextFrame)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxPreviousFrame)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxCurrentFrame)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxNextFrame)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPreviousFrame)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCurrentFrame)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -592,7 +742,7 @@
         private System.Windows.Forms.Button btnColor06;
         private System.Windows.Forms.Button btnColor05;
         private System.Windows.Forms.Button btnColor04;
-        private System.Windows.Forms.Button button03;
+        private System.Windows.Forms.Button btnColor03;
         private System.Windows.Forms.Button btnColor02;
         private System.Windows.Forms.Button btnColor01;
         private System.Windows.Forms.Button btnTool06;
@@ -607,11 +757,7 @@
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.GroupBox gbxFrames;
         private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblColorValue;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox cbxShowPreviousFrame;
         private System.Windows.Forms.Button btnCopyPreviousFrameToCurrentFrame;
         private System.Windows.Forms.ColorDialog cld;
@@ -621,6 +767,17 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnCopyNextFrameToCurrentFrame;
+        private System.Windows.Forms.Button btnTool07;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
     }
 }
 
