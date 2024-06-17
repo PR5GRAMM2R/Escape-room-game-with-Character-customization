@@ -967,6 +967,11 @@ namespace Making_Pixel_Art
             btnTool01.PerformClick();
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////
+
+        //                  단축키 설정
+        ////////////////////////////////////////////////////////////////////////////////////////////
+
         private void MakingPixelArtForm_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
