@@ -46,6 +46,10 @@ namespace Making_Pixel_Art
         private static Point clickPoint;
         private static Point upPoint;
 
+        private List<Color[,]> undoList = new List<Color[,]>();
+        private List<Color[,]> redoList = new List<Color[,]>();
+        private Color[,] behaviors;     //// 클릭 한 번에 한 행동
+
         public MakingPixelArtForm()
         {
             InitializeComponent();
@@ -61,9 +65,9 @@ namespace Making_Pixel_Art
             btnTool06.Tag = Tools.Fill;
             btnTool07.Tag = Tools.Spoid;
 
-            pbxCurrentFrame.BackColor = Color.FromArgb(0, 255, 255, 255);       // 색상을 전부 투명으로 설정
-            pbxPreviousFrame.BackColor = Color.FromArgb(0, 255, 255, 255);
-            pbxNextFrame.BackColor = Color.FromArgb(0, 255, 255, 255);
+            pbxCurrentFrame.BackColor = Color.Empty;       // 색상을 전부 투명으로 설정
+            pbxPreviousFrame.BackColor = Color.Empty;
+            pbxNextFrame.BackColor = Color.Empty;
 
             this.colorButtons = GetAllButtons(this.gbxPalette);
 
@@ -185,6 +189,8 @@ namespace Making_Pixel_Art
 
             if (x >= 0 &&  x < pbxCurrentFrame.Width && y >= 0 && y < pbxCurrentFrame.Height)
             {
+                behaviors = (Color[,])currentFrame.Clone();
+
                 if (e.Button == MouseButtons.Left)
                 {
                     /////////////////// 도구 사용 여기에
@@ -201,7 +207,7 @@ namespace Making_Pixel_Art
                         case Tools.Circle:
                             break;
                         case Tools.Eraser:
-                            currentFrame[cellX, cellY] = Color.FromArgb(0, 255, 255, 255);
+                            currentFrame[cellX, cellY] = Color.Empty;
                             break;
                         case Tools.Fill:
                             Fill(clickPoint, currentFrame[cellX, cellY], currentColor);
@@ -215,7 +221,7 @@ namespace Making_Pixel_Art
                 }
                 else if(e.Button == MouseButtons.Right)
                 {
-                    currentFrame[cellX, cellY] = Color.FromArgb(0, 255, 255, 255);
+                    currentFrame[cellX, cellY] = Color.Empty;
                 }
 
                 pbxCurrentFrame.Invalidate();
@@ -393,6 +399,14 @@ namespace Making_Pixel_Art
             pbxCurrentFrame.Invalidate();
 
             isMouseDown = false;
+
+            if (currentTool != Tools.Spoid)
+            {
+                undoList.Add(behaviors);
+                redoList.Clear();
+            }
+            behaviors = null;
+
         }
 
         private void DrawLine(int startX, int startY, int endX, int endY, int cellSizeX, int cellSizeY)
@@ -505,7 +519,7 @@ namespace Making_Pixel_Art
                             }
                             break;
                         case Tools.Eraser:
-                            currentFrame[cellX, cellY] = Color.FromArgb(0, 255, 255, 255);
+                            currentFrame[cellX, cellY] = Color.Empty;
                             break;
                         default:
                             break;
@@ -515,7 +529,7 @@ namespace Making_Pixel_Art
                 {
                     if (x >= 0 && x < pbxCurrentFrame.Width && y >= 0 && y < pbxCurrentFrame.Height)
                     {
-                        currentFrame[cellX, cellY] = Color.FromArgb(0, 255, 255, 255);
+                        currentFrame[cellX, cellY] = Color.Empty;
                         pbxCurrentFrame.Invalidate();
                     }
                 }
@@ -720,7 +734,7 @@ namespace Making_Pixel_Art
 
             for (int i = 0; i < numCells; i++)
                 for (int j = 0; j < numCells; j++)
-                    currentFrame[i, j] = Color.FromArgb(0, 255, 255, 255);
+                    currentFrame[i, j] = Color.Empty;
 
             Color[,] tempFrame = new Color[numCells, numCells];
             tempFrame = (Color[,])currentFrame.Clone();
@@ -765,7 +779,7 @@ namespace Making_Pixel_Art
             {
                 for (int i = 0; i < numCells; i++)
                     for (int j = 0; j < numCells; j++)
-                        currentFrame[i, j] = Color.FromArgb(0, 255, 255, 255);
+                        currentFrame[i, j] = Color.Empty;
             }
 
             lblCurrentFrameNum.Text = (currentFrameNum + 1).ToString() + " / " + totalFramesNum.ToString();
@@ -935,8 +949,6 @@ namespace Making_Pixel_Art
                 {
                     Button button = (Button)control;
 
-
-
                     if (button.BackColor == currentFrame[cellX, cellY])
                     {
                         button.BackColor = currentFrame[cellX, cellY];
@@ -1030,6 +1042,22 @@ namespace Making_Pixel_Art
 
                 default:
                     break;
+            }
+
+            if (e.Control && e.KeyCode == Keys.Z && undoList.Count > 0)
+            {
+                redoList.Add(currentFrame);
+                currentFrame = undoList[undoList.Count - 1];
+                undoList.RemoveAt(undoList.Count - 1);
+                pbxCurrentFrame.Invalidate();
+            }
+
+            if (e.Control && e.KeyCode == Keys.Y && redoList.Count > 0)
+            {
+                undoList.Add(currentFrame);
+                currentFrame = redoList[redoList.Count - 1];
+                redoList.RemoveAt(redoList.Count - 1);
+                pbxCurrentFrame.Invalidate();
             }
         }
     }
