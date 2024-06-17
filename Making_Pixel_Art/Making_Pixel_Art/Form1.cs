@@ -218,7 +218,7 @@ namespace Making_Pixel_Art
                         case Tools.Circle:
                             break;
                         case Tools.Eraser:
-                            currentFrame[cellX, cellY] = Color.Empty;
+                            currentFrame[cellX, cellY] = Color.FromArgb(0, 255, 255, 255);
                             break;
                         case Tools.Fill:
                             Fill(clickPoint, currentFrame[cellX, cellY], currentColor);
@@ -232,7 +232,7 @@ namespace Making_Pixel_Art
                 }
                 else if(e.Button == MouseButtons.Right)
                 {
-                    currentFrame[cellX, cellY] = Color.Empty;
+                    currentFrame[cellX, cellY] = Color.FromArgb(0, 255, 255, 255);
                 }
 
                 pbxCurrentFrame.Invalidate();
@@ -530,7 +530,7 @@ namespace Making_Pixel_Art
                             }
                             break;
                         case Tools.Eraser:
-                            currentFrame[cellX, cellY] = Color.Empty;
+                            currentFrame[cellX, cellY] = Color.FromArgb(0, 255, 255, 255);
                             break;
                         default:
                             break;
@@ -540,7 +540,7 @@ namespace Making_Pixel_Art
                 {
                     if (x >= 0 && x < pbxCurrentFrame.Width && y >= 0 && y < pbxCurrentFrame.Height)
                     {
-                        currentFrame[cellX, cellY] = Color.Empty;
+                        currentFrame[cellX, cellY] = Color.FromArgb(0, 255, 255, 255);
                         pbxCurrentFrame.Invalidate();
                     }
                 }
@@ -779,7 +779,7 @@ namespace Making_Pixel_Art
 
             for (int i = 0; i < numCells; i++)
                 for (int j = 0; j < numCells; j++)
-                    currentFrame[i, j] = Color.Empty;
+                    currentFrame[i, j] = Color.FromArgb(0, 255, 255, 255);
 
             Color[,] tempFrame = new Color[numCells, numCells];
             tempFrame = (Color[,])currentFrame.Clone();
