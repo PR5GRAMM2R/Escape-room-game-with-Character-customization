@@ -1121,7 +1121,7 @@ namespace Making_Pixel_Art
                     break;
             }
 
-            if (e.Control && e.KeyCode == Keys.Z && undoList.Count > 0)
+            if (e.Control && !e.Shift && e.KeyCode == Keys.Z && undoList.Count > 0)
             {
                 redoList.Add(currentFrame);
                 currentFrame = undoList[undoList.Count - 1];
