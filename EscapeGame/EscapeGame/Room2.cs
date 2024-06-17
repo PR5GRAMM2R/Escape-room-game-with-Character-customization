@@ -13,6 +13,9 @@ namespace EscapeGame
 {
     public partial class Room2 : Form
     {
+        int numCells = 32;
+        int frameNum = 0;
+
         private HashSet<Keys> pressedKeys = new HashSet<Keys>();
         private Timer movementTimer;
         private const int step = 10; // 캐릭터 이동 거리
@@ -37,8 +40,10 @@ namespace EscapeGame
             movementTimer.Tick += MovementTimer_Tick;
             movementTimer.Start();
 
-            images = form.images;           //// 이미지 불러오기
-            pbPlayer.Image = images[0];     //// 초기 이미지 설정
+            //images = form.images;           //// 이미지 불러오기
+            //pbPlayer.Image = images[0];     //// 초기 이미지 설정
+
+            pbPlayer.BackColor = Color.FromArgb(0, 255, 255, 255);
         }
 
         private void Room2_KeyDown(object sender, KeyEventArgs e)
@@ -134,9 +139,27 @@ namespace EscapeGame
         // gif 움직일 때 사용할 타이머
         private void tmrImage_Tick(object sender, EventArgs e)
         {
-            imgClock++;
-            pbPlayer.Image = images[imgClock % 10];
-            if (imgClock % 10 == 0) { imgClock = 0; }
+            pbPlayer.Invalidate();
+            frameNum = (frameNum + 1) % GlobalSettings.Instance.frameCount;
+        }
+
+        private void pbPlayer_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+
+            int cellSizeX = pbPlayer.Width / numCells;
+            int cellSizeY = pbPlayer.Height / numCells;
+
+            for (int x = 0; x < numCells; x++)
+            {
+                for (int y = 0; y < numCells; y++)
+                {
+                    using (SolidBrush brush = new SolidBrush(GlobalSettings.Instance.frames[frameNum][x, y]))
+                    {
+                        e.Graphics.FillRectangle(brush, x * cellSizeX, y * cellSizeY, cellSizeX, cellSizeY);
+                    }
+                }
+            }
         }
     }
 }

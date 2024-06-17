@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EscapeGame
+{
+    public class GlobalSettings
+    {
+        private static GlobalSettings _instance;
+
+        public int characterNum { get; set; }
+
+        public int frameCount { get; set; }
+        public List<Color[,]> frames { get; set; }
+
+        public static GlobalSettings Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new GlobalSettings();
+                    _instance.characterNum = 0;
+                    _instance.frameCount = 0;
+                    _instance.frames = new List<Color[,]>();
+                }
+                return _instance;
+            }
+        }
+
+        private GlobalSettings() { }
+    }
+}

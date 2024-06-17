@@ -28,27 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.components = new System.ComponentModel.Container();
+            this.pbxCharacter = new System.Windows.Forms.PictureBox();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnCharacter = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.characterTimer = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCharacter)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pbxCharacter
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(583, 97);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(256, 284);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbxCharacter.Location = new System.Drawing.Point(607, 191);
+            this.pbxCharacter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbxCharacter.Name = "pbxCharacter";
+            this.pbxCharacter.Size = new System.Drawing.Size(180, 180);
+            this.pbxCharacter.TabIndex = 0;
+            this.pbxCharacter.TabStop = false;
+            this.pbxCharacter.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxCharacter_Paint);
             // 
             // btnStart
             // 
             this.btnStart.BackgroundImage = global::EscapeGame.Properties.Resources.BG;
-            this.btnStart.Font = new System.Drawing.Font("한컴산뜻돋움", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnStart.ForeColor = System.Drawing.Color.Orange;
             this.btnStart.Image = global::EscapeGame.Properties.Resources.판자_위;
             this.btnStart.Location = new System.Drawing.Point(322, 147);
@@ -56,14 +59,14 @@
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(203, 116);
             this.btnStart.TabIndex = 1;
-            this.btnStart.Text = "                            시작하기";
+            this.btnStart.Text = "\r\n시작하기";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // btnCharacter
             // 
             this.btnCharacter.BackgroundImage = global::EscapeGame.Properties.Resources.BG;
-            this.btnCharacter.Font = new System.Drawing.Font("한컴산뜻돋움", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCharacter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCharacter.ForeColor = System.Drawing.Color.Orange;
             this.btnCharacter.Image = global::EscapeGame.Properties.Resources.판자_중간;
             this.btnCharacter.Location = new System.Drawing.Point(322, 267);
@@ -78,7 +81,7 @@
             // btnExit
             // 
             this.btnExit.BackgroundImage = global::EscapeGame.Properties.Resources.BG;
-            this.btnExit.Font = new System.Drawing.Font("한컴산뜻돋움", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExit.ForeColor = System.Drawing.Color.Orange;
             this.btnExit.Image = global::EscapeGame.Properties.Resources.판자_마지막;
             this.btnExit.Location = new System.Drawing.Point(322, 343);
@@ -92,12 +95,18 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("휴먼엑스포", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(284, 54);
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("휴먼둥근헤드라인", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(135, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(278, 57);
+            this.label1.Size = new System.Drawing.Size(583, 103);
             this.label1.TabIndex = 4;
             this.label1.Text = "Prison Break";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // characterTimer
+            // 
+            this.characterTimer.Tick += new System.EventHandler(this.characterTimer_Tick);
             // 
             // MainGameMenu
             // 
@@ -109,21 +118,22 @@
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnCharacter);
             this.Controls.Add(this.btnStart);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbxCharacter);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainGameMenu";
             this.Text = "MainGameMenu";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCharacter)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbxCharacter;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnCharacter;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer characterTimer;
     }
 }

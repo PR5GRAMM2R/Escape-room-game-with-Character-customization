@@ -95,14 +95,14 @@
             // 
             // pbPlayer
             // 
-            this.pbPlayer.Image = global::EscapeGame.Properties.Resources.running;
-            this.pbPlayer.Location = new System.Drawing.Point(411, 265);
+            this.pbPlayer.Location = new System.Drawing.Point(418, 256);
             this.pbPlayer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbPlayer.Name = "pbPlayer";
-            this.pbPlayer.Size = new System.Drawing.Size(35, 34);
+            this.pbPlayer.Size = new System.Drawing.Size(64, 64);
             this.pbPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPlayer.TabIndex = 8;
             this.pbPlayer.TabStop = false;
+            this.pbPlayer.Paint += new System.Windows.Forms.PaintEventHandler(this.pbPlayer_Paint);
             // 
             // pbMainp
             // 
