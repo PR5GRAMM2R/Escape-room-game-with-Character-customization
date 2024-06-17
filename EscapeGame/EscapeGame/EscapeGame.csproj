@@ -434,7 +434,7 @@
     <None Include="Resources\Tool07_Spoid.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\sample.wav" />
+    <None Include="Resources\sample2.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
