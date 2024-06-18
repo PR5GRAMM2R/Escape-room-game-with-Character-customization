@@ -35,6 +35,7 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.characterTimer = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCharacter)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,12 +109,24 @@
             // 
             this.characterTimer.Tick += new System.EventHandler(this.characterTimer_Tick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(30, 351);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(205, 65);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "광운대학교 소프트웨어학과\r\n\r\n응용소프트웨어실습 10조\r\n\r\n조윤호, 배주환, 강동호, 고현호";
+            // 
             // MainGameMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::EscapeGame.Properties.Resources.BG;
             this.ClientSize = new System.Drawing.Size(859, 442);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnCharacter);
@@ -124,6 +137,7 @@
             this.Text = "MainGameMenu";
             ((System.ComponentModel.ISupportInitialize)(this.pbxCharacter)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -135,5 +149,6 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer characterTimer;
+        private System.Windows.Forms.Label label2;
     }
 }
