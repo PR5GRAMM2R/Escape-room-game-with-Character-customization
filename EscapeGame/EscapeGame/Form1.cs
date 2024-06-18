@@ -259,7 +259,7 @@ namespace EscapeGame
                     rest();
                     main.Show();
                     backgroundMusicPlayer.Stop();
-                    this.Close();
+                    this.Hide();
                 }
                 else
                 {
