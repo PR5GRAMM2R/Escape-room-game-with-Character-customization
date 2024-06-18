@@ -43,10 +43,10 @@
             // 
             // pbPlayer
             // 
-            this.pbPlayer.Location = new System.Drawing.Point(165, 195);
-            this.pbPlayer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbPlayer.Location = new System.Drawing.Point(236, 292);
+            this.pbPlayer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pbPlayer.Name = "pbPlayer";
-            this.pbPlayer.Size = new System.Drawing.Size(64, 64);
+            this.pbPlayer.Size = new System.Drawing.Size(91, 96);
             this.pbPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPlayer.TabIndex = 3;
             this.pbPlayer.TabStop = false;
@@ -57,8 +57,8 @@
             this.pbMainp.BackColor = System.Drawing.Color.Blue;
             this.pbMainp.BackgroundImage = global::EscapeGame.Properties.Resources.BGs;
             this.pbMainp.Image = ((System.Drawing.Image)(resources.GetObject("pbMainp.Image")));
-            this.pbMainp.Location = new System.Drawing.Point(10, 179);
-            this.pbMainp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbMainp.Location = new System.Drawing.Point(14, 268);
+            this.pbMainp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pbMainp.Name = "pbMainp";
             this.pbMainp.Size = new System.Drawing.Size(150, 100);
             this.pbMainp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -70,8 +70,8 @@
             this.pbRunnerGameMachine.BackColor = System.Drawing.Color.White;
             this.pbRunnerGameMachine.BackgroundImage = global::EscapeGame.Properties.Resources.BGs;
             this.pbRunnerGameMachine.Image = global::EscapeGame.Properties.Resources.오른쪽_오락기2;
-            this.pbRunnerGameMachine.Location = new System.Drawing.Point(815, 131);
-            this.pbRunnerGameMachine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbRunnerGameMachine.Location = new System.Drawing.Point(1164, 196);
+            this.pbRunnerGameMachine.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pbRunnerGameMachine.Name = "pbRunnerGameMachine";
             this.pbRunnerGameMachine.Size = new System.Drawing.Size(50, 70);
             this.pbRunnerGameMachine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -83,10 +83,10 @@
             this.pbHint.BackColor = System.Drawing.Color.Violet;
             this.pbHint.BackgroundImage = global::EscapeGame.Properties.Resources.BGs;
             this.pbHint.Image = global::EscapeGame.Properties.Resources.팻말1;
-            this.pbHint.Location = new System.Drawing.Point(821, 209);
-            this.pbHint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbHint.Location = new System.Drawing.Point(1173, 314);
+            this.pbHint.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pbHint.Name = "pbHint";
-            this.pbHint.Size = new System.Drawing.Size(28, 28);
+            this.pbHint.Size = new System.Drawing.Size(40, 42);
             this.pbHint.TabIndex = 5;
             this.pbHint.TabStop = false;
             // 
@@ -96,19 +96,20 @@
             // 
             // Room1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::EscapeGame.Properties.Resources.BG;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(859, 442);
+            this.ClientSize = new System.Drawing.Size(1227, 663);
             this.Controls.Add(this.pbHint);
             this.Controls.Add(this.pbRunnerGameMachine);
             this.Controls.Add(this.pbPlayer);
             this.Controls.Add(this.pbMainp);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Room1";
             this.Text = "room1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Room1_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMainp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRunnerGameMachine)).EndInit();

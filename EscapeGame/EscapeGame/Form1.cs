@@ -15,7 +15,9 @@ namespace EscapeGame
         int numCells = 32;
         int frameNum = 0;
 
-        private SoundPlayer backgroundMusicPlayer;
+        bool isTowardToRight = true;
+
+        public SoundPlayer backgroundMusicPlayer;
         private HashSet<Keys> pressedKeys = new HashSet<Keys>();
         private Timer movementTimer;
         private const int step = 10; // 캐릭터 이동 거리
@@ -24,6 +26,8 @@ namespace EscapeGame
         public bool hasKeyToRoom3 = false;
         public bool hasKeyToRoom4 = false;
         public bool hasKeyToEscape = false;
+
+        public System.IO.Stream musicStream;
 
         private Rectangle[] walls;
 
@@ -57,7 +61,7 @@ namespace EscapeGame
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            var musicStream = Properties.Resources.sample2;
+            musicStream = Properties.Resources.sample2;
             backgroundMusicPlayer = new SoundPlayer(musicStream);
             // 폼이 로드될 때 음악 재생
             backgroundMusicPlayer.PlayLooping();
@@ -100,10 +104,12 @@ namespace EscapeGame
             if (pressedKeys.Contains(Keys.Left))
             {
                 newPosition.X -= step;
+                isTowardToRight = false;
             }
             if (pressedKeys.Contains(Keys.Right))
             {
                 newPosition.X += step;
+                isTowardToRight = true;
             }
 
             bool collision = false;
@@ -315,13 +321,29 @@ namespace EscapeGame
             int cellSizeX = pbPlayer.Width / numCells;
             int cellSizeY = pbPlayer.Height / numCells;
 
-            for (int x = 0; x < numCells; x++)
+            if (isTowardToRight)
             {
-                for (int y = 0; y < numCells; y++)
+                for (int x = 0; x < numCells; x++)
                 {
-                    using (SolidBrush brush = new SolidBrush(GlobalSettings.Instance.frames[frameNum][x, y]))
+                    for (int y = 0; y < numCells; y++)
                     {
-                        e.Graphics.FillRectangle(brush, x * cellSizeX, y * cellSizeY, cellSizeX, cellSizeY);
+                        using (SolidBrush brush = new SolidBrush(GlobalSettings.Instance.frames[frameNum][x, y]))
+                        {
+                            e.Graphics.FillRectangle(brush, x * cellSizeX, y * cellSizeY, cellSizeX, cellSizeY);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                for (int x = 0; x < numCells; x++)
+                {
+                    for (int y = 0; y < numCells; y++)
+                    {
+                        using (SolidBrush brush = new SolidBrush(GlobalSettings.Instance.frames[frameNum][x, y]))
+                        {
+                            e.Graphics.FillRectangle(brush, (numCells - 1 - x) * cellSizeX, y * cellSizeY, cellSizeX, cellSizeY);
+                        }
                     }
                 }
             }

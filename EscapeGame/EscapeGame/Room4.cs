@@ -15,6 +15,8 @@ namespace EscapeGame
         int numCells = 32;
         int frameNum = 0;
 
+        bool isTowardToRight = true;
+
         private HashSet<Keys> pressedKeys = new HashSet<Keys>();
         private Timer movementTimer;
         private const int step = 10; // 캐릭터 이동 거리
@@ -89,10 +91,12 @@ namespace EscapeGame
             if (pressedKeys.Contains(Keys.Left))
             {
                 newPosition.X -= step;
+                isTowardToRight = false;
             }
             if (pressedKeys.Contains(Keys.Right))
             {
                 newPosition.X += step;
+                isTowardToRight = true;
             }
 
             bool collision = false;
@@ -221,16 +225,39 @@ namespace EscapeGame
             int cellSizeX = pbPlayer.Width / numCells;
             int cellSizeY = pbPlayer.Height / numCells;
 
-            for (int x = 0; x < numCells; x++)
+            if (isTowardToRight)
             {
-                for (int y = 0; y < numCells; y++)
+                for (int x = 0; x < numCells; x++)
                 {
-                    using (SolidBrush brush = new SolidBrush(GlobalSettings.Instance.frames[frameNum][x, y]))
+                    for (int y = 0; y < numCells; y++)
                     {
-                        e.Graphics.FillRectangle(brush, x * cellSizeX, y * cellSizeY, cellSizeX, cellSizeY);
+                        using (SolidBrush brush = new SolidBrush(GlobalSettings.Instance.frames[frameNum][x, y]))
+                        {
+                            e.Graphics.FillRectangle(brush, x * cellSizeX, y * cellSizeY, cellSizeX, cellSizeY);
+                        }
                     }
                 }
             }
+            else
+            {
+                for (int x = 0; x < numCells; x++)
+                {
+                    for (int y = 0; y < numCells; y++)
+                    {
+                        using (SolidBrush brush = new SolidBrush(GlobalSettings.Instance.frames[frameNum][x, y]))
+                        {
+                            e.Graphics.FillRectangle(brush, (numCells - 1 - x) * cellSizeX, y * cellSizeY, cellSizeX, cellSizeY);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void Room4_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            MainGameMenu main = new MainGameMenu();
+            main.Show();
+            this.Hide();
         }
     }
 }
