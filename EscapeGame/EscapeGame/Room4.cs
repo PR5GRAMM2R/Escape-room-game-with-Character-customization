@@ -54,7 +54,7 @@ namespace EscapeGame
             //pbPlayer.Image = images[0];     //// 초기 이미지 설정
 
             pbPlayer.BackColor = Color.FromArgb(0, 255, 255, 255);
-            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+            //this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
         }
 
         private void Room1_KeyDown(object sender, KeyEventArgs e)
