@@ -261,6 +261,7 @@ namespace EscapeGame
                     MainGameMenu main = new MainGameMenu();
                     rest();
                     main.Show();
+                    backgroundMusicPlayer.Stop();
                     this.Close();
                 }
                 else
