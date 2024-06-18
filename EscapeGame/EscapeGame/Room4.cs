@@ -256,6 +256,7 @@ namespace EscapeGame
         private void Room4_FormClosed(object sender, FormClosedEventArgs e)
         {
             MainGameMenu main = new MainGameMenu();
+            GlobalSettings.Instance.backgroundMusicPlayer.Stop();
             main.Show();
             this.Hide();
         }

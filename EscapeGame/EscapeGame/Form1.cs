@@ -17,7 +17,7 @@ namespace EscapeGame
 
         bool isTowardToRight = true;
 
-        public SoundPlayer backgroundMusicPlayer;
+        //public SoundPlayer backgroundMusicPlayer;
         private HashSet<Keys> pressedKeys = new HashSet<Keys>();
         private Timer movementTimer;
         private const int step = 10; // 캐릭터 이동 거리
@@ -62,9 +62,9 @@ namespace EscapeGame
         private void Form1_Load(object sender, EventArgs e)
         {
             musicStream = Properties.Resources.sample2;
-            backgroundMusicPlayer = new SoundPlayer(musicStream);
+            GlobalSettings.Instance.backgroundMusicPlayer = new SoundPlayer(musicStream);
             // 폼이 로드될 때 음악 재생
-            backgroundMusicPlayer.PlayLooping();
+            GlobalSettings.Instance.backgroundMusicPlayer.PlayLooping();
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -264,7 +264,7 @@ namespace EscapeGame
                     MainGameMenu main = new MainGameMenu();
                     rest();
                     main.Show();
-                    backgroundMusicPlayer.Stop();
+                    GlobalSettings.Instance.backgroundMusicPlayer.Stop();
                     this.Hide();
                 }
                 else
@@ -352,7 +352,7 @@ namespace EscapeGame
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             MainGameMenu main = new MainGameMenu();
-            backgroundMusicPlayer.Stop();
+            GlobalSettings.Instance.backgroundMusicPlayer.Stop();
             main.Show();
             this.Hide();
         }
