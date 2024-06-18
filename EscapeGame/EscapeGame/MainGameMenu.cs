@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System;                       // 광운대학교 소프트웨어학과
+using System.Collections.Generic;   //
+using System.ComponentModel;        //
+using System.Data;                  //
+using System.Drawing;               // 응용 소프트웨어 실습
+using System.IO;                    // 10 조
+using System.Linq;                  //
+using System.Text;                  //
+using System.Threading.Tasks;       //
+using System.Windows.Forms;         // 조윤호, 배주환, 강동호, 고현호
 
 namespace EscapeGame
 {
