@@ -38,7 +38,7 @@ namespace EscapeGame
 
             // 방향키 두 개를 동시에 눌렀을 때 대각선으로 이동시키기 위함
             movementTimer = new Timer();
-            movementTimer.Interval = 20; // 20ms 간격으로 움직임을 업데이트
+            movementTimer.Interval = 25; // 25ms 간격으로 움직임을 업데이트
             movementTimer.Tick += MovementTimer_Tick;
             movementTimer.Start();
 
@@ -55,6 +55,7 @@ namespace EscapeGame
             //pbPlayer.Image = images[0];     //// 초기 이미지 설정
 
             pbPlayer.BackColor = Color.FromArgb(0, 255, 255, 255);
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
         }
 
         private void Room2_KeyDown(object sender, KeyEventArgs e)
@@ -167,12 +168,15 @@ namespace EscapeGame
         // gif 움직일 때 사용할 타이머
         private void tmrImage_Tick(object sender, EventArgs e)
         {
+            //pbPlayer.BackColor = Color.FromArgb(0, 255, 255, 255);
             pbPlayer.Invalidate();
             frameNum = (frameNum + 1) % GlobalSettings.Instance.frameCount;
         }
 
         private void pbPlayer_Paint(object sender, PaintEventArgs e)
         {
+            pbPlayer.BackColor = Color.FromArgb(0, 255, 255, 255);
+
             Graphics g = e.Graphics;
 
             int cellSizeX = pbPlayer.Width / numCells;
