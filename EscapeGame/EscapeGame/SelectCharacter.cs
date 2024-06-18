@@ -132,6 +132,12 @@ namespace EscapeGame
         {
             MainGameMenu main = new MainGameMenu();
 
+            if (framesCount <= 0)
+            {
+                MessageBox.Show("캐릭터를 선택하세요!");
+                return;
+            }
+
             GlobalSettings.Instance.characterNum = characterNum;
             GlobalSettings.Instance.frameCount = framesCount;
             GlobalSettings.Instance.frames.Clear();
@@ -150,6 +156,13 @@ namespace EscapeGame
 
             makingPixelArtForm.Show();
 
+            this.Hide();
+        }
+
+        private void SelectCharacter_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            MainGameMenu main = new MainGameMenu();
+            main.Show();
             this.Hide();
         }
     }

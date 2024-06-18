@@ -27,9 +27,6 @@ namespace EscapeGame
 
         private Rectangle[] walls;
 
-        public List<Image> images = new List<Image>();     //// gif처럼 나타낼 이미지를 저장하는 List
-        private int imgClock = 0;                           //// 
-
         public Form1()
         {
             InitializeComponent();
@@ -301,21 +298,6 @@ namespace EscapeGame
 
         }
 
-        // images List에 이미지를 저장
-        private void LoadImages()
-        {
-            images.Add(Image.FromFile("..\\..\\Resources\\c1.png"));
-            images.Add(Image.FromFile("..\\..\\Resources\\c2.png"));
-            images.Add(Image.FromFile("..\\..\\Resources\\c3.png"));
-            images.Add(Image.FromFile("..\\..\\Resources\\c4.png"));
-            images.Add(Image.FromFile("..\\..\\Resources\\c5.png"));
-            images.Add(Image.FromFile("..\\..\\Resources\\c6.png"));
-            images.Add(Image.FromFile("..\\..\\Resources\\c7.png"));
-            images.Add(Image.FromFile("..\\..\\Resources\\c8.png"));
-            images.Add(Image.FromFile("..\\..\\Resources\\c9.png"));
-            images.Add(Image.FromFile("..\\..\\Resources\\c10.png"));
-        }
-
         // gif 움직일 때 사용할 타이머
         private void tmrImage_Tick(object sender, EventArgs e)
         {
@@ -343,6 +325,14 @@ namespace EscapeGame
                     }
                 }
             }
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            MainGameMenu main = new MainGameMenu();
+            backgroundMusicPlayer.Stop();
+            main.Show();
+            this.Hide();
         }
     }
 }

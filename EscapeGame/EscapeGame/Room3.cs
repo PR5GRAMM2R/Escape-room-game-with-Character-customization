@@ -24,9 +24,6 @@ namespace EscapeGame
 
         private Rectangle[] walls;
 
-        private List<System.Drawing.Image> images = new List<System.Drawing.Image>();     //// gif처럼 나타낼 이미지를 저장하는 List
-        private int imgClock = 0;
-
         public Room3(Form1 form)
         {
             InitializeComponent();

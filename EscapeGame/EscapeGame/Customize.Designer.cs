@@ -707,6 +707,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "MakingPixelArtForm";
             this.Text = "Making Pixel Art";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MakingPixelArtForm_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MakingPixelArtForm_KeyDown);
             this.gbxPalette.ResumeLayout(false);

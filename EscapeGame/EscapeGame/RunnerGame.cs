@@ -22,12 +22,18 @@ namespace EscapeGame
         int position;
         bool isGameOver = false;
 
+        int frameNum = 0;
+        List<System.Drawing.Image> images = new List<System.Drawing.Image>();
+
         public static int Score { get; set; } // 점수를 저장할 정적 변수
 
         public RunnerGame()
         {
             InitializeComponent();
             GameReset();
+            LoadImage();
+            trex.Image = images[0];
+            tmrImage.Start();
         }
 
         private void MainGameTimerEvent(object sender, EventArgs e)
@@ -130,6 +136,21 @@ namespace EscapeGame
         {
             Score = finalScore;
             this.Close();
+        }
+
+        private void LoadImage()
+        {
+            for (int i = 0;i<GlobalSettings.Instance.frameCount;i++)
+            {
+                images.Add(System.Drawing.Image.FromFile("..\\..\\Resources\\Customize\\" + GlobalSettings.Instance.characterNum + "\\frame" + (i + 1) + ".png"));
+            }
+        }
+
+        private void tmrImage_Tick(object sender, EventArgs e)
+        {
+            trex.Invalidate();
+            frameNum = (frameNum + 1) % GlobalSettings.Instance.frameCount;
+            trex.Image = images[frameNum];
         }
     }
 }

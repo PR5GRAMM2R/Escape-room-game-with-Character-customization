@@ -35,6 +35,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
+            this.tmrImage = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.trex)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -48,7 +49,7 @@
             this.trex.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.trex.Name = "trex";
             this.trex.Size = new System.Drawing.Size(40, 43);
-            this.trex.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.trex.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.trex.TabIndex = 2;
             this.trex.TabStop = false;
             // 
@@ -102,6 +103,10 @@
             this.gameTimer.Interval = 20;
             this.gameTimer.Tick += new System.EventHandler(this.MainGameTimerEvent);
             // 
+            // tmrImage
+            // 
+            this.tmrImage.Tick += new System.EventHandler(this.tmrImage_Tick);
+            // 
             // RunnerGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -135,5 +140,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer gameTimer;
+        private System.Windows.Forms.Timer tmrImage;
     }
 }

@@ -1160,5 +1160,14 @@ namespace EscapeGame
         {
             pbxCurrentFrame.Invalidate();
         }
+
+        private void MakingPixelArtForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            SelectCharacter selectCharacter = new SelectCharacter();
+
+            selectCharacter.Show();
+
+            this.Hide();
+        }
     }
 }

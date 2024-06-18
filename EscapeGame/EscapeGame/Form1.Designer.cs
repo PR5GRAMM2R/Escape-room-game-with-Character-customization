@@ -135,10 +135,12 @@
             this.Controls.Add(this.pbRoom2p);
             this.Controls.Add(this.pbPlayer);
             this.Controls.Add(this.pbRoom1p);
+            this.DoubleBuffered = true;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "d";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbRoom4p)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEscape)).EndInit();

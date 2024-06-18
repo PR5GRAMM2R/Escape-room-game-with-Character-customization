@@ -101,6 +101,7 @@
             this.Controls.Add(this.cbxCharacters);
             this.Name = "SelectCharacter";
             this.Text = "SelectCharacter";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SelectCharacter_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pbxCharacter)).EndInit();
             this.ResumeLayout(false);
 
