@@ -41,7 +41,7 @@ namespace EscapeGame
         private int currentFrameNum = 0;
         private int totalFramesNum = 0;
         Color[,] currentFrame = new Color[numCells, numCells];      // 현재 프레임
-        List<Color[,]> Frames = new List<Color[,]> ();              // 그려온 프레임들을 저장
+        List<Color[,]> Frames = new List<Color[,]>();              // 그려온 프레임들을 저장
 
         Color[,] previousFrame = new Color[numCells, numCells];      // 이전 프레임
 
@@ -104,7 +104,7 @@ namespace EscapeGame
 
             foreach (Control c in control.Controls)
             {
-                if(c is Button && c.Text != "Edit")
+                if (c is Button && c.Text != "Edit")
                 {
                     c.BackColor = Color.White;
                     buttons.Add((Button)c);
@@ -122,9 +122,9 @@ namespace EscapeGame
         {
             Button clickedButton = sender as Button;
 
-            if(clickedButton != null )
+            if (clickedButton != null)
             {
-                foreach(Button button in colorButtons)
+                foreach (Button button in colorButtons)
                 {
                     button.FlatStyle = FlatStyle.Standard;
                     button.FlatAppearance.BorderSize = 0;
@@ -184,7 +184,7 @@ namespace EscapeGame
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////
-        
+
         //                  현재 Frame (PictureBox) 에 그리기
         ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -208,7 +208,7 @@ namespace EscapeGame
             pn.Width = 3;
             Graphics g = pbxCurrentFrame.CreateGraphics();
 
-            if (x >= 0 &&  x < pbxCurrentFrame.Width && y >= 0 && y < pbxCurrentFrame.Height)
+            if (x >= 0 && x < pbxCurrentFrame.Width && y >= 0 && y < pbxCurrentFrame.Height)
             {
                 behaviors = (Color[,])currentFrame.Clone();
 
@@ -240,7 +240,7 @@ namespace EscapeGame
                             break;
                     }
                 }
-                else if(e.Button == MouseButtons.Right)
+                else if (e.Button == MouseButtons.Right)
                 {
                     currentFrame[cellX, cellY] = Color.FromArgb(0, 255, 255, 255);
                 }
@@ -291,7 +291,7 @@ namespace EscapeGame
                         if (devideNumX == 0)
                             break;
 
-                        if(e.X > clickPoint.X)
+                        if (e.X > clickPoint.X)
                         {
                             int tempRangeX = (e.X - clickPoint.X) / devideNumX;
 
@@ -460,7 +460,7 @@ namespace EscapeGame
 
             int x = e.X;
             int y = e.Y;
-            
+
             int cellX = x / cellSizeX;
             int cellY = y / cellSizeY;
 
@@ -597,8 +597,8 @@ namespace EscapeGame
                 for (int y = 0; y < numCells; y++)
                 {
                     using (SolidBrush brush = new SolidBrush(currentFrame[x, y]))
-                    {   
-                        if(brush.Color != Color.FromArgb(0, 255, 255, 255))
+                    {
+                        if (brush.Color != Color.FromArgb(0, 255, 255, 255))
                             e.Graphics.FillRectangle(brush, x * cellSizeX, y * cellSizeY, cellSizeX, cellSizeY);
                     }
                 }
@@ -719,7 +719,7 @@ namespace EscapeGame
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if(currentFrameNum < totalFramesNum - 1)
+            if (currentFrameNum < totalFramesNum - 1)
             {
                 Color[,] frame = new Color[numCells, numCells];
                 frame = (Color[,])currentFrame.Clone();
@@ -748,10 +748,10 @@ namespace EscapeGame
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            if(currentFrameNum > 0)
+            if (currentFrameNum > 0)
             {
                 Color[,] frame = new Color[numCells, numCells];
-                frame = (Color[,])currentFrame.Clone();                
+                frame = (Color[,])currentFrame.Clone();
 
                 Frames[currentFrameNum] = frame;
 
@@ -830,7 +830,7 @@ namespace EscapeGame
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            if(currentFrameNum > 0)
+            if (currentFrameNum > 0)
             {
                 Frames.RemoveAt(currentFrameNum);
 
@@ -881,7 +881,7 @@ namespace EscapeGame
 
         private void btnCopyPreviousFrameToCurrentFrame_Click(object sender, EventArgs e)
         {
-            if(currentFrameNum != 0)
+            if (currentFrameNum != 0)
             {
                 for (int i = 0; i < numCells; i++)
                     for (int j = 0; j < numCells; j++)
@@ -945,12 +945,12 @@ namespace EscapeGame
                 Directory.CreateDirectory(directory);
             }
 
-            for (int i=0;i<totalFramesNum;i++)
+            for (int i = 0; i < totalFramesNum; i++)
             {
                 Bitmap bitmap = new Bitmap(numCells, numCells);
-                for(int x=0;x<numCells;x++)
+                for (int x = 0; x < numCells; x++)
                 {
-                    for (int y=0;y<numCells;y++)
+                    for (int y = 0; y < numCells; y++)
                     {
                         bitmap.SetPixel(x, y, Frames[i][x, y]);
                     }
@@ -958,7 +958,14 @@ namespace EscapeGame
 
                 try
                 {
-                    bitmap.Save(directory + "\\" + "frame" + (i+1) + ".png", System.Drawing.Imaging.ImageFormat.Png);
+                    if (i + 1 <= 9)
+                    {
+                        bitmap.Save(directory + "\\" + "frame0" + (i + 1) + ".png", System.Drawing.Imaging.ImageFormat.Png);
+                    }
+                    else
+                    {
+                        bitmap.Save(directory + "\\" + "frame" + (i + 1) + ".png", System.Drawing.Imaging.ImageFormat.Png);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -1024,7 +1031,7 @@ namespace EscapeGame
 
         //                  스포이드 기능
         ////////////////////////////////////////////////////////////////////////////////////////////
-        
+
         private void Spoid(Point pt)
         {
             int cellSizeX = pbxCurrentFrame.Width / numCells;

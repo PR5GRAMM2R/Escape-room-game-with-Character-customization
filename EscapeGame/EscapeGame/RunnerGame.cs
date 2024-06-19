@@ -13,6 +13,11 @@ namespace EscapeGame
 {
     public partial class RunnerGame : Form
     {
+        int numCells = 32;
+        int frameNum = 0;
+
+        bool isTowardToRight = true;
+
         bool jumping = false;
         int jumpSpeed;
         int force = 12;
@@ -22,7 +27,7 @@ namespace EscapeGame
         int position;
         bool isGameOver = false;
 
-        int frameNum = 0;
+        //int frameNum = 0;
         List<System.Drawing.Image> images = new List<System.Drawing.Image>();
 
         public static int Score { get; set; } // 점수를 저장할 정적 변수
@@ -31,8 +36,8 @@ namespace EscapeGame
         {
             InitializeComponent();
             GameReset();
-            LoadImage();
-            trex.Image = images[0];
+            //LoadImage();
+            //trex.Image = images[0];
             tmrImage.Start();
         }
 
@@ -79,7 +84,7 @@ namespace EscapeGame
                     if (trex.Bounds.IntersectsWith(x.Bounds))
                     {
                         gameTimer.Stop();
-                        trex.Image = Properties.Resources.dead;
+                        //trex.Image = Properties.Resources.dead;
                         isGameOver = true;
                         EndGame(score); // 게임 종료 시 점수를 전달
                     }
@@ -116,7 +121,7 @@ namespace EscapeGame
             score = 0;
             obstacleSpeed = 10;
             txtScore.Text = "Score: " + score;
-            trex.Image = Properties.Resources.running;
+            //trex.Image = Properties.Resources.running;
             isGameOver = false;
             trex.Top = 335;
 
@@ -140,7 +145,7 @@ namespace EscapeGame
 
         private void LoadImage()
         {
-            for (int i = 0;i<GlobalSettings.Instance.frameCount;i++)
+            for (int i = 0; i < GlobalSettings.Instance.frameCount; i++)
             {
                 images.Add(System.Drawing.Image.FromFile("..\\..\\Resources\\Customize\\" + GlobalSettings.Instance.characterNum + "\\frame" + (i + 1) + ".png"));
             }
@@ -148,9 +153,33 @@ namespace EscapeGame
 
         private void tmrImage_Tick(object sender, EventArgs e)
         {
+            /*trex.Invalidate();
+            frameNum = (frameNum + 1) % GlobalSettings.Instance.frameCount;
+            trex.Image = images[frameNum];*/
+
             trex.Invalidate();
             frameNum = (frameNum + 1) % GlobalSettings.Instance.frameCount;
-            trex.Image = images[frameNum];
+        }
+
+        private void trex_Paint(object sender, PaintEventArgs e)
+        {
+            //trex.BackColor = Color.FromArgb(0, 255, 255, 255);
+
+            Graphics g = e.Graphics;
+
+            int cellSizeX = trex.Width / numCells;
+            int cellSizeY = trex.Height / numCells;
+
+            for (int x = 0; x < numCells; x++)
+            {
+                for (int y = 0; y < numCells; y++)
+                {
+                    using (SolidBrush brush = new SolidBrush(GlobalSettings.Instance.frames[frameNum][x, y]))
+                    {
+                        e.Graphics.FillRectangle(brush, x * cellSizeX, y * cellSizeY, cellSizeX, cellSizeY);
+                    }
+                }
+            }
         }
     }
 }
