@@ -2,6 +2,7 @@
 ---
 광운대학교 응용소프트웨어실습 10조 ( 조윤호, 배주환, 강동호, 고현호 ) 의 프로젝트입니다.
 
+![README_data_01](https://github.com/user-attachments/assets/7df3b2af-72f7-4813-b17a-650b5f943d75)
 
 
 
